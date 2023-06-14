@@ -1,4 +1,5 @@
 import "./Home.css";
+import axios from "axios";
 import Product from "../components/Product";
 import { useEffect, useState } from "react";
 
@@ -9,14 +10,15 @@ function Home() {
     async function getProductInfo() {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:3000/products`,
+        url: `http://localhost:3000/products/featured`,
         // headers: {
         //   Authorization: `Bearer ${token}`,
         // },
       });
       setProducts(response.data);
-      console.log(response.data);
+      //console.log(response.data);
     }
+    getProductInfo();
   }, []);
 
   return (
@@ -32,14 +34,11 @@ function Home() {
         <div className="hero-stats"></div>
       </section>
       <section id="featured_products" className="container-fluid">
-        <div className="row">
-          <Product />
-        </div>
+        {products &&
+          products.map((product) => {
+            return <Product key={product.id} product={product} />;
+          })}
       </section>
-      {products &&
-        products.map((product) => {
-          return <Product key={product.id} product={product} />;
-        })}
     </main>
   );
 }
