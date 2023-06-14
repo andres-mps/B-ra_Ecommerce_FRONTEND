@@ -23,9 +23,8 @@ function Home() {
 
   return (
     <main>
-      <section className="container-fluid p-0 mb-3">
-        <div className="hero-section">
-          <img className="hero-img" src="/public/img/home/header_home.webp" alt="hero image" />
+      <section className="hero-section container-fluid">
+        <div className="hero-container">
           <div className="hero-content">
             <h1>Want it Hoppy?</h1>
             <p>Come explore our Hoppy styles</p>
