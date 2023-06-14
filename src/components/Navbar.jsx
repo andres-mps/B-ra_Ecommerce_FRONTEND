@@ -15,7 +15,7 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" href="#" style={{fontFamily:""}}>
+              <a className="nav-link active" href="#" style={{ fontFamily: "" }}>
                 Beer
               </a>
             </li>
@@ -33,8 +33,7 @@ function Navbar() {
 
 export default Navbar;
 
-
- <p style={{ fontFamily: "var(--font-body-family)", fontSize: "50px" }}>Beers</p>
-      <p style={{ fontFamily: "var(--font-heading)", fontSize: "50px" }}>Beers</p>
-      <p style={{ fontFamily: "var(--font-heading-light)", fontSize: "50px" }}>Beers</p>
-    </>
+//  <p style={{ fontFamily: "var(--font-body-family)", fontSize: "50px" }}>Beers</p>
+//       <p style={{ fontFamily: "var(--font-heading)", fontSize: "50px" }}>Beers</p>
+//       <p style={{ fontFamily: "var(--font-heading-light)", fontSize: "50px" }}>Beers</p>
+//     </>
