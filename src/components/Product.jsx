@@ -11,7 +11,7 @@ function Product({ product }) {
           <span className="productName">Action Direct</span>
           <span className="productPrice">52.00 USD</span>
           <NavLink to="#" activeClassName="active">
-            <button className="btn btn-outline-dark">Add to cart</button>
+            <button className="addToCart btn btn-outline-dark">Add to cart</button>
           </NavLink>
         </div>
       </div>
@@ -21,7 +21,7 @@ function Product({ product }) {
           <p className="productName">Trouble Juice</p>
           <p className="productPrice">45.00 USD</p>
           <NavLink to="#" activeClassName="active">
-            <button className="btn btn-outline-dark">Add to cart</button>
+            <button className="addToCart btn btn-outline-dark">Add to cart</button>
           </NavLink>
         </div>
       </div>
@@ -31,7 +31,7 @@ function Product({ product }) {
           <p className="productName">Brokilde Brown</p>
           <p className="productPrice">41.60 USD</p>
           <NavLink to="#" activeClassName="active">
-            <button className="btn btn-outline-dark">Add to cart</button>
+            <button className=" addToCart btn btn-outline-dark">Add to cart</button>
           </NavLink>
         </div>
       </div>
@@ -41,7 +41,7 @@ function Product({ product }) {
           <p className="productName">Sovs</p>
           <p className="productPrice">47.30 USD</p>
           <NavLink to="#" activeClassName="active">
-            <button className="btn btn-outline-dark">Add to cart</button>
+            <button className=" addToCart btn btn-outline-dark">Add to cart</button>
           </NavLink>
         </div>
       </div>
