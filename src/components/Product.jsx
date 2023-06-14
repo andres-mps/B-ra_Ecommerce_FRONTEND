@@ -1,5 +1,6 @@
 import React from "react";
 import "./Product.css";
+import { NavLink } from "react-router-dom";
 
 function Product() {
   return (
@@ -32,6 +33,7 @@ function Product() {
           <p className="productPrice">47.30 USD</p>
         </div>
       </div>
+      <NavLink>Add to cart</NavLink>
     </>
   );
 }
