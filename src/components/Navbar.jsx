@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
-        <NavLink className="navbar-brand" href="#">
+        <NavLink className="navbar-brand p-0" href="#">
           <img
             src="/public/img/logo/tool_horizontal_logo_19.webp"
             alt="Logo"
