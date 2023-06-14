@@ -46,7 +46,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <section id="featured_products" className="container-fluid">
+      <section id="featured_products" className="container-fluid d-flex flex-row">
         {products &&
           products.map((product) => {
             return <Product key={product.id} product={product} />;

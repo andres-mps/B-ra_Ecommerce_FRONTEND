@@ -11,10 +11,14 @@
   border-radius: 0 !important;
   border: 2px solid black;
   display: none;
+  text-decoration: none;
+  /* padding: 6px 0 6px 0; */
+  transition: opacity 1s;
 }
 
-.addToCart:hover {
+.productContainer:hover .addToCart {
   background-color: white;
   color: black;
-  display: inline;
+  display: block;
+  opacity: 1;
 }
