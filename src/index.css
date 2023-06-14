@@ -8,6 +8,11 @@
   src: url("./fonts/HelveticaNeueLTProLtEx.otf") format("opentype");
 }
 
+@font-face {
+  font-family: "HelveticaExBd";
+  src: url("./fonts/HelveticaNeueLTProMdEx.otf") format("opentype");
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -15,4 +20,5 @@
   --font-body-family: Helvetica;
   --font-heading: HelveticaEx;
   --font-heading-light: HelveticaExLt;
+  --font-heading-bold: HelveticaExBd;
 }
