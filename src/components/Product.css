@@ -1,0 +1,8 @@
+.productName {
+  font-family: var(--font-heading-light);
+}
+
+.productPrice {
+  font-family: var(--font-heading-light);
+  color: red;
+}
