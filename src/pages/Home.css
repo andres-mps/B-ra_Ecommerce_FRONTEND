@@ -1,7 +1,6 @@
 .hero-section {
-  height: 500px;
+  height: 550px;
   width: 100vw;
-  padding: 0;
 }
 
 .hero-img {
@@ -31,5 +30,22 @@
 }
 
 .hero-stats {
-  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f3f3;
+  padding: 50px 50px;
+}
+
+.hero-stats div {
+  font-family: var(--font-heading);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.hero-stats p {
+  margin: 0px;
 }
