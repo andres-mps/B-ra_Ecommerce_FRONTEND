@@ -1,15 +1,18 @@
 @font-face {
   font-family: "HelveticaEx";
-  src: url("./fonts/HelveticaNeueLTProEx.otf") format("truetype");
+  src: url("./fonts/HelveticaNeueLTProEx.otf") format("opentype");
 }
 
 @font-face {
-  font-family: "HelveticaExLight";
-  src: url("./fonts/HelveticaNeueLTProThEx.otf") format("truetype");
+  font-family: "HelveticaExLt";
+  src: url("./fonts/HelveticaNeueLTProLtEx.otf") format("opentype");
 }
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  --font-body-family: Helvetica;
+  --font-heading: HelveticaEx;
+  --font-heading-light: HelveticaExLt;
 }
