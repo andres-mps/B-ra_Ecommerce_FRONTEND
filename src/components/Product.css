@@ -3,6 +3,8 @@
 }
 
 .productPrice {
-  font-family: var(--font-heading-light);
-  color: red;
+  font-family: var(--font-body-family);
+}
+
+.productContainer {
 }

@@ -1,7 +1,24 @@
 import "./Home.css";
 import Product from "../components/Product";
+import { useEffect, useState } from "react";
 
 function Home() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function getProductInfo() {
+      const response = await axios({
+        method: "GET",
+        url: `http://localhost:3000/products`,
+        // headers: {
+        //   Authorization: `Bearer ${token}`,
+        // },
+      });
+      setProducts(response.data);
+      console.log(response.data);
+    }
+  }, []);
+
   return (
     <main>
       <section className="container-fluid">
@@ -19,6 +36,10 @@ function Home() {
           <Product />
         </div>
       </section>
+      {products &&
+        products.map((product) => {
+          return <Product key={product.id} product={product} />;
+        })}
     </main>
   );
 }
