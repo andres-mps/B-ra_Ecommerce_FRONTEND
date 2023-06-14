@@ -1,1 +1,51 @@
+.hero-section {
+  height: 550px;
+  width: 100vw;
+}
 
+.hero-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  backdrop-filter: blur(3px);
+}
+
+.hero-content {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: white;
+}
+
+.hero-content h1 {
+  font-family: var(--font-heading-bold);
+}
+
+.hero-content p {
+  font-family: var(--font-body);
+  font-weight: 300;
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f3f3;
+  padding: 0px 50px;
+}
+
+.hero-stats div {
+  font-family: var(--font-heading);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 27px;
+}
+
+.hero-stats p {
+  margin: 20px 0px;
+}
