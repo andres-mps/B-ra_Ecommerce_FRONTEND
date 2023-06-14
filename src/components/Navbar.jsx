@@ -6,29 +6,29 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <NavLink className="navbar-brand" href="#">
           <img
             src="/public/img/logo/tool_horizontal_logo_19.webp"
             alt="Logo"
             style={{ maxWidth: "90px" }}
           />
-        </a>
+        </NavLink>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active " href="#">
+              <NavLink className="nav-link active " href="#">
                 BEER
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#">
+              <NavLink className="nav-link active" href="#">
                 ABOUT THE PROJECT
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
         <div className="d-flex">
-          <a href="" className="nav-icons">
+          <NavLink href="" className="nav-icons">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
@@ -45,8 +45,8 @@ function Navbar() {
                 fill="black"
               ></path>
             </svg>
-          </a>
-          <a href="" className="nav-icons">
+          </NavLink>
+          <NavLink href="" className="nav-icons">
             <svg
               class="icon icon-cart"
               aria-hidden="true"
@@ -62,7 +62,7 @@ function Navbar() {
                 d="M15.6 6.3V5c0-2-1.6-3.6-3.6-3.6S8.4 3 8.4 5v1.3H4.2v16.3h15.6V6.3h-4.2zM10.4 5c0-.9.7-1.6 1.6-1.6.9 0 1.6.7 1.6 1.6v1.3h-3.2V5zm7.4 15.6H6.2V8.3H17.8v12.3z"
               ></path>
             </svg>
-          </a>
+          </NavLink>
         </div>
       </div>
     </nav>
@@ -70,8 +70,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-//  <p style={{ fontFamily: "var(--font-body-family)", fontSize: "50px" }}>Beers</p>
-//       <p style={{ fontFamily: "var(--font-heading)", fontSize: "50px" }}>Beers</p>
-//       <p style={{ fontFamily: "var(--font-heading-light)", fontSize: "50px" }}>Beers</p>
-//     </>
