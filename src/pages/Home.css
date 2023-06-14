@@ -34,7 +34,7 @@
   align-items: center;
   justify-content: center;
   background-color: #f3f3f3;
-  padding: 50px 50px;
+  padding: 0px 50px;
 }
 
 .hero-stats div {
@@ -43,9 +43,9 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 20px 0px;
+  padding: 27px;
 }
 
 .hero-stats p {
-  margin: 0px;
+  margin: 20px 0px;
 }

@@ -21,7 +21,7 @@ function Home() {
 
   return (
     <main>
-      <section className="container-fluid p-0">
+      <section className="container-fluid p-0 mb-3">
         <div className="hero-section">
           <img className="hero-img" src="/public/img/home/header_home.webp" alt="hero image" />
           <div className="hero-content">
