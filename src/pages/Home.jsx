@@ -61,23 +61,146 @@ function Home() {
       </section>
       <section>
         <div className="row">
-          <div className="col-md-6 d-flex align-items-center justify-content-center">
+          <div
+            className="col-md-6 d-flex align-items-center justify-content-center"
+            style={{ padding: "0px" }}
+          >
             <img
               src="../../public/img/home/home_destilery_img.webp"
               alt="Imagen"
-              className="img-fluid object-fit-cover"
+              className="object-fit-cover"
+              style={{ minHeight: "100%", minWidth: "100%" }}
             />
           </div>
-          <div className="col-md-6 d-md-flex flex-md-column justify-content-md-center">
-            <div className="text-center font-extended">
-              <h2>Craft beer to the people</h2>
-              <p>
+          <div
+            className="col-md-6 d-md-flex flex-md-column justify-content-md-center"
+            style={{ paddingRight: "100px", paddingLeft: "100px" }}
+          >
+            <div className="text-left">
+              <h2
+                style={{
+                  fontFamily: "var(--font-heading-bold)",
+                  fontSize: "40px",
+                  paddingBottom: "20px",
+                  textAlign: "left",
+                }}
+              >
+                Craft beer to the people
+              </h2>
+              <p
+                style={{
+                  fontFamily: "var(--font-body-family: Regular, Helvetica)",
+                  fontSize: "17px",
+                }}
+              >
                 Starting out as a home brewing project back in 2005, To Øl was permanently
                 established in 2010 working as a gypsy brewery lending in on other breweries spare
                 capacity for the following decade. In 2019 we took over a former food factory in the
                 Western part of Zealand, Denmark, where we’re setting up a full-blown specially
                 designed brewery and craft beverage hub. To Øl City is the name of the place.
               </p>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div
+            className="col-md-6 d-md-flex flex-md-column justify-content-md-center"
+            style={{ paddingRight: "100px", paddingLeft: "100px" }}
+          >
+            <div className="text-left">
+              <h2
+                style={{
+                  fontFamily: "var(--font-heading-bold)",
+                  fontSize: "40px",
+                  paddingBottom: "20px",
+                  textAlign: "left",
+                }}
+              >
+                To Øl Beer Club
+              </h2>
+              <p
+                style={{
+                  fontFamily: "var(--font-body-family: Regular, Helvetica)",
+                  fontSize: "17px",
+                }}
+              >
+                Be a part of To Øl’s monthly beer club! A club for eager hop heads, curious beer
+                enthusiasts and everything in between. Every month you get a box with 6 carefully
+                selected beers, freshly brewed and packed by us. We will introduce and guide you
+                through each beer in our monthly digital beer Zine.
+              </p>
+            </div>
+          </div>
+          <div
+            className="col-md-6 d-flex align-items-center justify-content-center"
+            style={{ padding: "0px" }}
+          >
+            <img
+              src="../../public/img/home/beer_club_box.webp"
+              alt="Imagen"
+              className="object-fit-cover"
+              style={{ maxWidth: "100%", minWidth: "100%" }}
+            />
+          </div>
+        </div>
+        <div className="row">
+          <div
+            className="col-md-6 d-flex align-items-center justify-content-center"
+            style={{ padding: "0px" }}
+          >
+            <img
+              src="../../public/img/home/image_21.webp"
+              alt="Imagen"
+              className="object-fit-cover"
+              style={{ minHeight: "100%", minWidth: "100%" }}
+            />
+          </div>
+          <div
+            className="col-md-6 d-md-flex flex-md-column justify-content-md-center"
+            style={{ paddingRight: "100px", paddingLeft: "100px" }}
+          >
+            <div className="text-left">
+              <h2
+                style={{
+                  fontFamily: "var(--font-heading-bold)",
+                  fontSize: "40px",
+                  paddingBottom: "20px",
+                  textAlign: "left",
+                }}
+              >
+                We got the goods
+              </h2>
+              <div
+                style={{
+                  fontFamily: "var(--font-body-family: Regular, Helvetica)",
+                  fontSize: "17px",
+                }}
+              >
+                <table style={{ width: "100%", fontSize: "25px" }}>
+                  <tbody>
+                    <tr style={{ height: "40px" }}>
+                      <td>Hoppy Beer</td>
+                      <td>35</td>
+                    </tr>
+                    <tr style={{ height: "40px" }}>
+                      <td>Sour Beers</td>
+                      <td>23</td>
+                    </tr>
+                    <tr style={{ height: "40px" }}>
+                      <td>Wild Beers</td>
+                      <td>20</td>
+                    </tr>
+                    <tr style={{ height: "40px" }}>
+                      <td>Dark & Heavy Beers</td>
+                      <td>32</td>
+                    </tr>
+                    <tr>
+                      <td style={{ height: "40px" }}>Lager & Pilsner Beers</td>
+                      <td>10</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
