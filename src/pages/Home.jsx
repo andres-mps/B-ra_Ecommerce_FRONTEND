@@ -9,6 +9,7 @@ function Home() {
   const [hoveredImage, setHoveredImage] = useState(
     "https://cdn.shopify.com/s/files/1/0266/3704/1767/collections/hoppy-beers.jpg?v=1675247646&width=750",
   );
+  const [hoveredCategory, setHoveredCategory] = useState(null);
   useEffect(() => {
     async function getProductInfo() {
       const response = await axios({
@@ -40,8 +41,9 @@ function Home() {
     getCategories();
   }, []);
 
-  const handleHover = (image) => {
-    setHoveredImage(image);
+  const handleHover = (categoryName, categoryImage) => {
+    setHoveredImage(categoryImage);
+    setHoveredCategory(categoryName);
   };
 
   return (
@@ -205,8 +207,15 @@ function Home() {
                         return (
                           <tr
                             key={category.id}
-                            style={{ height: "40px" }}
-                            onMouseOver={() => handleHover(category.image)}
+                            style={{
+                              height: "40px",
+                              fontWeight: category.name === hoveredCategory ? "bold" : "normal",
+                              fontSize: category.name === hoveredCategory ? "30px" : "25px",
+                              textDecoration:
+                                category.name === hoveredCategory ? "underline" : "25px",
+                            }}
+                            onMouseEnter={() => handleHover(category.name, category.image)}
+                            onMouseLeave={() => setHoveredImage(defaultImage)}
                           >
                             <td>{category.name}</td>
                             <td>35</td>
