@@ -1,8 +1,12 @@
 import Navbar from "../components/Navbar";
 import { NavLink } from "react-router-dom";
+import { useEffect } from "react";
 import "./AboutThisProject.css";
 
 function AboutThisProject() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <section>
