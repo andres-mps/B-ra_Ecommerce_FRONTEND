@@ -1,0 +1,45 @@
+.styles-header {
+  text-align: center;
+  font-family: var(--font-heading);
+}
+
+.styles-list-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  gap: 8px 2rem;
+}
+
+.styles-list-header {
+  font-family: var(--font-heading);
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+.styles-list-header:hover {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  color: black;
+}
+
+@media (min-width: 768px) {
+  .styles-list-header {
+    font-size: 2rem;
+  }
+  .styles-header {
+    font-size: 5rem;
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .styles-list-header {
+    font-size: 1.5rem;
+  }
+  .styles-header {
+    font-size: 4rem;
+    margin-top: 1rem;
+  }
+}
