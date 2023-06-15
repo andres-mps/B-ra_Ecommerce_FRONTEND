@@ -7,6 +7,7 @@
   font-family: var(--font-heading-bold);
   margin: 10px;
   padding-bottom: 0;
+  color: black;
 }
 .nav-icons {
   height: 1.8rem;
