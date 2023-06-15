@@ -6,12 +6,12 @@ import AddToCart from "./AddToCart";
 function Product({ product }) {
   return (
     <div className="col-6 col-md-4 col-lg-3">
-      <div className="productContainer d-flex flex-column text-center">
+      <div className="product-container d-flex flex-column text-center">
         <div className="imgContainer">
-          <img className="productImg" src={product.image} alt={product.name} />
+          <img className="product-img" src={product.image} alt={product.name} />
         </div>
-        <span className="productName">{product.name}</span>
-        <span className="productPrice">{product.price} USD</span>
+        <span className="product-name">{product.name}</span>
+        <span className="product-price">{product.price} USD</span>
         <AddToCart />
       </div>
       {/* <p className="a">--font-body-family: Helvetica;</p>
