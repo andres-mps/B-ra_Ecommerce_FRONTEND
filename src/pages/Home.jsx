@@ -6,7 +6,9 @@ import { NavLink } from "react-router-dom";
 
 function Home() {
   const [products, setProducts] = useState([]);
-
+  const [hoveredImage, setHoveredImage] = useState(
+    "https://cdn.shopify.com/s/files/1/0266/3704/1767/collections/hoppy-beers.jpg?v=1675247646&width=750",
+  );
   useEffect(() => {
     async function getProductInfo() {
       const response = await axios({
@@ -21,6 +23,26 @@ function Home() {
     }
     getProductInfo();
   }, []);
+
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    async function getCategories() {
+      const response = await axios({
+        method: "GET",
+        url: `http://localhost:3000/products/categories`,
+        // headers: {
+        //   Authorization: `Bearer ${token}`,
+        // },
+      });
+      setCategories(response.data);
+      //console.log(response.data);
+    }
+    getCategories();
+  }, []);
+
+  const handleHover = (image) => {
+    setHoveredImage(image);
+  };
 
   return (
     <main>
@@ -62,7 +84,7 @@ function Home() {
       <section>
         <div className="row">
           <div
-            className="col-md-6 d-flex align-items-center justify-content-center"
+            className="col-md-6 d-flex align-items-center justify-content-center order-md-1"
             style={{ padding: "0px" }}
           >
             <img
@@ -73,7 +95,7 @@ function Home() {
             />
           </div>
           <div
-            className="col-md-6 d-md-flex flex-md-column justify-content-md-center"
+            className="col-md-6 d-md-flex flex-md-column justify-content-md-center order-md-2"
             style={{ paddingRight: "100px", paddingLeft: "100px" }}
           >
             <div className="text-left">
@@ -104,7 +126,7 @@ function Home() {
         </div>
         <div className="row">
           <div
-            className="col-md-6 d-md-flex flex-md-column justify-content-md-center"
+            className="col-md-6 d-md-flex flex-md-column justify-content-md-center order-md-1"
             style={{ paddingRight: "100px", paddingLeft: "100px" }}
           >
             <div className="text-left">
@@ -132,7 +154,7 @@ function Home() {
             </div>
           </div>
           <div
-            className="col-md-6 d-flex align-items-center justify-content-center"
+            className="col-md-6 d-flex align-items-center justify-content-center order-md-2"
             style={{ padding: "0px" }}
           >
             <img
@@ -145,18 +167,18 @@ function Home() {
         </div>
         <div className="row">
           <div
-            className="col-md-6 d-flex align-items-center justify-content-center"
+            className="col-md-6 d-flex align-items-center justify-content-center order-md-1"
             style={{ padding: "0px" }}
           >
             <img
-              src="../../public/img/home/image_21.webp"
+              src={hoveredImage}
               alt="Imagen"
               className="object-fit-cover"
               style={{ minHeight: "100%", minWidth: "100%" }}
             />
           </div>
           <div
-            className="col-md-6 d-md-flex flex-md-column justify-content-md-center"
+            className="col-md-6 d-md-flex flex-md-column justify-content-md-center order-md-2"
             style={{ paddingRight: "100px", paddingLeft: "100px" }}
           >
             <div className="text-left">
@@ -178,26 +200,19 @@ function Home() {
               >
                 <table style={{ width: "100%", fontSize: "25px" }}>
                   <tbody>
-                    <tr style={{ height: "40px" }}>
-                      <td>Hoppy Beer</td>
-                      <td>35</td>
-                    </tr>
-                    <tr style={{ height: "40px" }}>
-                      <td>Sour Beers</td>
-                      <td>23</td>
-                    </tr>
-                    <tr style={{ height: "40px" }}>
-                      <td>Wild Beers</td>
-                      <td>20</td>
-                    </tr>
-                    <tr style={{ height: "40px" }}>
-                      <td>Dark & Heavy Beers</td>
-                      <td>32</td>
-                    </tr>
-                    <tr>
-                      <td style={{ height: "40px" }}>Lager & Pilsner Beers</td>
-                      <td>10</td>
-                    </tr>
+                    {categories &&
+                      categories.map((category) => {
+                        return (
+                          <tr
+                            key={category.id}
+                            style={{ height: "40px" }}
+                            onMouseOver={() => handleHover(category.image)}
+                          >
+                            <td>{category.name}</td>
+                            <td>35</td>
+                          </tr>
+                        );
+                      })}
                   </tbody>
                 </table>
               </div>

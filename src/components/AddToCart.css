@@ -19,3 +19,20 @@
   display: block;
   opacity: 1;
 }
+
+.custom-offcanvas {
+  width: 80vw;
+  /* Personaliza el ancho deseado */
+}
+
+/* Estilos para dispositivos móviles */
+.custom-offcanvas {
+  width: 100vw !important;
+}
+
+/* Estilos para dispositivos de escritorio */
+@media (min-width: 768px) {
+  .custom-offcanvas {
+    width: 40vw !important;
+  }
+}
