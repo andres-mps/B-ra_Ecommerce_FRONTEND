@@ -2,6 +2,11 @@
   margin: 2rem;
 }
 
+.productImg {
+  width: 100%;
+  object-fit: cover;
+}
+
 .productName {
   font-family: var(--font-body-family);
   margin-top: 1rem;
@@ -10,6 +15,7 @@
 .productPrice {
   font-family: var(--font-heading-light);
   font-size: 1.2rem;
+  opacity: 0.7;
 }
 
 .productContainer:hover .productName {
@@ -20,6 +26,7 @@
   transform: scale(1.02);
 }
 
+/* TESTEO TIPOGRAFÍAS. BORRAR*/
 .a {
   font-family: var(--font-body-family);
 }
@@ -32,3 +39,4 @@
 .d {
   font-family: var(--font-heading-light);
 }
+/* TESTEO TIPOGRAFÍAS. BORRAR*/

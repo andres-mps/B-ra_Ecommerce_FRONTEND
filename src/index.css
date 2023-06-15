@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: "HelveticaEx";
   src: url("./fonts/HelveticaNeueLTProEx.otf") format("opentype");
@@ -12,7 +16,6 @@
   font-family: "HelveticaExBd";
   src: url("./fonts/HelveticaNeueLTProMdEx.otf") format("opentype");
 }
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
