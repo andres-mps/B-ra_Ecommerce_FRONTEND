@@ -2,6 +2,7 @@ import "./Home.css";
 import axios from "axios";
 import Product from "../components/Product";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -23,24 +24,28 @@ function Home() {
 
   return (
     <main>
-      <section className="hero-section container-fluid">
-        <div className="hero-container">
-          <div className="hero-content">
-            <h1>Want it Hoppy?</h1>
-            <p>Come explore our Hoppy styles</p>
+      <section>
+        <NavLink>
+          <div className="hero-container">
+            <div className="background-image"></div>
+            <div className="background-overlay"></div>
+            <div className="hero-content">
+              <h1>Want it Hoppy?</h1>
+              <p>Come explore our Hoppy styles</p>
+            </div>
           </div>
-        </div>
+        </NavLink>
         <div className="row hero-stats">
-          <div className="col-sm-6 col-md-3">
+          <div className="d-none d-md-block col-md-6 col-lg-3">
             <p>Brewed in Denmark 🇩🇰</p>
           </div>
-          <div className="col-sm-6 col-md-3">
+          <div className="d-none d-md-block col-md-6 col-lg-3">
             <p>High-quality ingredients 🍻</p>
           </div>
-          <div className="col-sm-6 col-md-3">
+          <div className="d-none d-md-block col-md-6 col-lg-3">
             <p>Fast and reliable shipping 🚀</p>
           </div>
-          <div className="col-sm-6 col-md-3">
+          <div className="d-none d-md-block col-md-6 col-lg-3">
             <p>4.7 rating on Trustpilot ✅</p>
           </div>
         </div>

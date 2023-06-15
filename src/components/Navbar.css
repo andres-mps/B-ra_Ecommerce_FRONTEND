@@ -5,6 +5,8 @@
 
 .nav-link {
   font-family: var(--font-heading-bold);
+  margin: 10px;
+  padding-bottom: 0;
 }
 .nav-icons {
   height: 1.8rem;
@@ -14,6 +16,9 @@
   margin-left: 1rem;
 }
 
-navbar-brand {
+.navbar-brand {
   padding: 0px;
+}
+
+@media (max-width: 991px) {
 }
