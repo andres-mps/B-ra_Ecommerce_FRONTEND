@@ -59,6 +59,29 @@ function Home() {
             })}
         </div>
       </section>
+      <section>
+        <div className="row">
+          <div className="col-md-6 d-flex align-items-center justify-content-center">
+            <img
+              src="../../public/img/home/home_destilery_img.webp"
+              alt="Imagen"
+              className="img-fluid object-fit-cover"
+            />
+          </div>
+          <div className="col-md-6 d-md-flex flex-md-column justify-content-md-center">
+            <div className="text-center font-extended">
+              <h2>Craft beer to the people</h2>
+              <p>
+                Starting out as a home brewing project back in 2005, To Øl was permanently
+                established in 2010 working as a gypsy brewery lending in on other breweries spare
+                capacity for the following decade. In 2019 we took over a former food factory in the
+                Western part of Zealand, Denmark, where we’re setting up a full-blown specially
+                designed brewery and craft beverage hub. To Øl City is the name of the place.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
