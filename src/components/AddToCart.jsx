@@ -16,18 +16,13 @@ function AddToCart() {
 
   return (  
   <div className="">
-      <button onClick={toggleShow} className="addToCart btn btn-outline-dark py-2">Add to cart</button>
+      <button onClick={toggleShow} className="add-to-cart btn btn-outline-dark py-2">Add to cart</button>
       <Offcanvas show={show} onHide={handleClose} placement="end" {...scrollDrop}
       className="custom-offcanvas">
-        
         <Offcanvas.Header closeButton>
     <h2>Your cart</h2>
-    <hr/>
         </Offcanvas.Header>
-
-
             <CartItem />
-
       </Offcanvas>
   </div>
   );

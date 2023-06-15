@@ -24,4 +24,7 @@
   --font-heading: HelveticaEx;
   --font-heading-light: HelveticaExLt;
   --font-heading-bold: HelveticaExBd;
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f3f3f3;
+  --color-background-dark: #121212;
 }
