@@ -36,6 +36,11 @@ function ProductDetail() {
               </button>
             </NavLink>
             <div className="product-img-container d-flex flex-column">
+              <NavLink to="/">
+                <button className="back-button btn btn-dark py-2">
+                  <i className="bi bi-arrow-left"></i> Back
+                </button>
+              </NavLink>
               <img
                 className="product-img"
                 src="/public/img/products/TroubleJuice-44cl.webp"
