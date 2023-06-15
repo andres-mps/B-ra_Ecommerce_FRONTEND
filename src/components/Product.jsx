@@ -1,6 +1,7 @@
 import React from "react";
 import "./Product.css";
 import { NavLink } from "react-router-dom";
+import AddToCart from "./AddToCart";
 
 function Product({ product }) {
   return (
@@ -9,10 +10,12 @@ function Product({ product }) {
         <img src={product.image} alt="" />
         <span className="productName">{product.name}</span>
         <span className="productPrice">{product.price} USD</span>
-        <NavLink to="#" activeClassName="active">
-          <button className="addToCart btn btn-outline-dark py-3">Add to cart</button>
-        </NavLink>
+        <AddToCart />
       </div>
+      <p className="a">--font-body-family: Helvetica;</p>
+      <p className="b">--font-heading: HelveticaEx;</p>
+      <p className="c">--font-heading-bold: HelveticaExBd;</p>
+      <p className="d">--font-heading-light: HelveticaExLt;</p>
     </div>
   );
 }

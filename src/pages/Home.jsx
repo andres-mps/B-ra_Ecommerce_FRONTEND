@@ -45,11 +45,14 @@ function Home() {
           </div>
         </div>
       </section>
-      <section id="featured_products" className="container-fluid d-flex flex-row">
-        {products &&
-          products.map((product) => {
-            return <Product key={product.id} product={product} />;
-          })}
+      <section id="featured_products" className="container-fluid d-flex flex-row  my-5">
+        <div className="row ">
+          <h2 className="featured_products_heading text-center">Featured Beers</h2>
+          {products &&
+            products.map((product) => {
+              return <Product key={product.id} product={product} />;
+            })}
+        </div>
       </section>
     </main>
   );

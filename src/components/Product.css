@@ -1,24 +1,34 @@
+.productContainer {
+  margin: 2rem;
+}
+
 .productName {
-  font-family: var(--font-heading-light);
+  font-family: var(--font-body-family);
+  margin-top: 1rem;
 }
 
 .productPrice {
+  font-family: var(--font-heading-light);
+  font-size: 1.2rem;
+}
+
+.productContainer:hover .productName {
+  text-decoration: underline;
+}
+
+.productContainer:hover img {
+  transform: scale(1.02);
+}
+
+.a {
   font-family: var(--font-body-family);
 }
-
-.addToCart {
-  width: 100%;
-  border-radius: 0 !important;
-  border: 2px solid black;
-  display: none;
-  text-decoration: none;
-  /* padding: 6px 0 6px 0; */
-  transition: opacity 1s;
+.b {
+  font-family: var(--font-heading);
 }
-
-.productContainer:hover .addToCart {
-  background-color: white;
-  color: black;
-  display: block;
-  opacity: 1;
+.c {
+  font-family: var(--font-heading-bold);
+}
+.d {
+  font-family: var(--font-heading-light);
 }

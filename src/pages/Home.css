@@ -61,3 +61,7 @@
 .hero-stats p {
   margin: 20px 0px;
 }
+
+.featured_products_heading {
+  font-family: var(--font-heading);
+}

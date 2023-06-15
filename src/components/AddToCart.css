@@ -1,0 +1,21 @@
+.addToCart {
+  width: 100%;
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+  margin-top: 1rem;
+  font-family: var(--font-heading);
+  border-radius: 0 !important;
+  color: transparent;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s ease-in;
+  opacity: 0.1;
+}
+
+.productContainer:hover .addToCart {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  display: block;
+  opacity: 1;
+}
