@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import AboutThisProject from "./pages/AboutThisProject";
 import ProductDetail from "./pages/ProductDetail";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/product" element={<ProductDetail />} />
         <Route path="/about-this-project" element={<AboutThisProject />} />
       </Routes>
+      <Footer />
     </>
   );
 }
