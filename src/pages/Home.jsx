@@ -65,13 +65,31 @@ function Home() {
             <img
               src="../../public/img/home/home_destilery_img.webp"
               alt="Imagen"
-              className="img-fluid object-fit-cover"
+              className="object-fit-cover"
+              style={{ maxWidth: "100%" }}
             />
           </div>
-          <div className="col-md-6 d-md-flex flex-md-column justify-content-md-center">
-            <div className="text-center font-extended">
-              <h2>Craft beer to the people</h2>
-              <p>
+          <div
+            className="col-md-6 d-md-flex flex-md-column justify-content-md-center"
+            style={{ paddingRight: "40px", paddingLeft: "40px" }}
+          >
+            <div className="text-left">
+              <h2
+                style={{
+                  fontFamily: "var(--font-heading-bold)",
+                  fontSize: "40px",
+                  paddingBottom: "20px",
+                  textAlign: "left",
+                }}
+              >
+                Craft beer to the people
+              </h2>
+              <p
+                style={{
+                  fontFamily: "var(--font-body-family: Regular, Helvetica)",
+                  fontSize: "17px",
+                }}
+              >
                 Starting out as a home brewing project back in 2005, To Øl was permanently
                 established in 2010 working as a gypsy brewery lending in on other breweries spare
                 capacity for the following decade. In 2019 we took over a former food factory in the
