@@ -14,10 +14,10 @@ function Product({ product }) {
         <span className="productPrice">{product.price} USD</span>
         <AddToCart />
       </div>
-      {/* <p className="a">--font-body-family: Helvetica;</p>
+      <p className="a">--font-body-family: Helvetica;</p>
       <p className="b">--font-heading: HelveticaEx;</p>
       <p className="c">--font-heading-bold: HelveticaExBd;</p>
-      <p className="d">--font-heading-light: HelveticaExLt;</p> */}
+      <p className="d">--font-heading-light: HelveticaExLt;</p>
     </div>
   );
 }
