@@ -9,27 +9,27 @@ function Footer() {
           <h5 className="footer-title">About</h5>
           <ul className="nav flex-column">
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 Home
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 Features
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 Pricing
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 FAQs
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 About
               </a>
             </li>
@@ -40,27 +40,27 @@ function Footer() {
           <h5 className="footer-title">Shop Info</h5>
           <ul className="nav flex-column">
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 Home
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 Features
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 Pricing
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 FAQs
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 About
               </a>
             </li>
@@ -71,27 +71,27 @@ function Footer() {
           <h5 className="footer-title">Products</h5>
           <ul className="nav flex-column">
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 Home
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 Features
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 Pricing
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 FAQs
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 About
               </a>
             </li>
@@ -102,27 +102,27 @@ function Footer() {
           <h5 className="footer-title">Social</h5>
           <ul className="nav flex-column">
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 Home
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 Features
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 Pricing
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 FAQs
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 ms-0">
+              <a href="#" className="footer-link p-0 ms-0">
                 About
               </a>
             </li>
