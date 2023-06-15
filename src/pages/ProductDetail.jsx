@@ -21,22 +21,23 @@ function ProductDetail() {
       setProducts(response.data);
       //console.log(response.data);
     }
+    window.scrollTo(0, 0);
     getProductInfo();
   }, []);
 
   return (
     <>
-      <section id="main-product" className="container">
-        <div className="row">
+      <section id="main-product-container" className="container p-3 ">
+        <div id="main-row" className="row">
           <div className="col-12 col-md-7">
+            <NavLink to="/">
+              <button className="back-button btn btn-dark py-2">
+                <i class="bi bi-arrow-left"></i> Back
+              </button>
+            </NavLink>
             <div className="product-img-container d-flex flex-column">
-              <NavLink to="/">
-                <button className="back-button btn btn-dark py-2">
-                  <i class="bi bi-arrow-left"></i> Back
-                </button>
-              </NavLink>
               <img
-                className="product-img "
+                className="product-img"
                 src="/public/img/products/TroubleJuice-44cl.webp"
                 alt=""
               />
