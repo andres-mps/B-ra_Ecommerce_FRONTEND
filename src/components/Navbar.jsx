@@ -62,7 +62,7 @@ function Navbar() {
               aria-hidden="true"
               focusable="false"
               role="presentation"
-              class="icon icon-account"
+              className="icon icon-account"
               fill="none"
               viewBox="0 0 24 24"
             >
@@ -76,7 +76,7 @@ function Navbar() {
           </NavLink>
           <NavLink href="" className="nav-icons">
             <svg
-              class="icon icon-cart"
+              className="icon icon-cart"
               aria-hidden="true"
               focusable="false"
               role="presentation"
