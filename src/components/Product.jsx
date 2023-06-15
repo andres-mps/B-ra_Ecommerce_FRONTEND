@@ -12,7 +12,7 @@ function Product({ product }) {
         </div>
         <span className="productName">{product.name}</span>
         <span className="productPrice">{product.price} USD</span>
-        <AddToCart />
+        <AddToCart product={product}/>
       </div>
       {/* <p className="a">--font-body-family: Helvetica;</p>
       <p className="b">--font-heading: HelveticaEx;</p>
