@@ -15,9 +15,6 @@ function Product({ product }) {
           <span className="product-price">{product.price} USD</span>
           <AddToCart />
         </div>
-        <span className="productName">{product.name}</span>
-        <span className="productPrice">{product.price} USD</span>
-        <AddToCart product={product} />
       </NavLink>
     </div>
   );
