@@ -72,9 +72,9 @@ function Home() {
           </div>
         </div>
       </section>
-      <section id="featured-products" className="container-fluid d-flex flex-row  my-5">
-        <div className="row ">
-          <h2 className="featured-products-heading text-center">Featured Beers</h2>
+      <section id="featured-products" className="container-fluid  my-5">
+        <h2 className="featured-products-heading text-center">Featured Beers</h2>
+        <div className="row align-items-end">
           {products &&
             products.map((product) => {
               return <Product key={product.id} product={product} />;

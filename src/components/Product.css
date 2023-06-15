@@ -31,13 +31,17 @@
 .a {
   font-family: var(--font-body-family);
 }
+
 .b {
   font-family: var(--font-heading);
 }
+
 .c {
   font-family: var(--font-heading-bold);
 }
+
 .d {
   font-family: var(--font-heading-light);
 }
+
 /* TESTEO TIPOGRAFÍAS. BORRAR*/
