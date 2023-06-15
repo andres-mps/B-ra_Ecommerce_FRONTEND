@@ -32,7 +32,7 @@ function ProductDetail() {
             <div className="product-img-container d-flex flex-column">
               <NavLink to="/">
                 <button className="back-button btn btn-dark py-2">
-                  <i class="bi bi-arrow-left"></i> Back
+                  <i className="bi bi-arrow-left"></i> Back
                 </button>
               </NavLink>
               <img

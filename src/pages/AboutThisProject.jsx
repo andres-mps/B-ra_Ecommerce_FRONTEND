@@ -1,8 +1,12 @@
 import Navbar from "../components/Navbar";
 import { NavLink } from "react-router-dom";
+import { useEffect } from "react";
 import "./AboutThisProject.css";
 
 function AboutThisProject() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <section>
@@ -31,13 +35,27 @@ function AboutThisProject() {
               className="about-the-project-middle-images"
             />
           </div>
-          <div className="col-md-6 d-md-flex p-5">
+          <div className="col-md-6 d-md-flex align-items-center p-5">
             <div className="text-start font-extended">
-              <h2 className="about-the-project-title-font">Equipo</h2>
+              <h3 className="about-the-project-title-font">Equipo</h3>
               <p className="about-the-project-content-font">
-                Nulla quam felis, enim faucibus proin velit, ornare id pretium. Augue ultrices sed
-                arcu condimentum vestibulum suspendisse. Volutpat eu faucibus vivamus eget bibendum
-                cras.
+                El equipo fue conformado por 5 estudiantes del curso Cooding Bootcamp de Hack
+                Academy. La eleccion del equipo fue realizada por los profesores.
+              </p>
+              <h3 className="about-the-project-title-font">Elección del proyecto</h3>
+              <p className="about-the-project-content-font">
+                Se presentó por parte de cada estudiante 3 ideas de posibles proyectos, conformando
+                un total de 15 proyectos. Los proyectos fueron votados, y el ganador fue el
+                e-commerce de cerveza. La comodidad del diseño y el conocimiento por el producto fue
+                lo que llevó al equipo a tomar la decisión.
+              </p>
+              <h3 className="about-the-project-title-font">Experiencia</h3>
+              <p className="about-the-project-content-font">
+                Los estudiantes del equipo tienen como experiencia los proyectos HackBlog, HackFlix
+                y clon de twitter, realizados también como estudiantes del curso Coding Bootcamp de
+                Hack Academy. El grupo particularmente nunca había trabajado junto, siendo la
+                organización un tema a resolver. La buena disposición y comunicacion llevó al grupo
+                a sacar lo mejor de si.
               </p>
             </div>
           </div>
@@ -52,7 +70,7 @@ function AboutThisProject() {
               className="about-the-project-middle-images"
             />
           </div>
-          <div className="col-md-6 order-md-1 d-md-flex p-5">
+          <div className="col-md-6 order-md-1 d-md-flex align-items-center p-5">
             <div className="text-start font-extended">
               <h3 className="about-the-project-title-font">
                 <i className="far fa-clock"></i> Duración
@@ -82,9 +100,7 @@ function AboutThisProject() {
         </div>
       </section>
       <section className="container-fluid about-the-project-dark pt-5 pb-5">
-        <h4 className="about-the-project-title-font text-center mb-5">
-          Presentaciones individuales
-        </h4>
+        <h4 className="about-the-project-title-font text-center mb-5">Nuestros integrantes</h4>
         <div className="container about-the-project-card-container">
           <div className="card" style={{ width: "18rem" }}>
             <img
@@ -93,7 +109,7 @@ function AboutThisProject() {
               className="card-img-top about-the-project-card-image"
             />
             <div className="card-body">
-              <h5 className="card-title about-the-project-title-font">Card title</h5>
+              <h5 className="card-title about-the-project-title-font">Andres Mendaro</h5>
               <p className="card-text about-the-project-content-font">
                 Some quick example text to build on the card title and make up the bulk of the
                 card's content.
@@ -106,12 +122,12 @@ function AboutThisProject() {
           </div>
           <div className="card" style={{ width: "18rem" }}>
             <img
-              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              src="https://images.unsplash.com/photo-1530268729831-4b0b9e170218?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
               alt=""
               className="card-img-top about-the-project-card-image"
             />
             <div className="card-body">
-              <h5 className="card-title about-the-project-title-font">Card title</h5>
+              <h5 className="card-title about-the-project-title-font">Emiliano Gaucher</h5>
               <p className="card-text about-the-project-content-font">
                 Some quick example text to build on the card title and make up the bulk of the
                 card's content.
@@ -129,7 +145,7 @@ function AboutThisProject() {
               className="card-img-top about-the-project-card-image"
             />
             <div className="card-body">
-              <h5 className="card-title about-the-project-title-font">Card title</h5>
+              <h5 className="card-title about-the-project-title-font">Gonzalo Bascans</h5>
               <p className="card-text about-the-project-content-font">
                 Some quick example text to build on the card title and make up the bulk of the
                 card's content.
@@ -147,7 +163,7 @@ function AboutThisProject() {
               className="card-img-top about-the-project-card-image"
             />
             <div className="card-body">
-              <h5 className="card-title about-the-project-title-font">Card title</h5>
+              <h5 className="card-title about-the-project-title-font">Guillermo Sanchez</h5>
               <p className="card-text about-the-project-content-font">
                 Some quick example text to build on the card title and make up the bulk of the
                 card's content.
@@ -165,7 +181,7 @@ function AboutThisProject() {
               className="card-img-top about-the-project-card-image"
             />
             <div className="card-body">
-              <h5 className="card-title about-the-project-title-font">Card title</h5>
+              <h5 className="card-title about-the-project-title-font">Juan Ignacio Esteves</h5>
               <p className="card-text about-the-project-content-font">
                 Some quick example text to build on the card title and make up the bulk of the
                 card's content.

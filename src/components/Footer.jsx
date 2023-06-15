@@ -3,7 +3,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <div classNameName="container-fluid footer-container">
+    <div className="container-fluid footer-container">
       <footer className="row py-5 px-5 footer">
         <div className="col-12 col-md-3 mb-5">
           <h5 className="footer-title">Beer styles</h5>
@@ -46,7 +46,7 @@ function Footer() {
           </ul>
         </div>
 
-        <div class="container-fluid border-top pt-5">
+        <div className="container-fluid border-top pt-5">
           <p className="text-center" style={{ color: "white", fontWeight: "100" }}>
             © 2022 Company, Inc. All rights reserved.
           </p>
