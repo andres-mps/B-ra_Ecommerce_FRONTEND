@@ -7,6 +7,7 @@ import "./Style.css";
 function Style() {
   const [style, setStyle] = useState("");
   const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     async function getProductInfo() {
@@ -20,7 +21,6 @@ function Style() {
     getProductInfo();
   }, [style]);
 
-  const [categories, setCategories] = useState([]);
   useEffect(() => {
     async function getCategories() {
       const response = await axios({
@@ -52,15 +52,6 @@ function Style() {
                 </NavLink>
               );
             })}
-          {/* <NavLink className="text-decoration-none">
-            <h2 className="styles-list-header">Sour</h2>
-          </NavLink>
-          <NavLink className="text-decoration-none">
-            <h2 className="styles-list-header">Stout</h2>
-          </NavLink>
-          <NavLink className="text-decoration-none">
-            <h2 className="styles-list-header">Lager & Pilsner</h2>
-          </NavLink> */}
         </div>
         <div className="row align-items-end">
           {products &&
