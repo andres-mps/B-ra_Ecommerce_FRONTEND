@@ -17,7 +17,7 @@ function QuantityCounter({ updateQuantity }) {
 
   return (
     <div className="d-flex align-items-center">
-      <div className="d-flex align-items-center justify-content-between mt-auto border border-dark w-100">
+      <div className="d-flex align-items-center justify-content-between border border-dark w-100">
         <button className="btn" onClick={decrement}>
           -
         </button>
