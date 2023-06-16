@@ -77,7 +77,7 @@ function CartItem() {
         </div>
       </div>
 
-      <div className="container row border-top pt-2">
+      <div className="row border-top pt-2">
         {/* <div className="col-4">
           <img src="../public/img/cart_alcohol_alert_x250.webp" width={150} alt="" />
         </div> */}
