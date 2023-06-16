@@ -215,19 +215,15 @@ function Home() {
                       categories.map((category) => {
                         return (
                           <tr
+                            id="style-list"
                             key={category.id}
-                            style={{
-                              height: "40px",
-                              fontWeight: category.name === hoveredCategory ? "bold" : "normal",
-                              fontSize: category.name === hoveredCategory ? "30px" : "25px",
-                              textDecoration:
-                                category.name === hoveredCategory ? "underline" : "25px",
-                            }}
                             onMouseEnter={() => handleHover(category.name, category.image)}
                             onMouseLeave={() => setHoveredImage(defaultImage)}
                           >
-                            <td>{category.name}</td>
-                            <td>35</td>
+                            <NavLink to={`/styles/${category.slug}`} id="style-list-link">
+                              <td>{category.name}</td>
+                              <td>{category.products.length}</td>
+                            </NavLink>
                           </tr>
                         );
                       })}

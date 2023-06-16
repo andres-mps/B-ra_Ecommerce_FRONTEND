@@ -14,7 +14,7 @@ function AddToCart() {
   const toggleShow = () => setShow((state) => !state);
 
   return (
-    <div className="add-to-cart-container">
+    <div>
       <button onClick={toggleShow} className="add-to-cart btn btn-outline-dark py-2">
         Add to cart
       </button>

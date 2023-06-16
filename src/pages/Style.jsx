@@ -5,39 +5,56 @@ import { NavLink } from "react-router-dom";
 import "./Style.css";
 
 function Style() {
+  const [style, setStyle] = useState("");
   const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     async function getProductInfo() {
+      window.scrollTo(0, 0);
       const response = await axios({
         method: "GET",
-        url: `http://localhost:3000/products/featured`,
+        url: `http://localhost:3000/products/${style}`,
       });
       setProducts(response.data);
     }
     window.scrollTo(0, 0);
     getProductInfo();
-  }, []);
+  }, [style]);
 
+  useEffect(() => {
+    async function getCategories() {
+      const response = await axios({
+        method: "GET",
+        url: `http://localhost:3000/products/categories`,
+        // headers: {
+        //   Authorization: `Bearer ${token}`,
+        // },
+      });
+      setCategories(response.data);
+      //console.log(response.data);
+    }
+    getCategories();
+  }, []);
   return (
     <section>
       <h1 className="styles-header">Beers</h1>
-      <div className="container-fluid d-flex flex-row mb-5">
-        <div className="row">
-          <div className="styles-list-container px-5">
-            <NavLink className="text-decoration-none">
-              <h2 className="styles-list-header">IPA</h2>
-            </NavLink>
-            <NavLink className="text-decoration-none">
-              <h2 className="styles-list-header">Sour</h2>
-            </NavLink>
-            <NavLink className="text-decoration-none">
-              <h2 className="styles-list-header">Stout</h2>
-            </NavLink>
-            <NavLink className="text-decoration-none">
-              <h2 className="styles-list-header">Lager & Pilsner</h2>
-            </NavLink>
-          </div>
+      <div className="container-fluid">
+        <div className="styles-list-container px-5">
+          {categories &&
+            categories.map((category) => {
+              return (
+                <NavLink
+                  key={category.id}
+                  className="text-decoration-none"
+                  onClick={() => setStyle(category.name)}
+                >
+                  <h2 className="styles-list-header">{category.name}</h2>
+                </NavLink>
+              );
+            })}
+        </div>
+        <div className="row align-items-end">
           {products &&
             products.map((product) => {
               return <Product key={product.id} product={product} />;
