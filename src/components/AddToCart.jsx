@@ -23,15 +23,19 @@ function AddToCart() {
         onHide={handleClose}
         placement="end"
         {...scrollDrop}
-        className="ps-5 pe-5 custom-offcanvas"
+        className="offcanvas-container ps-5 pe-5 pt-5 custom-offcanvas"
       >
         <Offcanvas.Header closeButton>
           <h2>Your cart</h2>
         </Offcanvas.Header>
+        <div className="d-flex justify-content-between">
+
+        <p className="ms-5">PRODUCT</p>
+        <p className="pe-5 me-5">PRICE</p>
+        </div>
         <Offcanvas.Body>
           <CartItem/>
         </Offcanvas.Body>
-        
       </Offcanvas>
     </div>
   );
