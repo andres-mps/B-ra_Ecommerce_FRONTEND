@@ -21,18 +21,22 @@
 }
 
 .custom-offcanvas {
-  width: 80vw;
+  max-width: 800px;
   /* Personaliza el ancho deseado */
 }
 
-/* Estilos para dispositivos móviles */
 .custom-offcanvas {
   width: 100vw !important;
 }
 
-/* Estilos para dispositivos de escritorio */
-@media (min-width: 768px) {
-  .custom-offcanvas {
-    width: 40vw !important;
-  }
+.tittle-cart {
+  font-family: var(--font-heading-light);
+  font-size: 1.8rem;
+  opacity: 0.8;
+}
+
+.subtittle-cart {
+  font-family: var(--font-heading-light);
+  font-size: 0.9rem;
+  opacity: 0.8;
 }

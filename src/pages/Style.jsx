@@ -4,12 +4,14 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Style.css";
 import { useParams } from "react-router-dom";
+import ButtonsLoader from "../components/ButtonsLoader";
+import ProductLoader from "../components/ProductLoader";
 
 function Style() {
   const params = useParams();
   const [err, setErr] = useState(null);
-  const [products, setProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState(null);
+  const [categories, setCategories] = useState(null);
 
   useEffect(() => {
     async function getAllProductInfo() {
@@ -62,7 +64,9 @@ function Style() {
       </NavLink>
       <div className="container-fluid">
         <div className="styles-list-container px-5">
-          {categories &&
+          {!categories ? (
+            <ButtonsLoader cant={4} />
+          ) : (
             categories.map((category) => {
               return (
                 <NavLink
@@ -73,7 +77,8 @@ function Style() {
                   <h2 className="styles-list-header">{category.name}</h2>
                 </NavLink>
               );
-            })}
+            })
+          )}
         </div>
         {err && (
           <div id="error" class="alert alert-danger text-center" role="alert">
@@ -82,10 +87,13 @@ function Style() {
         )}
 
         <div className="row align-items-end">
-          {products &&
+          {!products ? (
+            <ProductLoader />
+          ) : (
             products.map((product) => {
               return <Product key={product.id} product={product} />;
-            })}
+            })
+          )}
         </div>
       </div>
     </section>
