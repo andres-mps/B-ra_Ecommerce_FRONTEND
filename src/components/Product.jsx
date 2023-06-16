@@ -5,7 +5,7 @@ import AddToCart from "./AddToCart";
 
 function Product({ product }) {
   return (
-    <div className="col-6 col-md-4 col-lg-3">
+    <div className="col-12 col-sm-6 col-md-4 col-lg-3">
       <NavLink className="text-decoration-none text-black" to={`/beers/${product.slug}`}>
         <div className="product-container d-flex flex-column text-center">
           <div className="imgContainer">
