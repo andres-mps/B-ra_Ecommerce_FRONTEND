@@ -5,6 +5,7 @@
 .product-img {
   width: 90%;
   object-fit: cover;
+  transition: all 0.1s ease-in;
 }
 
 .product-name {
