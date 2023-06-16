@@ -46,7 +46,7 @@ function ProductDetail() {
   return (
     product && (
       <>
-        <section id="main-product-container" className="container p-3 m-0">
+        <section id="main-product-container" className="container-fluid p-3 m-0">
           <div id="main-row" className="row">
             <div className="col-12 col-md-7">
               <div className="product-img-container">
