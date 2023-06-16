@@ -23,12 +23,15 @@ function AddToCart() {
         onHide={handleClose}
         placement="end"
         {...scrollDrop}
-        className="custom-offcanvas"
+        className="ps-5 pe-5 custom-offcanvas"
       >
         <Offcanvas.Header closeButton>
           <h2>Your cart</h2>
         </Offcanvas.Header>
-        <CartItem />
+        <Offcanvas.Body>
+          <CartItem/>
+        </Offcanvas.Body>
+        
       </Offcanvas>
     </div>
   );

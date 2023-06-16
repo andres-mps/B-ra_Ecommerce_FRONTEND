@@ -30,7 +30,7 @@ function Home() {
     async function getCategories() {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:3000/products/categories`,
+        url: `http://localhost:3000/categories`,
         // headers: {
         //   Authorization: `Bearer ${token}`,
         // },
@@ -132,6 +132,17 @@ function Home() {
         </div>
         <div className="row">
           <div
+            className="col-md-6 d-flex align-items-center justify-content-center order-md-2"
+            style={{ padding: "0px" }}
+          >
+            <img
+              src="../../public/img/home/beer_club_box.webp"
+              alt="Imagen"
+              className="object-fit-cover"
+              style={{ maxWidth: "100%", minWidth: "100%" }}
+            />
+          </div>
+          <div
             className="col-md-6 d-md-flex flex-md-column justify-content-md-center order-md-1"
             style={{ paddingRight: "100px", paddingLeft: "100px" }}
           >
@@ -163,17 +174,6 @@ function Home() {
                 Zine.
               </p>
             </div>
-          </div>
-          <div
-            className="col-md-6 d-flex align-items-center justify-content-center order-md-2"
-            style={{ padding: "0px" }}
-          >
-            <img
-              src="../../public/img/home/beer_club_box.webp"
-              alt="Imagen"
-              className="object-fit-cover"
-              style={{ maxWidth: "100%", minWidth: "100%" }}
-            />
           </div>
         </div>
         <div className="row">
