@@ -6,27 +6,28 @@ import "./Style.css";
 
 function Style() {
   const [style, setStyle] = useState("");
+  console.log(style);
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     async function getProductInfo() {
-      window.scrollTo(0, 0);
       const response = await axios({
         method: "GET",
         url: `http://localhost:3000/products/${style}`,
       });
       setProducts(response.data);
     }
-    window.scrollTo(0, 0);
+
     getProductInfo();
   }, [style]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     async function getCategories() {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:3000/products/categories`,
+        url: `http://localhost:3000/categories`,
         // headers: {
         //   Authorization: `Bearer ${token}`,
         // },
@@ -38,7 +39,9 @@ function Style() {
   }, []);
   return (
     <section>
-      <h1 className="styles-header">Beers</h1>
+      <h1 className="styles-header" onClick={() => setStyle("")}>
+        Beers
+      </h1>
       <div className="container-fluid">
         <div className="styles-list-container px-5">
           {categories &&

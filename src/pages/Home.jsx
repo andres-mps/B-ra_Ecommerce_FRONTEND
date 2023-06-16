@@ -30,7 +30,7 @@ function Home() {
     async function getCategories() {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:3000/products/categories`,
+        url: `http://localhost:3000/categories`,
         // headers: {
         //   Authorization: `Bearer ${token}`,
         // },

@@ -26,14 +26,21 @@ function AboutThisProject() {
           </div>
         </NavLink>
       </section>
-
+      <section className="container-fluid about-the-project-icons-container">
+        <i class="fas fa-circle about-the-project-bullet"></i>
+        <i class="fab fa-react"></i>
+        <i class="fas fa-circle about-the-project-bullet"></i>
+        <i class="fab fa-node-js"></i>
+        <i class="fas fa-circle about-the-project-bullet"></i>
+        <i class="fab fa-github"></i>
+      </section>
       <section>
         <div className="row">
           <div className="col-md-6  about-the-project-middle-images-container">
             <img
-              src="https://images.unsplash.com/photo-1578707484207-cef507f0c378?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=782&q=80"
+              src="https://images.unsplash.com/photo-1438557068880-c5f474830377?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80"
               alt="Imagen"
-              className="about-the-project-middle-images"
+              className="about-the-project-middle-images about-the-project-blur-effect"
             />
           </div>
           <div className="col-md-6 d-md-flex align-items-center p-5">
@@ -101,7 +108,7 @@ function AboutThisProject() {
         </div>
       </section>
       <section className="container-fluid about-the-project-dark pt-5 pb-5">
-        <h4 className="about-the-project-title-font text-center mb-5">Nuestros integrantes</h4>
+        <h4 className="about-the-project-title-font text-center mb-5">Nuestro equipo</h4>
         <div className="container about-the-project-card-container">
           <div className="card" style={{ width: "18rem" }}>
             <img
