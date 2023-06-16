@@ -1,7 +1,8 @@
 #main-product-container {
   display: flex;
+  height: auto;
   flex-direction: column;
-  margin: 0;
+  margin-bottom: 0;
 }
 
 .back-button {
@@ -17,18 +18,20 @@
 
 .product-detail-img-container {
   width: 100%;
-  height: fit-content;
+  height: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: start;
+  position: relative;
   align-items: baseline;
   position: sticky;
   top: 0;
 }
 
 .product-detail-img {
-  width: auto;
+  width: 40%;
+  height: 100%;
   margin: 0 auto;
   object-fit: contain;
 }

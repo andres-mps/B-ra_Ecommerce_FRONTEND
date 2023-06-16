@@ -49,7 +49,7 @@ function ProductDetail() {
         <section id="main-product-container" className="container-fluid p-3 m-0">
           <div id="main-row" className="row">
             <div className="col-12 col-md-7">
-              <div className="product-img-container">
+              <div className="product-detail-img-container">
                 <NavLink to="/">
                   {/* Botón "BACK" vista desktop  */}
                   <button className="back-button  d-none d-xl-inline-block btn btn-dark py-2">
@@ -60,7 +60,7 @@ function ProductDetail() {
                     <i className="bi bi-arrow-left"></i>
                   </button>
                 </NavLink>
-                <img className="product-img" src={product.image} alt="" />
+                <img className="product-detail-img" src={product.image} alt="" />
               </div>
             </div>
 
