@@ -15,7 +15,7 @@ function AddToCart() {
 
 
   return (  
-  <div className="">
+  <div>
       <button onClick={toggleShow} className="add-to-cart btn btn-outline-dark py-2">Add to cart</button>
       <Offcanvas show={show} onHide={handleClose} placement="end" {...scrollDrop}
       className="custom-offcanvas">

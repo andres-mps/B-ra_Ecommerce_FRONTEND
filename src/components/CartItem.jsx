@@ -26,7 +26,7 @@ function CartItem() {
 
   return (
 <>
-    <div className="container overflow-auto" style={{ maxHeight: "300px" }}>
+    <div className="container overflow-auto" style={{ maxHeight: "400px" }}>
       <p>PRODUCT</p>
       <div className="row border-top">
         <div className="col-4">
