@@ -8,6 +8,7 @@ import Style from "./pages/Style";
 import AboutThisProject from "./pages/AboutThisProject";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/styles" element={<Style />} />
         <Route path="/styles/:style" element={<Style />} />
         <Route path="/about-this-project" element={<AboutThisProject />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
       <Footer />
     </>
