@@ -113,8 +113,12 @@ function Home() {
               </h2>
               <p
                 style={{
-                  fontFamily: "var(--font-body-family: Regular, Helvetica)",
-                  fontSize: "17px",
+                  fontFamily: "var(--font-heading-light)",
+                  opacity: 0.9,
+                  lineHeight: "1.6",
+                  fontSize: "1rem",
+                  fontWeight: "lighter",
+                  letterSpacing: "3px",
                 }}
               >
                 Starting out as a home brewing project back in 2005, To Øl was permanently
@@ -144,14 +148,19 @@ function Home() {
               </h2>
               <p
                 style={{
-                  fontFamily: "var(--font-body-family: Regular, Helvetica)",
-                  fontSize: "17px",
+                  fontFamily: "var(--font-heading-light)",
+                  opacity: 0.9,
+                  lineHeight: "1.6",
+                  fontSize: "1rem",
+                  fontWeight: "lighter",
+                  letterSpacing: "3px",
                 }}
               >
                 Be a part of To Øl’s monthly beer club! A club for eager hop heads, curious beer
                 enthusiasts and everything in between. Every month you get a box with 6 carefully
-                selected beers, freshly brewed and packed by us. We will introduce and guide you
-                through each beer in our monthly digital beer Zine.
+                selected beers, freshly brewed and packed by us. <br />
+                <br /> We will introduce and guide you through each beer in our monthly digital beer
+                Zine.
               </p>
             </div>
           </div>
@@ -187,7 +196,7 @@ function Home() {
               <h2
                 style={{
                   fontFamily: "var(--font-heading-bold)",
-                  fontSize: "40px",
+                  fontSize: "2rem",
                   paddingBottom: "20px",
                   textAlign: "left",
                 }}

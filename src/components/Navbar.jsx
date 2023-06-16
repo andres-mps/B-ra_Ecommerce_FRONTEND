@@ -10,7 +10,7 @@ function NavbarBeer() {
   return (
     <>
       {["lg"].map((expand) => (
-        <Navbar sticky="top" key={expand} bg="white" expand={expand} className="navbar">
+        <Navbar sticky="" key={expand} bg="white" expand={expand} className="navbar">
           <Container fluid>
             <NavLink className="navbar-brand" to="/">
               <img

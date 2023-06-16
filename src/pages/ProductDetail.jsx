@@ -5,6 +5,7 @@ import Product from "../components/Product";
 import AddToCart from "../components/AddToCart";
 import { NavLink } from "react-router-dom";
 import "./ProductDetail.css";
+import QuantityCounter from "../components/QuantityCounter";
 
 function ProductDetail() {
   const [products, setProducts] = useState([]);
@@ -27,17 +28,22 @@ function ProductDetail() {
 
   return (
     <>
-      <section id="main-product-container" className="container p-3 m-0">
+      <section id="main-product-container" className="container-fluid px-5">
         <div id="main-row" className="row">
           <div className="col-12 col-md-7">
-            <div className="product-img-container">
+            <div className="product-detail-img-container">
               <NavLink to="/">
-                <button className="back-button btn btn-dark py-2">
+                {/* Botón "BACK" vista desktop  */}
+                <button className="back-button  d-none d-xl-inline-block btn btn-dark py-2">
                   <i className="bi bi-arrow-left"></i> Back
+                </button>
+                {/* Botón "BACK" vista mobile  */}
+                <button className="d-xl-none back-button btn btn-dark py-2">
+                  <i className="bi bi-arrow-left"></i>
                 </button>
               </NavLink>
               <img
-                className="product-img"
+                className="product-detail-img"
                 src="/public/img/products/TroubleJuice-44cl.webp"
                 alt=""
               />
@@ -51,7 +57,11 @@ function ProductDetail() {
             </div>
             <span className="product-price ">37.00 USD</span>
             <div className="product-form-buttons">
-              <AddToCart />
+              <div className="counter">
+                <span>-</span>
+                <span>1</span>
+                <span>+</span>
+              </div>
               <AddToCart />
             </div>
             <div className="product-description-container">

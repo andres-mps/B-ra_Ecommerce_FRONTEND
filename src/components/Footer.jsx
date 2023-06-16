@@ -4,7 +4,7 @@ import "./Footer.css";
 function Footer() {
   return (
     <div className="container-fluid footer-container">
-      <footer className="row py-5 px-5 footer">
+      <footer className="row py-5 px-5 footer ">
         <div className="col-12 col-md-3 mb-5">
           <h5 className="footer-title">Beer styles</h5>
           <ul className="nav flex-column">

@@ -26,6 +26,7 @@ function AboutThisProject() {
           </div>
         </NavLink>
       </section>
+
       <section>
         <div className="row">
           <div className="col-md-6  about-the-project-middle-images-container">

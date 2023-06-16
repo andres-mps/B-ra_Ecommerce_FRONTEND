@@ -15,6 +15,7 @@ function Style() {
       });
       setProducts(response.data);
     }
+    window.scrollTo(0, 0);
     getProductInfo();
   }, []);
 
