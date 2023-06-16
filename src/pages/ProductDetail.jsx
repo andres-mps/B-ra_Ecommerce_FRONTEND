@@ -97,18 +97,18 @@ function ProductDetail() {
                 <span id="product-info-name" className="color-label">
                   COLOR
                 </span>
-                {/* <div className="product-info-color-circles">
-                <span style={{ background: "#E2B461" }}></span>
-                <span style={{ background: "#D59450" }}></span>
-                <span style={{ background: "#C67641" }}></span>
-                <span style={{ background: "#B65731" }}></span>
-                <span style={{ background: "#A74126" }}></span>
-                <span style={{ background: "#98311E" }}></span>
-                <span style={{ background: "#872619" }}></span>
-                <span style={{ background: "#741D15" }}></span>
-                <span style={{ background: "#611913" }}></span>
-                <span style={{ background: "#531612" }}></span>
-              </div> */}
+                <div className="product-info-color-circles">
+                  <span style={{ background: "#E2B461" }}></span>
+                  <span style={{ background: "#D59450" }}></span>
+                  <span style={{ background: "#C67641" }}></span>
+                  <span style={{ background: "#B65731" }}></span>
+                  <span style={{ background: "#A74126" }}></span>
+                  <span style={{ background: "#98311E" }}></span>
+                  <span style={{ background: "#872619" }}></span>
+                  <span style={{ background: "#741D15" }}></span>
+                  <span style={{ background: "#611913" }}></span>
+                  <span style={{ background: "#531612" }}></span>
+                </div>
               </div>
             </div>
           </div>
