@@ -76,3 +76,22 @@
 .featured-products-heading {
   font-family: var(--font-heading);
 }
+
+#style-list td {
+  font-family: var(--font-heading-light);
+  padding: 10px 0px;
+  color: black;
+}
+
+#style-list:hover {
+  font-weight: bold;
+  font-size: 2rem;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+#style-list-link {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+}
