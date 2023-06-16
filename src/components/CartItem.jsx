@@ -98,7 +98,7 @@ function CartItem() {
           <div className="row">
             <div className="d-flex justify-content-between">
               <h3>Total</h3>
-              <h3>{total}DKK</h3>
+              <h3>{total} USD</h3>
             </div>
           </div>
           <div className="row">
