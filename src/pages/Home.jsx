@@ -218,7 +218,7 @@ function Home() {
                             onMouseLeave={() => setHoveredImage(defaultImage)}
                           >
                             <td>{category.name}</td>
-                            <td>35</td>
+                            <td>{category.products.length}</td>
                           </tr>
                         );
                       })}
