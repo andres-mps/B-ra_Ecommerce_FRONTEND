@@ -2,12 +2,6 @@ import React, { useState } from "react";
 import "./AddToCart.css";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import CartItem from "./CartItem";
-const scrollDrop = {
-  name: "Enable both scrolling & backdrop",
-  scroll: true,
-  backdrop: true,
-};
-
 function AddToCart() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -22,16 +16,14 @@ function AddToCart() {
         show={show}
         onHide={handleClose}
         placement="end"
-        {...scrollDrop}
-        className="offcanvas-container ps-5 pe-5 pt-5 custom-offcanvas"
+        className="offcanvas-container custom-offcanvas"
       >
         <Offcanvas.Header closeButton>
           <h2>Your cart</h2>
         </Offcanvas.Header>
         <div className="d-flex justify-content-between">
-
-        <p className="ms-5">PRODUCT</p>
-        <p className="pe-5 me-5">PRICE</p>
+        <p className="ms-3">PRODUCT</p>
+        <p className="me-3">PRICE</p>
         </div>
         <Offcanvas.Body>
           <CartItem/>
