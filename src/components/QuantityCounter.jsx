@@ -21,7 +21,7 @@ function QuantityCounter({updateQuantity}) {
         <button className="btn" onClick={decrement}>
           -
         </button>
-        <p>{count}</p>
+        <p className="mt-3">{count}</p>
         <button className="btn" onClick={increment}>
           +
         </button>
