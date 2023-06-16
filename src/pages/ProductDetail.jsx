@@ -32,7 +32,7 @@ function ProductDetail() {
     async function getProductInfo() {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:3000/beers/${params.product}`,
+        url: `http://localhost:3000/products/${params.product}`,
         // headers: {
         //   Authorization: `Bearer ${token}`,
         // },
