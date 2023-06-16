@@ -32,8 +32,8 @@ function CartItem() {
   const total = calculateTotal();
 
   return (
-    <div>
-      <div className="row overflow-auto" style={{ maxHeight: "450px" }}>
+    <div className="cart">
+      <div className="row overflow-auto" style={{ maxHeight: "950px" }}>
         <div className="row border-top pt-4">
           <div className="col-4">
             <img src="../public/img/products/Action-Directe_44cl_can.webp" alt="" width={100} />
@@ -44,7 +44,7 @@ function CartItem() {
             <QuantityCounter updateQuantity={updateQuantity1} />
           </div>
           <div className="col-4 d-flex align-items-center justify-content-end">
-            <h3>{precioUnitario1 * quantity1}kr</h3>
+            <h3>{precioUnitario1 * quantity1} USD</h3>
           </div>
         </div>
 
@@ -58,7 +58,7 @@ function CartItem() {
             <QuantityCounter updateQuantity={updateQuantity2} />
           </div>
           <div className="col-4 d-flex align-items-center justify-content-end">
-            <h3>{precioUnitario2 * quantity2}kr</h3>
+            <h3>{precioUnitario2 * quantity2} USD</h3>
           </div>
         </div>
 
@@ -72,34 +72,35 @@ function CartItem() {
             <QuantityCounter updateQuantity={updateQuantity3} />
           </div>
           <div className="col-4 d-flex align-items-center justify-content-end">
-            <h3>{precioUnitario3 * quantity3}kr</h3>
+            <h3>{precioUnitario3 * quantity3} USD</h3>
           </div>
         </div>
       </div>
 
       <div className="container row border-top pt-5">
         <div className="col-4">
-          <img src="../public/img/cart_alcohol_alert_x250.webp" width={150} alt="" />
+          <img src="../public/img/cart_alcohol_alert_x250.webp" width={100} alt="" />
         </div>
 
         <div className="col-8">
           <div className="row">
             <div className="d-flex justify-content-between">
               <h5>Subtotal</h5>
-                <p>{total - (total*0.22)}</p>
-              </div>
+              <p>{total - total * 0.22}</p>
+            </div>
           </div>
           <div className="row">
-          <div className="d-flex justify-content-between">
+            <div className="d-flex justify-content-between">
               <h5>Iva</h5>
-                <p>{total*0.22}</p>
-              </div>
+              <p>{total * 0.22}</p>
+            </div>
           </div>
           <div className="row">
-          <div className="d-flex justify-content-between">
+            <div className="d-flex justify-content-between">
               <h3>Total</h3>
-                <h3>{total}DKK</h3>
-              </div></div>
+              <h3>{total}DKK</h3>
+            </div>
+          </div>
           <div className="row">
             <p> Shipping calculated at checkout</p>
             <button className="check-out btn btn-outline-dark py-2">Check out</button>

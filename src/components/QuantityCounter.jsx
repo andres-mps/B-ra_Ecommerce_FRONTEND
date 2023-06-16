@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./QuantityCounter.css";
 
-function QuantityCounter({updateQuantity}) {
+function QuantityCounter({ updateQuantity }) {
   const [count, setCount] = useState(0);
   const increment = () => {
     setCount(count + 1);
@@ -26,7 +26,7 @@ function QuantityCounter({updateQuantity}) {
           +
         </button>
       </div>
-      <i className="bi bi-trash"></i>
+      <i className="bi bi-trash ms-2"></i>
     </div>
   );
 }
