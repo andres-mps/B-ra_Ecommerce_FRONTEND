@@ -1,5 +1,3 @@
-
-
 .hero-container {
   /* background-color: rgba(0, 0, 0, 0); */
   position: relative;
@@ -79,21 +77,17 @@
   font-family: var(--font-heading);
 }
 
-#style-list td {
+#style-list-link {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
   font-family: var(--font-heading-light);
   padding: 10px 0px;
   color: black;
 }
 
-#style-list:hover {
-  font-weight: bold;
-  font-size: 2rem;
+#style-list-link:hover {
+  font-family: var(--font-heading);
   text-decoration: underline;
   text-underline-offset: 8px;
-}
-
-#style-list-link {
-  text-decoration: none;
-  display: flex;
-  justify-content: space-between;
 }

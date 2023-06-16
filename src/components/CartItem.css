@@ -12,5 +12,23 @@
 }
 
 .cart {
-  width: 500px;
+  width: 100%;
+}
+
+.tittle-product {
+  font-family: var(--font-heading-light);
+  font-size: 1.2rem;
+}
+
+.price-cart {
+  font-family: var(--font-heading-light);
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-right: 8px;
+}
+
+.price-cart-p {
+  font-family: var(--font-heading-light);
+  font-size: 0.9rem;
+  opacity: 0.8;
 }

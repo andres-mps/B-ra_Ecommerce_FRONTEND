@@ -33,76 +33,76 @@ function CartItem() {
 
   return (
     <div className="cart">
-      <div className="row overflow-auto" style={{ maxHeight: "950px" }}>
-        <div className="row border-top pt-4">
-          <div className="col-4">
-            <img src="../public/img/products/Action-Directe_44cl_can.webp" alt="" width={100} />
+      <div className="row overflow-auto" style={{ maxHeight: "420px" }}>
+        <div className="row border-top pt-3 pe-0 ps-0">
+          <div className="col-4 d-flex justify-content-center">
+            <img src="../public/img/products/Action-Directe_44cl_can.webp" alt="" width={100}/>
           </div>
-          <div className="col-4">
-            <h4>Action Direct</h4>
-            <p>{precioUnitario1}</p>
+          <div className="col-6">
+            <h4 className="tittle-product">Action Direct</h4>
+            <p className="price-cart">{precioUnitario1}</p>
             <QuantityCounter updateQuantity={updateQuantity1} />
           </div>
-          <div className="col-4 d-flex align-items-center justify-content-end">
-            <h3>{precioUnitario1 * quantity1} USD</h3>
+          <div className="col-2 d-flex align-items-center justify-content-end">
+            <h3 className="price-cart">{precioUnitario1 * quantity1} USD</h3>
           </div>
         </div>
 
-        <div className="row border-top pt-4">
-          <div className="col-4">
+        <div className="row border-top pt-4 pe-0 ps-0">
+          <div className="col-4 d-flex justify-content-center">
             <img src="../public/img/products/TroubleJuice-44cl.webp" alt="" width={100} />
           </div>
-          <div className="col-4">
-            <h4>Trouble Juice</h4>
-            <p>{precioUnitario2}</p>
+          <div className="col-6">
+            <h4 className="tittle-product">Trouble Juice</h4>
+            <p className="price-cart">{precioUnitario2}</p>
             <QuantityCounter updateQuantity={updateQuantity2} />
           </div>
-          <div className="col-4 d-flex align-items-center justify-content-end">
-            <h3>{precioUnitario2 * quantity2} USD</h3>
+          <div className="col-2 d-flex align-items-center justify-content-end">
+            <h3 className="price-cart">{precioUnitario2 * quantity2} USD</h3>
           </div>
         </div>
 
-        <div className="row border-top pt-4">
-          <div className="col-4">
+        <div className="row border-top pt-4 pe-0 ps-0">
+          <div className="col-4 d-flex justify-content-center">
             <img src="../public/img/products/Chitfaced.webp" alt="" width={100} />
           </div>
-          <div className="col-4">
-            <h4>Chit Faced</h4>
-            <p>{precioUnitario2}</p>
+          <div className="col-6">
+            <h4 className="tittle-product">Chit Faced</h4>
+            <p className="price-cart">{precioUnitario2}</p>
             <QuantityCounter updateQuantity={updateQuantity3} />
           </div>
-          <div className="col-4 d-flex align-items-center justify-content-end">
-            <h3>{precioUnitario3 * quantity3} USD</h3>
+          <div className="col-2 d-flex align-items-center justify-content-end">
+            <h3 className="price-cart">{precioUnitario3 * quantity3} USD</h3>
           </div>
         </div>
       </div>
 
-      <div className="container row border-top pt-5">
-        <div className="col-4">
-          <img src="../public/img/cart_alcohol_alert_x250.webp" width={100} alt="" />
-        </div>
+      <div className="row border-top pt-2">
+        {/* <div className="col-4">
+          <img src="../public/img/cart_alcohol_alert_x250.webp" width={150} alt="" />
+        </div> */}
 
-        <div className="col-8">
+        <div className="col-12">
           <div className="row">
-            <div className="d-flex justify-content-between">
+            <div className="d-flex justify-content-between price-cart">
               <h5>Subtotal</h5>
-              <p>{total - total * 0.22}</p>
+              <p>-</p>
             </div>
           </div>
           <div className="row">
-            <div className="d-flex justify-content-between">
+            <div className="d-flex justify-content-between price-cart">
               <h5>Iva</h5>
-              <p>{total * 0.22}</p>
+              <p>-</p>
             </div>
           </div>
           <div className="row">
-            <div className="d-flex justify-content-between">
+            <div className="d-flex justify-content-between price-cart">
               <h3>Total</h3>
               <h3>{total} USD</h3>
             </div>
           </div>
-          <div className="row">
-            <p> Shipping calculated at checkout</p>
+          <div className="row price-cart">
+            <p className="price-cart-p"> Shipping calculated at checkout</p>
             <button className="check-out btn btn-outline-dark py-2">Check out</button>
           </div>
         </div>
