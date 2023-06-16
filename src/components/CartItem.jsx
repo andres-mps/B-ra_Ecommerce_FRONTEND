@@ -39,8 +39,8 @@ function CartItem() {
             <img src="../public/img/products/Action-Directe_44cl_can.webp" alt="" width={100}/>
           </div>
           <div className="col-6">
-            <h4>Action Direct</h4>
-            <p>{precioUnitario1}</p>
+            <h4 className="tittle-product">Action Direct</h4>
+            <p className="price-cart">{precioUnitario1}</p>
             <QuantityCounter updateQuantity={updateQuantity1} />
           </div>
           <div className="col-2 d-flex align-items-center justify-content-end">
@@ -53,8 +53,8 @@ function CartItem() {
             <img src="../public/img/products/TroubleJuice-44cl.webp" alt="" width={100} />
           </div>
           <div className="col-6">
-            <h4>Trouble Juice</h4>
-            <p>{precioUnitario2}</p>
+            <h4 className="tittle-product">Trouble Juice</h4>
+            <p className="price-cart">{precioUnitario2}</p>
             <QuantityCounter updateQuantity={updateQuantity2} />
           </div>
           <div className="col-2 d-flex align-items-center justify-content-end">
@@ -67,8 +67,8 @@ function CartItem() {
             <img src="../public/img/products/Chitfaced.webp" alt="" width={100} />
           </div>
           <div className="col-6">
-            <h4 >Chit Faced</h4>
-            <p>{precioUnitario2}</p>
+            <h4 className="tittle-product">Chit Faced</h4>
+            <p className="price-cart">{precioUnitario2}</p>
             <QuantityCounter updateQuantity={updateQuantity3} />
           </div>
           <div className="col-2 d-flex align-items-center justify-content-end">

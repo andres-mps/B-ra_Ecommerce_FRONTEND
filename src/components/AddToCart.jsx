@@ -16,14 +16,14 @@ function AddToCart() {
         show={show}
         onHide={handleClose}
         placement="end"
-        className="offcanvas-container custom-offcanvas"
+        className="offcanvas-container custom-offcanvas container"
       >
         <Offcanvas.Header closeButton>
-          <h2>Your cart</h2>
+          <h2 className="tittle-cart">Your cart</h2>
         </Offcanvas.Header>
         <div className="d-flex justify-content-between">
-        <p className="ms-3">PRODUCT</p>
-        <p className="me-3">PRICE</p>
+        <p className="ms-3 subtittle-cart">PRODUCT</p>
+        <p className="me-3 subtittle-cart">PRICE</p>
         </div>
         <Offcanvas.Body>
           <CartItem/>

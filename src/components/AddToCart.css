@@ -28,3 +28,15 @@
 .custom-offcanvas {
   width: 100vw !important;
 }
+
+.tittle-cart {
+  font-family: var(--font-heading-light);
+  font-size: 1.8rem;
+  opacity: 0.8;
+}
+
+.subtittle-cart {
+  font-family: var(--font-heading-light);
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
