@@ -74,7 +74,7 @@ function NavbarBeer() {
               </Offcanvas.Body>
             </Navbar.Offcanvas>
             <div className="d-flex">
-              <NavLink to="" className="nav-icons">
+              <NavLink to="/admin" className="nav-icons">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden="true"
