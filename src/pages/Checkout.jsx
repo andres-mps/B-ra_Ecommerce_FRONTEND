@@ -1,7 +1,11 @@
 import { NavLink } from "react-router-dom";
+import { useEffect } from "react";
 import beer from "../../public/img/products/Action-Directe_44cl_can.webp";
 import "./Checkout.css";
 function Checkout() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <section className="container-fluid checkout-navbar-container">
