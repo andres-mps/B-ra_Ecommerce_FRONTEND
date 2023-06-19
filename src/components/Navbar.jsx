@@ -12,7 +12,7 @@ function NavbarBeer() {
       {["lg"].map((expand) => (
         <Navbar sticky="" key={expand} bg="white" expand={expand} className="navbar">
           <Container fluid>
-            <NavLink className="navbar-brand" to="/">
+            <NavLink className="navbar-brand" to="/home">
               <img
                 src="/public/img/logo/tool_horizontal_logo_19.webp"
                 alt="Logo"

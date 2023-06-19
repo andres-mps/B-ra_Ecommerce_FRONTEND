@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import QuantityCounter from "./QuantityCounter";
 import "./CartItem.css";
 
@@ -36,7 +37,7 @@ function CartItem() {
       <div className="row overflow-auto" style={{ maxHeight: "420px" }}>
         <div className="row border-top pt-3 pe-0 ps-0">
           <div className="col-4 d-flex justify-content-center">
-            <img src="../public/img/products/Action-Directe_44cl_can.webp" alt="" width={100}/>
+            <img src="../public/img/products/Action-Directe_44cl_can.webp" alt="" width={100} />
           </div>
           <div className="col-6">
             <h4 className="tittle-product">Action Direct</h4>
@@ -103,7 +104,9 @@ function CartItem() {
           </div>
           <div className="row price-cart">
             <p className="price-cart-p"> Shipping calculated at checkout</p>
-            <button className="check-out btn btn-outline-dark py-2">Check out</button>
+            <NavLink to="/checkout">
+              <button className="check-out btn btn-outline-dark py-2">Check out</button>
+            </NavLink>
           </div>
         </div>
       </div>

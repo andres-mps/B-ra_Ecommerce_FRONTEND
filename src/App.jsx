@@ -9,20 +9,24 @@ import AboutThisProject from "./pages/AboutThisProject";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Admin from "./pages/Admin";
+import Checkout from "./pages/Checkout";
+import Page from "./pages/Page";
 
 function App() {
   return (
     <>
-      <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/beers/:product" element={<ProductDetail />} />
-        <Route path="/styles" element={<Style />} />
-        <Route path="/styles/:style" element={<Style />} />
-        <Route path="/about-this-project" element={<AboutThisProject />} />
+        <Route path="/" element={<Page />}>
+          <Route path="home" element={<Home />} />
+          <Route path="beers/:product" element={<ProductDetail />} />
+          <Route path="styles" element={<Style />} />
+          <Route path="styles/:style" element={<Style />} />
+          <Route path="about-this-project" element={<AboutThisProject />} />
+        </Route>
+
         <Route path="/admin" element={<Admin />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
-      <Footer />
     </>
   );
 }
