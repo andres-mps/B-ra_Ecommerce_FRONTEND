@@ -6,9 +6,6 @@ import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
 import Style from "./pages/Style";
 import AboutThisProject from "./pages/AboutThisProject";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Admin from "./pages/Admin";
 import Checkout from "./pages/Checkout";
 import Page from "./pages/Page";
 
@@ -24,7 +21,6 @@ function App() {
           <Route path="about-this-project" element={<AboutThisProject />} />
         </Route>
 
-        <Route path="/admin" element={<Admin />} />
         <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </>
