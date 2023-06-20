@@ -8,6 +8,7 @@ import Style from "./pages/Style";
 import AboutThisProject from "./pages/AboutThisProject";
 import Checkout from "./pages/Checkout";
 import Page from "./pages/Page";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Page />}>
           <Route path="home" element={<Home />} />
+          <Route path="login" element={<Login />} />
           <Route path="beers/:product" element={<ProductDetail />} />
           <Route path="styles" element={<Style />} />
           <Route path="styles/:style" element={<Style />} />
