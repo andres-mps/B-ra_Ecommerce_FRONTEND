@@ -11,7 +11,7 @@
 .checkout-navbar-logo {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50px;
 }
 
 .checkout-regular-text {
@@ -34,10 +34,7 @@
     background-color: var(--color-background-secondary);
 }
 
-.checkout-count-section {
-    margin-left: 0;
-    max-width: 450px;
-}
+
 
 .checkout-discount-button {
     width: 100%;
@@ -69,4 +66,92 @@
     z-index: 1;
     width: 20px;
     text-align: center;
+}
+
+.checkout-collapse-button {
+    display: none;
+}
+
+.checkout-navbar-container-md {
+    display: none;
+}
+
+.checkout-apple-pay-button {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 2rem;
+}
+
+.checkout-pay-button {
+    display: inline-block;
+    background-color: var(--color-background-secondary);
+    color: var(--color-background-dark);
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    border: none;
+}
+
+.checkout-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 0 10px;
+}
+
+.checkout-divider-line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: grey;
+    font: var(--font-heading-light);
+}
+
+.checkout-divider-text {
+    margin: 0 10px;
+}
+
+@media (max-width: 767.98px) {
+    .checkout-navbar-container {
+        display: none;
+    }
+
+    .checkout-navbar-container-md {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .checkout-collapse-button {
+        display: block;
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 0;
+        color: black;
+        border: none;
+        background-color: var(--color-background-secondary);
+    }
+
+    .checkout-summary-container {
+        height: fit-content;
+    }
+
+
+}
+
+@media (min-width: 767.99px) {
+
+    .checkout-count-section {
+        margin-left: 0;
+        max-width: 450px;
+    }
+
+    .checkout-payment-container {
+        margin-right: 0;
+        max-width: 700px;
+    }
 }
