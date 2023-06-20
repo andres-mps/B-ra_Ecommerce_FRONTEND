@@ -15,12 +15,12 @@
   font-size: calc(0.9 * 6vw);
 }
 
-#input {
+.input {
   display: flex;
   flex-direction: column;
 }
 
-#register-input {
+.register-input {
   border: 1px solid black;
   height: 3rem;
   padding-left: 1rem;
