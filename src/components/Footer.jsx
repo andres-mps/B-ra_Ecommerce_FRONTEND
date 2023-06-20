@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div className="container-fluid p-0">
       <footer className="row py-5 px-5 footer">
-        <div className="col-12 col-md-3 mb-5">
+        <div className="col-6 col-md-3 mb-5">
           <h5 className="footer-title">Beer styles</h5>
           <ul className="nav flex-column">
             <li className="footer-link p-0 ms-0 mb-2">IPA</li>
@@ -15,7 +15,7 @@ function Footer() {
           </ul>
         </div>
 
-        <div className="col-12 col-md-3 mb-5">
+        <div className="col-6 col-md-3 mb-5">
           <h5 className="footer-title">About</h5>
           <ul className="nav flex-column">
             <li className="footer-link p-0 ms-0 mb-2">Visit To Øl City</li>
@@ -26,7 +26,7 @@ function Footer() {
           </ul>
         </div>
 
-        <div className="col-12 col-md-3 mb-5">
+        <div className="col-6 col-md-3 mb-5">
           <h5 className="footer-title">Social</h5>
           <ul className="nav flex-column">
             <li className="footer-link p-0 ms-0 mb-2">Newsletter</li>
@@ -37,7 +37,7 @@ function Footer() {
           </ul>
         </div>
 
-        <div className="col-12 col-md-3 mb-5">
+        <div className="col-6 col-md-3 mb-5">
           <h5 className="footer-title">Shop Info</h5>
           <ul className="nav flex-column">
             <li className="footer-link p-0 ms-0 mb-2">FAQ</li>

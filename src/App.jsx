@@ -6,23 +6,31 @@ import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
 import Style from "./pages/Style";
 import AboutThisProject from "./pages/AboutThisProject";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Admin from "./pages/Admin";
+import Checkout from "./pages/Checkout";
+import Page from "./pages/Page";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import YourOrders from "./pages/YourOrders";
+import AgeGate from "./pages/AgeGate";
 
 function App() {
   return (
     <>
-      <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/beers/:product" element={<ProductDetail />} />
-        <Route path="/styles" element={<Style />} />
-        <Route path="/styles/:style" element={<Style />} />
-        <Route path="/about-this-project" element={<AboutThisProject />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/" element={<Page />}>
+          <Route path="home" element={<Home />} />
+          <Route path="register" element={<Register />} />
+          <Route path="login" element={<Login />} />
+          <Route path="orders" element={<YourOrders />}/>
+          <Route path="beers/:product" element={<ProductDetail />} />
+          <Route path="styles" element={<Style />} />
+          <Route path="styles/:style" element={<Style />} />
+          <Route path="about-this-project" element={<AboutThisProject />} />
+        </Route>
+
+        <Route path="age-gate" element={<AgeGate />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
-      <Footer />
     </>
   );
 }

@@ -12,7 +12,7 @@ function NavbarBeer() {
       {["lg"].map((expand) => (
         <Navbar sticky="" key={expand} bg="white" expand={expand} className="navbar">
           <Container fluid>
-            <NavLink className="navbar-brand" to="/">
+            <NavLink className="navbar-brand" to="/home">
               <img
                 src="/public/img/logo/tool_horizontal_logo_19.webp"
                 alt="Logo"
@@ -74,7 +74,7 @@ function NavbarBeer() {
               </Offcanvas.Body>
             </Navbar.Offcanvas>
             <div className="d-flex">
-              <NavLink to="/admin" className="nav-icons">
+              <NavLink to="/login" className="nav-icons">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden="true"

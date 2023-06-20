@@ -1,0 +1,11 @@
+.bold-font {
+    font-family: var(--font-heading-bold)
+}
+
+.font {
+    font-family: var(--font-heading)
+}
+
+.light-font {
+    font-family: var(--font-heading-light)
+}

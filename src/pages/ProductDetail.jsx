@@ -50,7 +50,7 @@ function ProductDetail() {
           <div id="main-row" className="row">
             <div className="col-12 col-md-7">
               <div className="product-detail-img-container">
-                <NavLink to="/">
+                <NavLink to="/home">
                   {/* Botón "BACK" vista desktop  */}
                   <button className="back-button  d-none d-xl-inline-block btn btn-dark py-2">
                     <i className="bi bi-arrow-left"></i> Back
