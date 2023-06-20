@@ -9,6 +9,8 @@ import AboutThisProject from "./pages/AboutThisProject";
 import Checkout from "./pages/Checkout";
 import Page from "./pages/Page";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
+import AgeGate from "./pages/AgeGate";
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Page />}>
           <Route path="home" element={<Home />} />
+          <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
           <Route path="beers/:product" element={<ProductDetail />} />
           <Route path="styles" element={<Style />} />
@@ -23,6 +26,7 @@ function App() {
           <Route path="about-this-project" element={<AboutThisProject />} />
         </Route>
 
+        <Route path="age-gate" element={<AgeGate />} />
         <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </>

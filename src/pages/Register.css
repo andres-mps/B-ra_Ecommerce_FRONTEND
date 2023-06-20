@@ -1,16 +1,16 @@
-#login-image {
+#register-image {
   height: 650px;
   width: 100%;
   object-fit: cover;
 }
 
-#login-form {
+#register-form {
   display: flex;
   flex-direction: column;
   padding: 4rem;
 }
 
-#login-heading {
+#register-heading {
   font-family: var(--font-heading);
   font-size: calc(0.9 * 6vw);
 }
@@ -20,14 +20,14 @@
   flex-direction: column;
 }
 
-.login-input {
+.register-input {
   border: 1px solid black;
   height: 3rem;
   padding-left: 1rem;
   font-family: var(--font-heading);
 }
 
-#login-button {
+#register-button {
   background-color: black;
   color: white;
   font-family: var(--font-heading);
@@ -38,7 +38,7 @@
   padding-right: 1rem;
 }
 
-#login-link {
+#register-link {
   display: flex;
   justify-content: start;
   margin-top: 1rem;
@@ -46,16 +46,16 @@
   color: black;
 }
 
-#login-link:hover {
+#register-link:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
 @media (max-width: 992px) {
-  #login-image {
+  #register-image {
     height: 500px;
   }
-  #login-heading {
+  #register-heading {
     font-size: calc(0.9 * 8vw);
   }
 }
