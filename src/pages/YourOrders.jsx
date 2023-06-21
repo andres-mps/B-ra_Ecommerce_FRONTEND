@@ -19,7 +19,7 @@ function YourOrders() {
 
   return (
     <div className="container">
-      <h2>Historial de compras</h2>
+      <h2>Order history</h2>
       <div>
                 {orders.map((order) => (
           <Order key={order.id} order={order} />
