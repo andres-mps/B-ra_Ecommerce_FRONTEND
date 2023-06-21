@@ -10,12 +10,10 @@ function Order({ order }) {
         <div className="card container">
           <div className="row">
             <div className="col-4">
-              <h5 className="card-title bold-font">Id de la orden: {order.id}</h5>
+              <h5 className="card-title bold-font">Order Id: {order.id}</h5>
             </div>
             <div className="col-4">
-              <p>
-                Realizada el {format(new Date(order.createdAt), "dd MMM yyyy", { locale: enUS })}
-              </p>
+              <p>Date placed {format(new Date(order.createdAt), "dd MMM yyyy", { locale: enUS })}</p>
             </div>
             <div className="col-4 text-end bold-font">
               <h5>Total: ${order.totalAmount}</h5>

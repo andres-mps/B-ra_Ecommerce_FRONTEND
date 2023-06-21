@@ -8,7 +8,17 @@ import "./ProductDetail.css";
 import QuantityCounter from "../components/QuantityCounter";
 
 function ProductDetail() {
-  const [products, setProducts] = useState([]);
+  const [count, setCount] = useState(1);
+  const increment = () => {
+    setCount(count + 1);
+  };
+  const decrement = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    }
+  };
+
+  const [featured, setFeatured] = useState([]);
   const [product, setProduct] = useState("");
   const params = useParams();
 
@@ -16,28 +26,14 @@ function ProductDetail() {
     async function getProductInfo() {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:3000/products/featured`,
-        // headers: {
-        //   Authorization: `Bearer ${token}`,
-        // },
-      });
-      setProducts(response.data);
-      //console.log(response.data);
-    }
-    window.scrollTo(0, 0);
-    getProductInfo();
-  }, []);
-
-  useEffect(() => {
-    async function getProductInfo() {
-      const response = await axios({
-        method: "GET",
         url: `http://localhost:3000/products/${params.product}`,
-        // headers: {
-        //   Authorization: `Bearer ${token}`,
-        // },
       });
       setProduct(response.data);
+      const featured = await axios({
+        method: "GET",
+        url: `http://localhost:3000/products/featured`,
+      });
+      setFeatured(featured.data);
     }
     window.scrollTo(0, 0);
     getProductInfo();
@@ -71,12 +67,19 @@ function ProductDetail() {
               </div>
               <span className="product-price ">{product.price} USD</span>
               <div className="product-form-buttons">
-                <div className="counter">
-                  <span>-</span>
-                  <span>1</span>
-                  <span>+</span>
+                <div className="d-flex align-items-center">
+                  <div className="d-flex align-items-center justify-content-between border border-dark w-100">
+                    <button className="btn" onClick={decrement}>
+                      -
+                    </button>
+                    <p className="mt-3">{count}</p>
+                    <button className="btn" onClick={increment}>
+                      +
+                    </button>
+                  </div>
+                  <i className="bi bi-trash ms-2"></i>
                 </div>
-                <AddToCart />
+                <AddToCart product={product} qty={count} setCount={setCount} />
               </div>
               <div className="product-description-container">
                 <p className="product-description">{product.description}</p>
@@ -118,8 +121,8 @@ function ProductDetail() {
         <section id="featured-products" className="container-fluid d-flex flex-row  my-5">
           <div className="row ">
             <h2 className="featured-products-heading text-center">You may also like</h2>
-            {products &&
-              products.map((product) => {
+            {featured &&
+              featured.map((product) => {
                 return <Product key={product.id} product={product} />;
               })}
           </div>

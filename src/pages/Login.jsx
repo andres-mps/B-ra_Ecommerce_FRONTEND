@@ -25,7 +25,6 @@ function Login() {
       },
     });
     response.data && dispatch(setToken(response.data));
-    console.log(response.data);
     navigate("/home");
   }
 
