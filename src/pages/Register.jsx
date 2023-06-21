@@ -2,8 +2,6 @@ import { useState } from "react";
 import "./Register.css";
 import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
-// import { setToken } from "../redux/userSlice";
-// import { useDispatch } from "react-redux";
 
 function Register() {
   const [emailValue, setEmailValue] = useState("");
@@ -12,7 +10,6 @@ function Register() {
   const [lastnameValue, setLastnameValue] = useState("");
 
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
 
   async function handleSubmit(event) {
     event.preventDefault();
