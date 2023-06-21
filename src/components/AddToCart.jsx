@@ -1,19 +1,20 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./AddToCart.css";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import CartItem from "./CartItem";
-import { addProduct } from "../redux/cartSlice";
+import { addProduct, openCart, closeCart } from "../redux/cartSlice";
 
 function AddToCart({ product, qty, setCount }) {
   const dispatch = useDispatch();
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  // const toggleShow = () => setShow((state) => !state);
+  const cart = useSelector((state) => state.cart);
+
+  function handleClose() {
+    dispatch(closeCart(false));
+  }
 
   function handleSubmit() {
     dispatch(addProduct({ product: product, qty: qty }));
-    setShow((state) => !state);
+    dispatch(openCart(true));
     setCount(1);
   }
 
@@ -23,7 +24,7 @@ function AddToCart({ product, qty, setCount }) {
         Add to cart
       </button>
       <Offcanvas
-        show={show}
+        show={cart.isOpen}
         onHide={handleClose}
         placement="end"
         className="offcanvas-container custom-offcanvas container"

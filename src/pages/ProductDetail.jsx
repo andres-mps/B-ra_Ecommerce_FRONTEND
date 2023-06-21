@@ -5,7 +5,6 @@ import Product from "../components/Product";
 import AddToCart from "../components/AddToCart";
 import { NavLink, useParams } from "react-router-dom";
 import "./ProductDetail.css";
-import QuantityCounter from "../components/QuantityCounter";
 
 function ProductDetail() {
   const [count, setCount] = useState(1);

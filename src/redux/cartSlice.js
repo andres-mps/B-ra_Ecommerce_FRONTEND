@@ -2,9 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const userSlice = createSlice({
   name: "cart",
-  initialState: { products: [] },
+  initialState: { products: [], isOpen: false },
   reducers: {
-    isOpen(state, action) {
+    openCart(state, action) {
+      return { ...state, isOpen: action.payload };
+    },
+    closeCart(state, action) {
       return { ...state, isOpen: action.payload };
     },
     addProduct(state, action) {
@@ -16,7 +19,7 @@ const userSlice = createSlice({
       }
     },
     removeProduct(state, action) {
-      return state.products.filter((product) => product.id !== action.payload);
+      state.products = state.products.filter((product) => product.id !== action.payload);
     },
     incrementQuantity(state, action) {
       const product = state.products.find((product) => product.id === action.payload); //Action.payload incluye solo el product id
@@ -32,5 +35,12 @@ const userSlice = createSlice({
 });
 
 const { actions, reducer } = userSlice;
-export const { isOpen, addProduct, removeProduct, incrementQuantity, decrementQuantity } = actions;
+export const {
+  openCart,
+  closeCart,
+  addProduct,
+  removeProduct,
+  incrementQuantity,
+  decrementQuantity,
+} = actions;
 export default reducer;

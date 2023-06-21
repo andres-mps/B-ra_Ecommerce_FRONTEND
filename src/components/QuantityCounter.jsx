@@ -1,19 +1,26 @@
-import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { removeProduct, incrementQuantity, decrementQuantity } from "../redux/cartSlice";
+import { useNavigate } from "react-router-dom";
 import "./QuantityCounter.css";
 
-function QuantityCounter({ updateQuantity }) {
-  const [count, setCount] = useState(0);
+function QuantityCounter({ qty, id }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const increment = () => {
-    setCount(count + 1);
-    updateQuantity(count + 1);
+    dispatch(incrementQuantity(id));
   };
 
   const decrement = () => {
-    if (count > 0) {
-      setCount(count - 1);
-      updateQuantity(count - 1);
+    if (qty > 0) {
+      dispatch(decrementQuantity(id));
     }
   };
+
+  function handleRemove() {
+    dispatch(removeProduct(id));
+    navigate(-1);
+  }
 
   return (
     <div className="d-flex align-items-center">
@@ -21,12 +28,12 @@ function QuantityCounter({ updateQuantity }) {
         <button className="btn" onClick={decrement}>
           -
         </button>
-        <p className="mt-3">{count}</p>
+        <p className="mt-3">{qty}</p>
         <button className="btn" onClick={increment}>
           +
         </button>
       </div>
-      <i className="bi bi-trash ms-2"></i>
+      <i className="bi bi-trash ms-2" onClick={handleRemove}></i>
     </div>
   );
 }
