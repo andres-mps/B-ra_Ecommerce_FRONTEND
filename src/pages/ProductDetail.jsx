@@ -8,7 +8,7 @@ import "./ProductDetail.css";
 import QuantityCounter from "../components/QuantityCounter";
 
 function ProductDetail() {
-  const [products, setProducts] = useState([]);
+  const [featured, setFeatured] = useState([]);
   const [product, setProduct] = useState("");
   const params = useParams();
 
@@ -16,28 +16,14 @@ function ProductDetail() {
     async function getProductInfo() {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:3000/products/featured`,
-        // headers: {
-        //   Authorization: `Bearer ${token}`,
-        // },
-      });
-      setProducts(response.data);
-      //console.log(response.data);
-    }
-    window.scrollTo(0, 0);
-    getProductInfo();
-  }, []);
-
-  useEffect(() => {
-    async function getProductInfo() {
-      const response = await axios({
-        method: "GET",
         url: `http://localhost:3000/products/${params.product}`,
-        // headers: {
-        //   Authorization: `Bearer ${token}`,
-        // },
       });
       setProduct(response.data);
+      const featured = await axios({
+        method: "GET",
+        url: `http://localhost:3000/products/featured`,
+      });
+      setFeatured(featured.data);
     }
     window.scrollTo(0, 0);
     getProductInfo();
@@ -118,8 +104,8 @@ function ProductDetail() {
         <section id="featured-products" className="container-fluid d-flex flex-row  my-5">
           <div className="row ">
             <h2 className="featured-products-heading text-center">You may also like</h2>
-            {products &&
-              products.map((product) => {
+            {featured &&
+              featured.map((product) => {
                 return <Product key={product.id} product={product} />;
               })}
           </div>
