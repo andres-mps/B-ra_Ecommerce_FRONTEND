@@ -7,10 +7,13 @@ import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
 import Form from "react-bootstrap/Form";
 import CheckoutItems from "../components/CheckoutItems";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Tooltip } from "antd";
+import { closeCart } from "../redux/cartSlice";
 
 function Checkout() {
+  const dispatch = useDispatch();
+
   const loggedUser = useSelector((state) => state.user.userData);
   const [email, setEmail] = loggedUser ? useState(loggedUser.email) : useState(null);
   const [nameOnCard, setNameOnCard] = loggedUser
@@ -28,7 +31,6 @@ function Checkout() {
   const [taxes, setTaxes] = useState(null);
   const [total, setTotal] = useState(null);
   const [open, setOpen] = useState(false);
-  console.log(subTotal, taxes, total);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -38,6 +40,7 @@ function Checkout() {
     });
     setTaxes(subTotal * 0.09);
     setTotal(taxes + subTotal);
+    dispatch(closeCart(false));
   }, [cart, taxes]);
   return (
     <>
