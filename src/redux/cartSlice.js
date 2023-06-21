@@ -9,9 +9,10 @@ const userSlice = createSlice({
     },
     addProduct(state, action) {
       const product = state.products.find((product) => product.id === action.payload.product.id);
-      product.qty = product.qty + action.payload.qty;
-      if (!product) {
-        state.products.push(action.payload);
+      if (product) {
+        product.qty = product.qty + action.payload.qty;
+      } else {
+        state.products.push({ ...action.payload.product, qty: action.payload.qty });
       }
     },
     removeProduct(state, action) {
@@ -31,5 +32,5 @@ const userSlice = createSlice({
 });
 
 const { actions, reducer } = userSlice;
-export const { isOpen, setProducts } = actions;
+export const { isOpen, addProduct, removeProduct, incrementQuantity, decrementQuantity } = actions;
 export default reducer;

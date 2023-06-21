@@ -8,6 +8,16 @@ import "./ProductDetail.css";
 import QuantityCounter from "../components/QuantityCounter";
 
 function ProductDetail() {
+  const [count, setCount] = useState(1);
+  const increment = () => {
+    setCount(count + 1);
+  };
+  const decrement = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    }
+  };
+
   const [featured, setFeatured] = useState([]);
   const [product, setProduct] = useState("");
   const params = useParams();
@@ -57,12 +67,19 @@ function ProductDetail() {
               </div>
               <span className="product-price ">{product.price} USD</span>
               <div className="product-form-buttons">
-                <div className="counter">
-                  <span>-</span>
-                  <span>1</span>
-                  <span>+</span>
+                <div className="d-flex align-items-center">
+                  <div className="d-flex align-items-center justify-content-between border border-dark w-100">
+                    <button className="btn" onClick={decrement}>
+                      -
+                    </button>
+                    <p className="mt-3">{count}</p>
+                    <button className="btn" onClick={increment}>
+                      +
+                    </button>
+                  </div>
+                  <i className="bi bi-trash ms-2"></i>
                 </div>
-                <AddToCart />
+                <AddToCart product={product} qty={count} setCount={setCount} />
               </div>
               <div className="product-description-container">
                 <p className="product-description">{product.description}</p>
