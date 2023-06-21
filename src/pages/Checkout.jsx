@@ -1,17 +1,16 @@
 import { NavLink } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./Checkout.css";
-import { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Collapse from "react-bootstrap/Collapse";
-import Form from "react-bootstrap/Form";
+import { Button, Collapse, Form } from "react-bootstrap";
 import CheckoutItems from "../components/CheckoutItems";
 import { useSelector, useDispatch } from "react-redux";
 import { Tooltip } from "antd";
-import { closeCart } from "../redux/cartSlice";
+import { closeCart, clearCart } from "../redux/cartSlice";
+import axios from "axios";
 
 function Checkout() {
   const dispatch = useDispatch();
+  const token = useSelector((state) => state.user.token);
 
   const loggedUser = useSelector((state) => state.user.userData);
   const [email, setEmail] = loggedUser ? useState(loggedUser.email) : useState(null);
@@ -25,22 +24,52 @@ function Checkout() {
   const city = loggedUser ? "Montevideo" : null;
   const pcode = loggedUser ? "10100" : null;
 
-  const cart = useSelector((state) => state.cart.products);
+  const products = useSelector((state) => state.cart.products);
   const [subTotal, setSubTotal] = useState(null);
   const [taxes, setTaxes] = useState(null);
   const [total, setTotal] = useState(null);
+
   const [open, setOpen] = useState(false);
+  const [err, setErr] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     setSubTotal(0);
-    cart.map((product) => {
+    products.map((product) => {
       setSubTotal((prevState) => prevState + product.price * product.qty);
     });
-    setTaxes(subTotal * 0.09);
+    setTaxes(Math.round(subTotal * 0.09 * 100) / 100);
     setTotal(taxes + subTotal);
     dispatch(closeCart(false));
-  }, [cart, taxes]);
+  }, [products, taxes, total]);
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const response = await axios({
+      method: "post",
+      url: `http://localhost:3000/orders/${loggedUser.id}`,
+      data: {
+        products,
+        subTotalPrice: subTotal,
+        taxes,
+        totalAmount: total,
+        status: "pending",
+        address,
+      },
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    if (response.data.err) {
+      return setErr(response.data.message);
+    }
+    setErr(null);
+    dispatch(clearCart());
+    setTaxes(null);
+    setTotal(null);
+    return console.log("compra realizada con exito");
+  }
+
   return (
     <>
       <section className="container-fluid checkout-navbar-container">
@@ -100,14 +129,14 @@ function Checkout() {
                     </p>
                   )}
 
-                  <p className="text-black fs-6 fw-lighter">kr 45.00</p>
+                  <p className="text-black fs-6 fw-lighter">USD {total}</p>
                 </div>
               </Button>
               <Collapse in={open}>
                 <div id="example-collapse-text" className="d-md-block">
                   <section className="mt-5">
-                    {cart &&
-                      cart.map((product) => {
+                    {products &&
+                      products.map((product) => {
                         return <CheckoutItems product={product} />;
                       })}
                   </section>
@@ -133,7 +162,7 @@ function Checkout() {
                   <section className="mt-3">
                     <div className="d-flex justify-content-between">
                       <p>Subtotal</p>
-                      <p className="fw-bold text-black">kr {subTotal}</p>
+                      <p className="fw-bold text-black">USD {subTotal}</p>
                     </div>
                     <div className="d-flex justify-content-between">
                       <div className="d-flex gap-2">
@@ -160,11 +189,11 @@ function Checkout() {
                           </Tooltip>
                         </span>
                       </div>
-                      <p className="fw-bold text-black">kr {taxes}</p>
+                      <p className="fw-bold text-black">USD {taxes}</p>
                     </div>
                     <div className="d-flex justify-content-between">
                       <p className="fs-3">Total</p>
-                      <p className="fw-bold text-black fs-3">kr {total}</p>
+                      <p className="fw-bold text-black fs-3">USD {total}</p>
                     </div>
                   </section>
                 </div>
@@ -266,7 +295,14 @@ function Checkout() {
                   </div>
                 ))}
               </Form>
-              <button className="checkout-pay-button">Total kr {total}</button>
+              <button className="checkout-pay-button" onClick={handleSubmit}>
+                Total USD {total}
+              </button>
+              {err && (
+                <div class="alert alert-danger" role="alert">
+                  {err}
+                </div>
+              )}
               <span className="d-inline-block mt-3">
                 <i className="fas fa-lock me-3"></i>Payment details stored in plain text
               </span>

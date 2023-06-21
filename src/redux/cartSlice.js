@@ -31,6 +31,9 @@ const userSlice = createSlice({
       product.qty <= 0 &&
         (state.products = state.products.filter((product) => product.id !== action.payload));
     },
+    clearCart(state, action) {
+      state.products = [];
+    },
   },
 });
 
@@ -42,5 +45,6 @@ export const {
   removeProduct,
   incrementQuantity,
   decrementQuantity,
+  clearCart,
 } = actions;
 export default reducer;
