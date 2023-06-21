@@ -4,7 +4,7 @@ import Order from "../components/Order";
 
 function YourOrders() {
   const [orders, setOrders] = useState([]);
-  const userId = 2;
+  const userId = 3;
   useEffect(() => {
     async function getOrdersInfo() {
       try {
@@ -20,14 +20,12 @@ function YourOrders() {
   return (
     <div className="container">
       <h2>Historial de compras</h2>
-      <div className="border">
-        <div className="row">
-        </div>
-        {orders.map((order) => (
+      <div>
+                {orders.map((order) => (
           <Order key={order.id} order={order} />
         ))}
+        </div>
       </div>
-    </div>
   );
 }
 
