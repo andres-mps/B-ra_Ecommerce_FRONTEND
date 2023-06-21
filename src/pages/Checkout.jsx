@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
-import beer from "../../public/img/products/Action-Directe_44cl_can.webp";
 import "./Checkout.css";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
