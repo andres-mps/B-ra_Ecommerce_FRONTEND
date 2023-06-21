@@ -1,13 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import userReducer from "./userSlice";
-// import tweetReducer from "./tweetSlice";
+import userReducer from "./userSlice";
+import cartReducer from "./cartSlice";
 import storage from "redux-persist/lib/storage";
 import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
 import { combineReducers } from "@reduxjs/toolkit";
 
 const reducer = combineReducers({
-  //   user: userReducer,
-  //   tweets: tweetReducer,
+  user: userReducer,
+  cart: cartReducer,
 });
 
 const persistConfig = {
