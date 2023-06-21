@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-// import { useDispatch } from "react-redux";
-// import { setToken } from "../redux/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { setToken } from "../redux/userSlice";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import { NavLink } from "react-router-dom";
 
 function Login() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const user = useSelector((state) => state.user);
 
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
@@ -23,8 +24,8 @@ function Login() {
         password: passwordValue,
       },
     });
+    response.data && dispatch(setToken(response.data));
     console.log(response.data);
-    // && dispatch(setToken(response.data));
     navigate("/home");
   }
 
