@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setToken } from "../redux/userSlice";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import "./Login.css";
-import { NavLink } from "react-router-dom";
 
 function Login() {
   const dispatch = useDispatch();
@@ -25,7 +24,7 @@ function Login() {
       },
     });
     response.data && dispatch(setToken(response.data));
-    navigate("/home");
+    navigate(-1);
   }
 
   return (

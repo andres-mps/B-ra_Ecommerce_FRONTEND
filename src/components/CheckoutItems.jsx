@@ -1,14 +1,19 @@
-function CheckoutItems({ beer }) {
+import { NavLink } from "react-router-dom";
+function CheckoutItems({ product }) {
   return (
     <>
-      <div className="d-flex align-items-center gap-3">
-        <div className="checkout-product-photo-container">
-          <img src={beer} alt="" className="checkout-product-photo" />
-          <span className="checkout-product-span">1</span>
+      <div className="d-flex justify-content-between align-items-center mb-3">
+        <div className="d-flex align-items-center gap-3">
+          <div className="checkout-product-photo-container">
+            <img src={product.image} alt="" className="checkout-product-photo" />
+            <span className="checkout-product-span">{product.qty}</span>
+          </div>
+          <NavLink to={`/beers/${product.slug}`} className="text-decoration-none text-black">
+            <p className="checkout-regular-text fw-bold">{product.name}</p>
+          </NavLink>
         </div>
-        <p className="checkout-regular-text fw-bold">Action Direct</p>
+        <p>kr {product.price}</p>
       </div>
-      <p>kr 36.00</p>
     </>
   );
 }
