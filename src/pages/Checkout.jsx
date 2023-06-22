@@ -57,7 +57,7 @@ function Checkout() {
         subTotalPrice: subTotal,
         taxes,
         totalAmount: total,
-        status: "pending",
+        status: "Pending",
         address,
       },
       headers: {
@@ -77,15 +77,13 @@ function Checkout() {
   return (
     <>
       <section className="container-fluid checkout-navbar-container">
-        <div>
-          <NavLink className="navbar-brand checkout-navbar-logo" to="/home">
-            <img
-              src="/public/img/logo/tool_horizontal_logo_19.webp"
-              alt="Logo"
-              style={{ maxWidth: "90px" }}
-            />
-          </NavLink>
-        </div>
+        <NavLink className="checkout-navbar-logo" to="/home">
+          <img
+            src="/public/img/logo/tool_horizontal_logo_19.webp"
+            alt="Logo"
+            style={{ maxWidth: "90px" }}
+          />
+        </NavLink>
         <div className="checkout-regular-text pt-3 d-flex align-items-center gap-3">
           <NavLink to="/styles" className="text-decoration-none text-black">
             <p>
@@ -144,7 +142,7 @@ function Checkout() {
                         return <CheckoutItems product={product} />;
                       })}
                   </section>
-                  <section className="mt-5">
+                  <section className="pt-5">
                     <form action="" className="row g-3">
                       <div className="col-9">
                         <input
@@ -214,11 +212,13 @@ function Checkout() {
                 <span className="checkout-divider-text">or</span>
                 <span className="checkout-divider-line"></span>
               </div>
-              <div className="m-0 text-end">
-                <p className="fs-6">
-                  Already have an account? <NavLink to="/login">Log in</NavLink>
-                </p>
-              </div>
+              {!token && (
+                <div className="m-0 text-end">
+                  <p className="fs-6">
+                    Already have an account? <NavLink to="/login">Log in</NavLink>
+                  </p>
+                </div>
+              )}
               <form action="" onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">
