@@ -29,7 +29,6 @@
 }
 
 .checkout-summary-container {
-  min-height: 100vh;
   font-family: var(--font-heading-light);
   background-color: var(--color-background-secondary);
 }
@@ -166,5 +165,9 @@
   .checkout-payment-container {
     margin-right: 0;
     max-width: 700px;
+  }
+
+  .checkout-summary-container {
+    min-height: 100vh;
   }
 }
