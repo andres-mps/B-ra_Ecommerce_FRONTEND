@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./Checkout.css";
 import { Button, Collapse, Form } from "react-bootstrap";
@@ -10,6 +10,7 @@ import axios from "axios";
 
 function Checkout() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const token = useSelector((state) => state.user.token);
 
   const loggedUser = useSelector((state) => state.user.userData);
@@ -70,7 +71,7 @@ function Checkout() {
     dispatch(clearCart());
     setTaxes(null);
     setTotal(null);
-    return console.log("compra realizada con exito");
+    return navigate("/order-success");
   }
 
   return (

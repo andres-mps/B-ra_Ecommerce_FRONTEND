@@ -12,6 +12,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import YourOrders from "./pages/YourOrders";
 import AgeGate from "./pages/AgeGate";
+import OrderSuccess from "./pages/OrderSuccess";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path="home" element={<Home />} />
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
-          <Route path="orders" element={<YourOrders />}/>
+          <Route path="orders" element={<YourOrders />} />
           <Route path="beers/:product" element={<ProductDetail />} />
           <Route path="styles" element={<Style />} />
           <Route path="styles/:style" element={<Style />} />
@@ -30,6 +31,7 @@ function App() {
 
         <Route path="age-gate" element={<AgeGate />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/order-success" element={<OrderSuccess />} />
       </Routes>
     </>
   );
