@@ -1,49 +1,64 @@
-import React, { useState } from "react";
-import "./AddToCart.css";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import CartItem from "./CartItem";
-import "./Navbar.css";
-function Cart() {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const toggleShow = () => setShow((state) => !state);
+import "./AddToCart.css";
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+function Cart({ show, onHide }) {
+  const cart = useSelector((state) => state.cart);
+  const products = cart.products;
 
   return (
-    <div>
-      <svg
-        className="nav-icons"
-        aria-hidden="true"
-        focusable="false"
-        role="presentation"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        onClick={toggleShow}
-      >
-        <path
-          fill="black"
-          fillRule="evenodd"
-          d="M15.6 6.3V5c0-2-1.6-3.6-3.6-3.6S8.4 3 8.4 5v1.3H4.2v16.3h15.6V6.3h-4.2zM10.4 5c0-.9.7-1.6 1.6-1.6.9 0 1.6.7 1.6 1.6v1.3h-3.2V5zm7.4 15.6H6.2V8.3H17.8v12.3z"
-        ></path>
-      </svg>
-      <Offcanvas
-        show={show}
-        onHide={handleClose}
-        placement="end"
-        className="offcanvas-container custom-offcanvas container"
-      >
-        <Offcanvas.Header closeButton>
-          <h2 className="tittle-cart">Your cart</h2>
-        </Offcanvas.Header>
-        <div className="d-flex justify-content-between">
-          <p className="ms-3 subtittle-cart">PRODUCT</p>
-          <p className="me-3 subtittle-cart">PRICE</p>
+    <Offcanvas
+      show={show}
+      onHide={onHide}
+      placement="end"
+      className="offcanvas-container custom-offcanvas container"
+    >
+      <Offcanvas.Header closeButton>
+        <h2 className="tittle-cart">Your cart</h2>
+      </Offcanvas.Header>
+      <div className="d-flex justify-content-between">
+        <p className="ms-3 subtittle-cart">PRODUCT</p>
+        <p className="me-3 subtittle-cart">PRICE</p>
+      </div>
+      <Offcanvas.Body>
+        <div className="cart">
+          <div className="row overflow-auto" style={{ maxHeight: "420px" }}></div>
+          {products.map((product) => (
+            <CartItem key={product.id} product={product} />
+          ))}
+          <div className="row border-top pt-2">
+            <div className="col-12">
+              <div className="row">
+                <div className="d-flex justify-content-between price-cart">
+                  <h5>Subtotal</h5>
+                  <p></p>
+                </div>
+              </div>
+              <div className="row">
+                <div className="d-flex justify-content-between price-cart">
+                  <h5>Iva</h5>
+                  <p>-</p>
+                </div>
+              </div>
+              <div className="row">
+                <div className="d-flex justify-content-between price-cart">
+                  <h3>Total</h3>
+                  <h3> USD</h3>
+                </div>
+              </div>
+              <div className="row price-cart">
+                <p className="price-cart-p"> Shipping calculated at checkout</p>
+                <NavLink to="/checkout">
+                  <button className="check-out btn btn-outline-dark py-2">Check out</button>
+                </NavLink>
+              </div>
+            </div>
+          </div>
         </div>
-        <Offcanvas.Body>
-          <CartItem />
-        </Offcanvas.Body>
-      </Offcanvas>
-    </div>
+      </Offcanvas.Body>
+    </Offcanvas>
   );
 }
 
