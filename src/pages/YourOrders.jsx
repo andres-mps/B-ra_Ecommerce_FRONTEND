@@ -28,11 +28,12 @@ function YourOrders() {
   return (
     <div className="container">
       <h2>Order history</h2>
-      <div>
+              <div>
         {orders.map((order) => (
           <Order key={order.id} order={order} />
         ))}
       </div>
+
     </div>
   );
 }

@@ -1,7 +1,6 @@
-import React from "react";
-import "./Product.css";
 import { NavLink } from "react-router-dom";
 import AddToCart from "./AddToCart";
+import "./Product.css";
 
 function Product({ product }) {
   return (
@@ -21,7 +20,7 @@ function Product({ product }) {
           <span className="product-name">{product.name}</span>
           <span id="product-price">{product.price} USD</span>
         </NavLink>
-        <AddToCart />
+        <AddToCart product={product} qty={1} />
       </div>
     </div>
   );
