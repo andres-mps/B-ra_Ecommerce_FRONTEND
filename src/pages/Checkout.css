@@ -120,6 +120,17 @@
   padding-right: 5px;
 }
 
+#return-to-cart {
+  text-decoration: none;
+  color: black;
+}
+
+#return-to-cart:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: black;
+}
+
 @media (max-width: 767.98px) {
   .checkout-navbar-container {
     display: none;
