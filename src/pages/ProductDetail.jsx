@@ -63,7 +63,7 @@ function ProductDetail() {
               </div>
             </div>
 
-            <div className="col-12 col-md-5">
+            <div className="col-12 col-md-5" style={{ paddingRight: "2rem" }}>
               <h2>To Øl</h2>
               <div className="product-title my-4">
                 <h1>{product.name}</h1>
