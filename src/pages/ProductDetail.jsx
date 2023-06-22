@@ -71,16 +71,15 @@ function ProductDetail() {
               <span className="product-price ">{product.price} USD</span>
               <div className="product-form-buttons">
                 <div className="d-flex align-items-center">
-                  <div className="d-flex align-items-center justify-content-between border border-dark w-100">
-                    <button className="btn" onClick={decrement}>
+                  <div id="counter-button">
+                    <button id="decrement-button" onClick={decrement}>
                       -
                     </button>
-                    <p className="mt-3">{count}</p>
-                    <button className="btn" onClick={increment}>
+                    <p className="m-0">{count}</p>
+                    <button id="increment-button" onClick={increment}>
                       +
                     </button>
                   </div>
-                  <i className="bi bi-trash ms-2"></i>
                 </div>
                 <AddToCart product={product} qty={count} setCount={setCount} />
               </div>
