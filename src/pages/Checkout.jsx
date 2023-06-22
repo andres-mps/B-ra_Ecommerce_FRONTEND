@@ -5,13 +5,17 @@ import { Button, Collapse, Form } from "react-bootstrap";
 import CheckoutItems from "../components/CheckoutItems";
 import { useSelector, useDispatch } from "react-redux";
 import { Tooltip } from "antd";
-import { closeCart, clearCart } from "../redux/cartSlice";
+import { closeCart, clearCart, openCart } from "../redux/cartSlice";
 import axios from "axios";
 
 function Checkout() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const token = useSelector((state) => state.user.token);
+
+  function handleOpen() {
+    dispatch(openCart(true));
+  }
 
   const loggedUser = useSelector((state) => state.user.userData);
   const [email, setEmail] = loggedUser ? useState(loggedUser.email) : useState(null);
@@ -57,7 +61,7 @@ function Checkout() {
         subTotalPrice: subTotal,
         taxes,
         totalAmount: total,
-        status: "pending",
+        status: "Pending",
         address,
       },
       headers: {
@@ -77,15 +81,13 @@ function Checkout() {
   return (
     <>
       <section className="container-fluid checkout-navbar-container">
-        <div>
-          <NavLink className="navbar-brand checkout-navbar-logo" to="/home">
-            <img
-              src="/public/img/logo/tool_horizontal_logo_19.webp"
-              alt="Logo"
-              style={{ maxWidth: "90px" }}
-            />
-          </NavLink>
-        </div>
+        <NavLink className="checkout-navbar-logo" to="/home">
+          <img
+            src="/public/img/logo/tool_horizontal_logo_19.webp"
+            alt="Logo"
+            style={{ maxWidth: "90px" }}
+          />
+        </NavLink>
         <div className="checkout-regular-text pt-3 d-flex align-items-center gap-3">
           <NavLink to="/styles" className="text-decoration-none text-black">
             <p>
@@ -144,7 +146,7 @@ function Checkout() {
                         return <CheckoutItems product={product} />;
                       })}
                   </section>
-                  <section className="mt-5">
+                  <section className="pt-5">
                     <form action="" className="row g-3">
                       <div className="col-9">
                         <input
@@ -196,7 +198,7 @@ function Checkout() {
                       <p className="fw-bold text-black">USD {taxes}</p>
                     </div>
                     <div className="d-flex justify-content-between">
-                      <p className="fs-3">Total</p>
+                      <p className="fs-3 me-3">Total </p>
                       <p className="fw-bold text-black fs-3">USD {total}</p>
                     </div>
                   </section>
@@ -205,7 +207,7 @@ function Checkout() {
             </div>
           </div>
           <div className="col-md-6 order-md-1">
-            <div className="container mt-3 checkout-payment-container">
+            <div className="container mt-3 mb-5 checkout-payment-container">
               <button className="checkout-apple-pay-button">
                 <i className="fab fa-apple-pay"></i>
               </button>
@@ -214,11 +216,13 @@ function Checkout() {
                 <span className="checkout-divider-text">or</span>
                 <span className="checkout-divider-line"></span>
               </div>
-              <div className="m-0 text-end">
-                <p className="fs-6">
-                  Already have an account? <NavLink to="/login">Log in</NavLink>
-                </p>
-              </div>
+              {!token && (
+                <div className="m-0 text-end">
+                  <p className="fs-6">
+                    Already have an account? <NavLink to="/login">Log in</NavLink>
+                  </p>
+                </div>
+              )}
               <form action="" onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">
@@ -312,6 +316,11 @@ function Checkout() {
               <span className="d-inline-block mt-1">
                 <i className="fas fa-lock me-3"></i>Payment details stored in plain text
               </span>
+              <div className="mt-5">
+                <NavLink id="return-to-cart" to={-1} onClick={handleOpen}>
+                  ← Return to cart
+                </NavLink>
+              </div>
             </div>
           </div>
         </div>

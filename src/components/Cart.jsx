@@ -37,10 +37,11 @@ function Cart({ show, onHide }) {
             </div>
             <Offcanvas.Body className="p-0">
               <div className="cart">
-                <div className="row overflow-auto" style={{ maxHeight: "420px" }}></div>
-                {productsInCart.map((product) => (
-                  <CartItem key={product.id} product={product} />
-                ))}
+                <div className="row overflow-auto" style={{ maxHeight: "500px" }}>
+                  {productsInCart.map((product) => (
+                    <CartItem key={product.id} product={product} />
+                  ))}
+                </div>
                 <div className="row border-top pt-2 checkout-info">
                   <div className="col-12">
                     <div className="row">
