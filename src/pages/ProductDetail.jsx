@@ -82,7 +82,12 @@ function ProductDetail() {
                   </div>
                   <i className="bi bi-trash ms-2"></i>
                 </div>
-                <AddToCart product={product} qty={count} setCount={setCount} />
+                <AddToCart
+                  product={product}
+                  qty={count}
+                  setCount={setCount}
+                  hasStock={product.stock}
+                />
               </div>
               <div className="product-description-container">
                 <p className="product-description">{product.description}</p>

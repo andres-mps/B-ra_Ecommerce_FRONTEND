@@ -29,6 +29,21 @@
   transform: scale(1.02);
 }
 
+.product-imgContainer {
+  position: relative;
+}
+
+.product-sold-out {
+  position: absolute;
+  font-family: var(--font-heading-light);
+  bottom: 5%;
+  left: 15%;
+  color: white;
+  background-color: var(--color-background-dark);
+  padding: 3px 10px 3px 10px;
+  border-radius: 10px;
+}
+
 /* TESTEO TIPOGRAFÍAS. BORRAR*/
 .a {
   font-family: var(--font-body-family);
