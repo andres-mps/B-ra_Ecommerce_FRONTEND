@@ -12,6 +12,7 @@ function Login() {
 
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
+  const [err, setErr] = useState(null);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -23,8 +24,10 @@ function Login() {
         password: passwordValue,
       },
     });
-    response.data && dispatch(setToken(response.data));
-    navigate(-1);
+    if (response.data === "Credenciales incorrectas") {
+      return setErr(response.data);
+    }
+    return response.data && dispatch(setToken(response.data)) && navigate(-1);
   }
 
   return (
@@ -63,6 +66,11 @@ function Login() {
             <button type="submit" id="login-button">
               Sign in
             </button>
+            {err && (
+              <div class="text-danger mt-2 login-alert" role="alert">
+                {err}
+              </div>
+            )}
             <div>
               <NavLink id="login-link" to="/register">
                 Don't have an account? Sign up

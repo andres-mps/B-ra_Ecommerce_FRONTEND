@@ -45,6 +45,9 @@ function Checkout() {
 
   async function handleSubmit(event) {
     event.preventDefault();
+    if (loggedUser === undefined) {
+      setErr("inicia sesion para realizar una compra");
+    }
     const response = await axios({
       method: "post",
       url: `http://localhost:3000/orders/${loggedUser.id}`,
@@ -215,95 +218,97 @@ function Checkout() {
                   Already have an account? <NavLink to="/login">Log in</NavLink>
                 </p>
               </div>
-              <div className="mb-3">
-                <label htmlFor="email" className="form-label">
-                  Email address
-                </label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="name-on-card" className="form-label">
-                  Name on card
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="name-on-card"
-                  value={nameOnCard}
-                  onChange={(event) => setNameOnCard(event.target.value)}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="card-number" className="form-label">
-                  Card number
-                </label>
-                <input type="text" className="form-control" id="card-number" value={cardNumber} />
-              </div>
-              <div className="row mb-3">
-                <div className="col-auto">
-                  <label htmlFor="exp-date" className="form-label">
-                    Expiration date {"(MM/YY)"}
+              <form action="" onSubmit={handleSubmit}>
+                <div className="mb-3">
+                  <label htmlFor="email" className="form-label">
+                    Email address
                   </label>
-                  <input type="text" className="form-control" id="exp-date" value={expDate} />
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    required
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                  />
                 </div>
-                <div className="col-auto">
-                  <label htmlFor="cvc" className="form-label">
-                    CVC
+                <div className="mb-3">
+                  <label htmlFor="name-on-card" className="form-label">
+                    Name on card
                   </label>
-                  <input type="text" className="form-control" id="cvc" value={cvc} />
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="name-on-card"
+                    value={nameOnCard}
+                    onChange={(event) => setNameOnCard(event.target.value)}
+                  />
                 </div>
-              </div>
-              <div className="mb-3">
-                <label htmlFor="address" className="form-label">
-                  Address
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="address"
-                  value={address}
-                  onChange={(event) => setAddress(event.target.value)}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="city" className="form-label">
-                  City
-                </label>
-                <input type="text" className="form-control" id="city" value={city} />
-              </div>
-
-              <div className="mb-3">
-                <label htmlFor="postal-code" className="form-label">
-                  Postal Code
-                </label>
-                <input type="text" className="form-control" id="postal-code" value={pcode} />
-              </div>
-              <Form>
-                {["checkbox"].map((type) => (
-                  <div key={`default-${type}`} className="mb-3">
-                    <Form.Check // prettier-ignore
-                      type={type}
-                      id={`default-${type}`}
-                      label="Billing address is the same as shipping address"
-                    />
+                <div className="mb-3">
+                  <label htmlFor="card-number" className="form-label">
+                    Card number
+                  </label>
+                  <input type="text" className="form-control" id="card-number" value={cardNumber} />
+                </div>
+                <div className="row mb-3">
+                  <div className="col-auto">
+                    <label htmlFor="exp-date" className="form-label">
+                      Expiration date {"(MM/YY)"}
+                    </label>
+                    <input type="text" className="form-control" id="exp-date" value={expDate} />
                   </div>
-                ))}
-              </Form>
-              <button className="checkout-pay-button" onClick={handleSubmit}>
-                Total USD {total}
-              </button>
+                  <div className="col-auto">
+                    <label htmlFor="cvc" className="form-label">
+                      CVC
+                    </label>
+                    <input type="text" className="form-control" id="cvc" value={cvc} />
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="address" className="form-label">
+                    Address
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="address"
+                    required
+                    value={address}
+                    onChange={(event) => setAddress(event.target.value)}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="city" className="form-label">
+                    City
+                  </label>
+                  <input type="text" className="form-control" id="city" value={city} />
+                </div>
+
+                <div className="mb-3">
+                  <label htmlFor="postal-code" className="form-label">
+                    Postal Code
+                  </label>
+                  <input type="text" className="form-control" id="postal-code" value={pcode} />
+                </div>
+                <Form>
+                  {["checkbox"].map((type) => (
+                    <div key={`default-${type}`} className="mb-3">
+                      <Form.Check // prettier-ignore
+                        type={type}
+                        id={`default-${type}`}
+                        label="Billing address is the same as shipping address"
+                      />
+                    </div>
+                  ))}
+                </Form>
+                <button className="checkout-pay-button">Total USD {total}</button>
+              </form>
               {err && (
-                <div class="alert alert-danger" role="alert">
+                <div class="checkout-regular-text text-danger mt-2 checkout-alert" role="alert">
                   {err}
                 </div>
               )}
-              <span className="d-inline-block mt-3">
+              <span className="d-inline-block mt-1">
                 <i className="fas fa-lock me-3"></i>Payment details stored in plain text
               </span>
             </div>
