@@ -55,7 +55,11 @@ function ProductDetail() {
                     <i className="bi bi-arrow-left"></i>
                   </button>
                 </NavLink>
-                <img className="product-detail-img" src={product.image} alt="" />
+                <img
+                  className="product-detail-img"
+                  src={`http://localhost:3000/img/${product.image}`}
+                  alt=""
+                />
               </div>
             </div>
 

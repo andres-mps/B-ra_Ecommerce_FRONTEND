@@ -12,7 +12,11 @@ function Product({ product }) {
           to={`/beers/${product.slug}`}
         >
           <div className="imgContainer">
-            <img className="product-img" src={product.image} alt={product.name} />
+            <img
+              className="product-img"
+              src={`http://localhost:3000/img/${product.image}`}
+              alt={product.name}
+            />
           </div>
           <span className="product-name">{product.name}</span>
           <span id="product-price">{product.price} USD</span>
