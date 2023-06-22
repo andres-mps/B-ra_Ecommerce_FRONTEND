@@ -5,11 +5,14 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import "./Navbar.css";
 
 function NavbarBeer() {
   const dispatch = useDispatch();
   const productsInCart = useSelector((state) => state.cart.products);
+
+  const loggedUser = useSelector((state) => state.user.userData);
 
   function calcCartQuantity() {
     const quantities = productsInCart.map((product) => product.qty);
@@ -47,11 +50,13 @@ function NavbarBeer() {
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  <img
-                    src="/public/img/logo/tool_horizontal_logo_19.webp"
-                    alt="Logo"
-                    style={{ maxWidth: "90px" }}
-                  />
+                  <NavLink to="/home">
+                    <img
+                      src="/public/img/logo/tool_horizontal_logo_19.webp"
+                      alt="Logo"
+                      style={{ maxWidth: "90px" }}
+                    />
+                  </NavLink>
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body className="p-0">
@@ -63,49 +68,78 @@ function NavbarBeer() {
                     ABOUT THIS PROJECT
                   </NavLink>
                   <div className="login-container">
-                    <NavLink to="" className="nav-link mb-3 ms-4">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                        focusable="false"
-                        role="presentation"
-                        className="icon icon-account nav-icons"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        style={{ marginLeft: "0px", marginBottom: "5px" }}
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M3 14v8h2v-6h14v6h2v-8zM12 12c2.8 0 5-2.2 5-5s-2.2-5-5-5-5 2.2-5 5 2.2 5 5 5zm0-8c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.3-3 3-3z"
-                          fill="black"
-                        ></path>
-                      </svg>
-                      <span className="nav-login">Log in</span>
-                    </NavLink>
+                    {loggedUser === undefined ? (
+                      <NavLink to="/login" className="nav-link mb-3 ms-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                          focusable="false"
+                          role="presentation"
+                          className="icon icon-account nav-icons"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          style={{ marginLeft: "0px", marginBottom: "5px" }}
+                        >
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M3 14v8h2v-6h14v6h2v-8zM12 12c2.8 0 5-2.2 5-5s-2.2-5-5-5-5 2.2-5 5 2.2 5 5 5zm0-8c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.3-3 3-3z"
+                            fill="black"
+                          ></path>
+                        </svg>
+                        <span className="nav-login">Log in</span>
+                      </NavLink>
+                    ) : (
+                      <div>
+                        <NavLink to="" className="nav-link mb-3 ms-4">
+                          Your Profile
+                        </NavLink>
+                        <NavLink to="/orders" className="nav-link mb-3 ms-4">
+                          Your Orders
+                        </NavLink>
+                        <NavLink to="" className="nav-link mb-3 ms-4">
+                          LogOut
+                        </NavLink>
+                      </div>
+                    )}
                   </div>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
             <div className="d-flex">
-              <NavLink to="/login" className="nav-icons">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                  focusable="false"
-                  role="presentation"
-                  className="icon icon-account"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M3 14v8h2v-6h14v6h2v-8zM12 12c2.8 0 5-2.2 5-5s-2.2-5-5-5-5 2.2-5 5 2.2 5 5 5zm0-8c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.3-3 3-3z"
-                    fill="black"
-                  ></path>
-                </svg>
-              </NavLink>
+              <div className="d-none d-md-flex">
+                {loggedUser === undefined ? (
+                  <NavLink to="/login" className="nav-icons">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      focusable="false"
+                      role="presentation"
+                      className="icon icon-account"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M3 14v8h2v-6h14v6h2v-8zM12 12c2.8 0 5-2.2 5-5s-2.2-5-5-5-5 2.2-5 5 2.2 5 5 5zm0-8c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.3-3 3-3z"
+                        fill="black"
+                      ></path>
+                    </svg>
+                  </NavLink>
+                ) : (
+                  <NavDropdown
+                    id="nav-dropdown-dark-example"
+                    title={`${loggedUser.firstname} ${loggedUser.lastname}`}
+                    menuVariant="dark"
+                  >
+                    <NavDropdown.Item href="#action/3.1">Your Profile</NavDropdown.Item>
+                    <NavDropdown.Item href="/orders">Your Orders</NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#action/3.4">LogOut</NavDropdown.Item>
+                  </NavDropdown>
+                )}
+              </div>
               <div className="nav-icons">
                 <span onClick={handleOpen}>
                   <svg
