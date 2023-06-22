@@ -1,63 +1,76 @@
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useState } from "react";
+
 import Offcanvas from "react-bootstrap/Offcanvas";
 import CartItem from "./CartItem";
 import "./AddToCart.css";
-import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
 
 function Cart({ show, onHide }) {
-  const cart = useSelector((state) => state.cart);
-  const products = cart.products;
+  const [subTotal, setSubTotal] = useState(null);
+
+  const productsInCart = useSelector((state) => state.cart.products);
+
+  function calcCartSubtotalPrice() {
+    const productPrice = productsInCart.map((product) => product.price * product.qty);
+    const subtotalPrice = productPrice.reduce((acc, price) => acc + price, 0);
+    return subtotalPrice;
+  }
 
   return (
     <Offcanvas
       show={show}
       onHide={onHide}
       placement="end"
-      className="offcanvas-container custom-offcanvas container"
+      className="offcanvas-container custom-offcanvas container p-4 d-flex"
     >
-      <Offcanvas.Header closeButton>
-        <h2 className="tittle-cart">Your cart</h2>
+      <Offcanvas.Header closeButton className="p-0">
+        <h2 className="title-cart">Your cart</h2>
       </Offcanvas.Header>
-      <div className="d-flex justify-content-between">
-        <p className="ms-3 subtittle-cart">PRODUCT</p>
-        <p className="me-3 subtittle-cart">PRICE</p>
-      </div>
-      <Offcanvas.Body>
-        <div className="cart">
-          <div className="row overflow-auto" style={{ maxHeight: "420px" }}></div>
-          {products.map((product) => (
-            <CartItem key={product.id} product={product} />
-          ))}
-          <div className="row border-top pt-2">
-            <div className="col-12">
-              <div className="row">
-                <div className="d-flex justify-content-between price-cart">
-                  <h5>Subtotal</h5>
-                  <p></p>
-                </div>
-              </div>
-              <div className="row">
-                <div className="d-flex justify-content-between price-cart">
-                  <h5>Iva</h5>
-                  <p>-</p>
-                </div>
-              </div>
-              <div className="row">
-                <div className="d-flex justify-content-between price-cart">
-                  <h3>Total</h3>
-                  <h3> USD</h3>
-                </div>
-              </div>
-              <div className="row price-cart">
-                <p className="price-cart-p"> Shipping calculated at checkout</p>
-                <NavLink to="/checkout">
-                  <button className="check-out btn btn-outline-dark py-2">Check out</button>
-                </NavLink>
-              </div>
+
+      <div>
+        {productsInCart.length > 0 ? (
+          <>
+            <div className="d-flex justify-content-between mt-3">
+              <p className="ms-3 subtitle-cart">PRODUCT</p>
+              <p className="me-2 subtitle-cart">PRICE</p>
             </div>
-          </div>
-        </div>
-      </Offcanvas.Body>
+            <Offcanvas.Body className="p-0">
+              <div className="cart">
+                <div className="row overflow-auto" style={{ maxHeight: "420px" }}></div>
+                {productsInCart.map((product) => (
+                  <CartItem key={product.id} product={product} />
+                ))}
+                <div className="row border-top pt-2 checkout-info">
+                  <div className="col-12">
+                    <div className="row">
+                      <div className="d-flex justify-content-between price-cart mt-3">
+                        <h5>Subtotal</h5>
+                        <h5 className="pe-4">{calcCartSubtotalPrice()} USD</h5>
+                      </div>
+                    </div>
+                    <div className="row price-cart">
+                      <p className="price-cart-p"> Shipping calculated at checkout</p>
+                      <NavLink to="/checkout" className="pe-3">
+                        <button className="check-out btn btn-outline-dark py-2">Check out</button>
+                      </NavLink>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Offcanvas.Body>
+          </>
+        ) : (
+          <Offcanvas.Body className="mt-3">
+            <div className="cart-empty">
+              <h3 className="mb-0">Your cart is empty</h3>
+              <NavLink to="/styles" onClick={onHide} className="continue-shopping">
+                <h3 className="mb-0">Continue shopping</h3>
+              </NavLink>
+            </div>
+          </Offcanvas.Body>
+        )}
+      </div>
     </Offcanvas>
   );
 }
