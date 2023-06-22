@@ -14,7 +14,11 @@ function CartItem() {
           return (
             <div className="row border-top pt-3 pe-0 ps-0">
               <div className="col-4 d-flex justify-content-center">
-                <img src={product.image} alt={product.slug} width={100} />
+                <img
+                  src={`http://localhost:3000/img/${product.image}`}
+                  alt={product.slug}
+                  width={100}
+                />
               </div>
               <div className="col-6">
                 <h4 className="tittle-product">{product.name}</h4>
