@@ -6,7 +6,7 @@
   font-family: var(--font-heading);
   border-radius: 0 !important;
   color: white;
-  background-color: black;
+  background-color: var(--color-background-dark);
   border: none;
   text-decoration: none;
 }
@@ -39,4 +39,28 @@
   bottom: 0;
   margin-bottom: 2rem;
   margin-right: 2rem;
+}
+
+.cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.continue-shopping {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: var(--color-background-dark);
+  font-family: var(--font-heading-light);
+  padding: 1rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.continue-shopping h3 {
+  font-size: 1rem;
+}
+
+.continue-shopping:hover {
+  color: black;
 }
