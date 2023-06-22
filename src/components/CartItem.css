@@ -35,9 +35,10 @@
 
 .checkout-info {
   position: absolute;
+  background-color: white;
   width: 100%;
   bottom: 0;
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
   margin-right: 2rem;
 }
 
