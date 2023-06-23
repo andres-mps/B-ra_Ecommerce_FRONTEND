@@ -11,7 +11,7 @@ function CartItem({ product }) {
         <div className="col-6">
           <h4 className="title-product">{product.name}</h4>
           <p className="price-cart">{product.price}</p>
-          <QuantityCounter qty={product.qty} id={product.id} />
+          <QuantityCounter qty={product.qty} id={product.id} product={product} />
         </div>
         <div className="col-2 d-flex align-items-center justify-content-end">
           <h3 className="price-cart">{product.price * product.qty} USD</h3>

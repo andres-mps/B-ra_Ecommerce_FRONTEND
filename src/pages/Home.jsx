@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 function Home() {
   const [products, setProducts] = useState([]);
   const [hoveredImage, setHoveredImage] = useState(
-    "https://cdn.shopify.com/s/files/1/0266/3704/1767/collections/hoppy-beers.jpg?v=1675247646&width=750",
+    "http://localhost:5173/public/img//home/home_stylesList.webp",
   );
   const [hoveredCategory, setHoveredCategory] = useState(null);
   useEffect(() => {
@@ -36,13 +36,13 @@ function Home() {
         // },
       });
       setCategories(response.data);
-      //console.log(response.data);
+      console.log(response.data);
     }
     getCategories();
   }, []);
 
   const handleHover = (categoryName, categoryImage) => {
-    setHoveredImage(categoryImage);
+    setHoveredImage(`http://localhost:5173/public/img//home/${categoryImage}`);
     setHoveredCategory(categoryName);
   };
 
@@ -98,7 +98,12 @@ function Home() {
           </div>
           <div
             className="col-md-6 d-md-flex flex-md-column justify-content-md-center order-md-2"
-            style={{ paddingRight: "100px", paddingLeft: "100px" }}
+            style={{
+              paddingRight: "100px",
+              paddingLeft: "100px",
+              paddingTop: "30px",
+              paddingBottom: "30px",
+            }}
           >
             <div className="text-left">
               <h2
@@ -144,7 +149,12 @@ function Home() {
           </div>
           <div
             className="col-md-6 d-md-flex flex-md-column justify-content-md-center order-md-1"
-            style={{ paddingRight: "100px", paddingLeft: "100px" }}
+            style={{
+              paddingRight: "100px",
+              paddingLeft: "100px",
+              paddingTop: "30px",
+              paddingBottom: "30px",
+            }}
           >
             <div className="text-left">
               <h2
@@ -190,7 +200,12 @@ function Home() {
           </div>
           <div
             className="col-md-6 d-md-flex flex-md-column justify-content-md-center order-md-2"
-            style={{ paddingRight: "100px", paddingLeft: "100px" }}
+            style={{
+              paddingRight: "100px",
+              paddingLeft: "100px",
+              marginTop: "30px",
+              marginBottom: "30px",
+            }}
           >
             <div className="text-left">
               <h2

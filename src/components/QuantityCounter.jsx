@@ -1,14 +1,14 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { removeProduct, incrementQuantity, decrementQuantity } from "../redux/cartSlice";
-import { useNavigate } from "react-router-dom";
-import "./QuantityCounter.css";
+import "../pages/ProductDetail.css";
 
-function QuantityCounter({ qty, id }) {
+function QuantityCounter({ qty, id, product }) {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const increment = () => {
-    dispatch(incrementQuantity(id));
+    if (qty < product.stock) {
+      dispatch(incrementQuantity(id));
+    }
   };
 
   const decrement = () => {
@@ -19,17 +19,19 @@ function QuantityCounter({ qty, id }) {
 
   function handleRemove() {
     dispatch(removeProduct(id));
-    navigate(-1);
   }
 
   return (
     <div className="d-flex align-items-center">
-      <div className="d-flex align-items-center justify-content-between border border-dark w-100">
-        <button className="btn" onClick={decrement}>
+      <div
+        className="d-flex align-items-center justify-content-between border border-dark w-100"
+        id="counter-button"
+      >
+        <button className="btn" onClick={decrement} id="decrement-button">
           -
         </button>
         <p className="mt-3">{qty}</p>
-        <button className="btn" onClick={increment}>
+        <button className="btn" onClick={increment} id="increment-button">
           +
         </button>
       </div>

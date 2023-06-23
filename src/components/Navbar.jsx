@@ -185,7 +185,7 @@ function NavbarBeer() {
               <div className="nav-icons">
                 <span onClick={handleOpen}>
                   <svg
-                    class="icon icon-cart"
+                    className="icon icon-cart"
                     aria-hidden="true"
                     focusable="false"
                     role="presentation"
@@ -195,7 +195,7 @@ function NavbarBeer() {
                   >
                     <path
                       fill="currentColor"
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M15.6 6.3V5c0-2-1.6-3.6-3.6-3.6S8.4 3 8.4 5v1.3H4.2v16.3h15.6V6.3h-4.2zM10.4 5c0-.9.7-1.6 1.6-1.6.9 0 1.6.7 1.6 1.6v1.3h-3.2V5zm7.4 15.6H6.2V8.3H17.8v12.3z"
                     ></path>
                   </svg>
