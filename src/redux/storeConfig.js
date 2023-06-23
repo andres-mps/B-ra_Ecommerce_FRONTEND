@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./userSlice";
 import cartReducer from "./cartSlice";
+import dropdownReducer from "./DropdownSlice";
 import storage from "redux-persist/lib/storage";
 import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
 import { combineReducers } from "@reduxjs/toolkit";
@@ -8,6 +9,7 @@ import { combineReducers } from "@reduxjs/toolkit";
 const reducer = combineReducers({
   user: userReducer,
   cart: cartReducer,
+  dropdown: dropdownReducer,
 });
 
 const persistConfig = {
