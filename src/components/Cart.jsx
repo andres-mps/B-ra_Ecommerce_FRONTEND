@@ -22,7 +22,7 @@ function Cart({ show, onHide }) {
       show={show}
       onHide={onHide}
       placement="end"
-      className="offcanvas-container custom-offcanvas container p-4 d-flex"
+      className="offcanvas-container custom-offcanvas container p-4 d-flex overflow-auto"
     >
       <Offcanvas.Header closeButton className="p-0">
         <h2 className="title-cart">Your cart</h2>
@@ -37,7 +37,7 @@ function Cart({ show, onHide }) {
             </div>
             <Offcanvas.Body className="p-0">
               <div className="cart">
-                <div className="row overflow-auto" style={{ maxHeight: "500px" }}>
+                <div className="row overflow-auto" style={{ maxHeight: "420px" }}>
                   {productsInCart.map((product) => (
                     <CartItem key={product.id} product={product} />
                   ))}
