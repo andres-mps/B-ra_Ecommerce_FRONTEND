@@ -12,6 +12,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import YourOrders from "./pages/YourOrders";
 import AgeGate from "./pages/AgeGate";
+import Error404 from "./pages/Error404";
 import OrderSuccess from "./pages/OrderSuccess";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="styles" element={<Style />} />
           <Route path="styles/:style" element={<Style />} />
           <Route path="about-this-project" element={<AboutThisProject />} />
+        <Route path="*" element={<Error404 />} />
         </Route>
 
         <Route path="age-gate" element={<AgeGate />} />
