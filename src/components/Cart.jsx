@@ -1,49 +1,78 @@
-import React, { useState } from "react";
-import "./AddToCart.css";
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useState } from "react";
+
 import Offcanvas from "react-bootstrap/Offcanvas";
 import CartItem from "./CartItem";
-import "./Navbar.css";
-function Cart() {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const toggleShow = () => setShow((state) => !state);
+import "./AddToCart.css";
+
+function Cart({ show, onHide }) {
+  const [subTotal, setSubTotal] = useState(null);
+
+  const productsInCart = useSelector((state) => state.cart.products);
+
+  function calcCartSubtotalPrice() {
+    const productPrice = productsInCart.map((product) => product.price * product.qty);
+    const subtotalPrice = productPrice.reduce((acc, price) => acc + price, 0);
+    return subtotalPrice;
+  }
 
   return (
-    <div>
-      <svg
-        className="nav-icons"
-        aria-hidden="true"
-        focusable="false"
-        role="presentation"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        onClick={toggleShow}
-      >
-        <path
-          fill="black"
-          fillRule="evenodd"
-          d="M15.6 6.3V5c0-2-1.6-3.6-3.6-3.6S8.4 3 8.4 5v1.3H4.2v16.3h15.6V6.3h-4.2zM10.4 5c0-.9.7-1.6 1.6-1.6.9 0 1.6.7 1.6 1.6v1.3h-3.2V5zm7.4 15.6H6.2V8.3H17.8v12.3z"
-        ></path>
-      </svg>
-      <Offcanvas
-        show={show}
-        onHide={handleClose}
-        placement="end"
-        className="offcanvas-container custom-offcanvas container"
-      >
-        <Offcanvas.Header closeButton>
-          <h2 className="tittle-cart">Your cart</h2>
-        </Offcanvas.Header>
-        <div className="d-flex justify-content-between">
-          <p className="ms-3 subtittle-cart">PRODUCT</p>
-          <p className="me-3 subtittle-cart">PRICE</p>
-        </div>
-        <Offcanvas.Body>
-          <CartItem />
-        </Offcanvas.Body>
-      </Offcanvas>
-    </div>
+    <Offcanvas
+      show={show}
+      onHide={onHide}
+      placement="end"
+      className="offcanvas-container custom-offcanvas container p-4 d-flex"
+    >
+      <Offcanvas.Header closeButton className="p-0">
+        <h2 className="title-cart">Your cart</h2>
+      </Offcanvas.Header>
+
+      <div>
+        {productsInCart.length > 0 ? (
+          <>
+            <div className="d-flex justify-content-between mt-3">
+              <p className="ms-3 subtitle-cart">PRODUCT</p>
+              <p className="me-2 subtitle-cart">PRICE</p>
+            </div>
+            <Offcanvas.Body className="p-0">
+              <div className="cart">
+                <div className="row overflow-auto" style={{ maxHeight: "500px" }}>
+                  {productsInCart.map((product) => (
+                    <CartItem key={product.id} product={product} />
+                  ))}
+                </div>
+                <div className="row border-top pt-2 checkout-info">
+                  <div className="col-12">
+                    <div className="row">
+                      <div className="d-flex justify-content-between price-cart mt-3">
+                        <h5>Subtotal</h5>
+                        <h5 className="pe-4">{calcCartSubtotalPrice()} USD</h5>
+                      </div>
+                    </div>
+                    <div className="row price-cart">
+                      <p className="price-cart-p"> Shipping calculated at checkout</p>
+                      <NavLink to="/checkout" className="pe-3">
+                        <button className="check-out btn btn-outline-dark py-2">Check out</button>
+                      </NavLink>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Offcanvas.Body>
+          </>
+        ) : (
+          <Offcanvas.Body className="mt-3">
+            <div className="cart-empty">
+              <h3 className="mb-0">Your cart is empty</h3>
+              <NavLink to="/styles" onClick={onHide} className="continue-shopping">
+                <h3 className="mb-0">Continue shopping</h3>
+              </NavLink>
+            </div>
+          </Offcanvas.Body>
+        )}
+      </div>
+    </Offcanvas>
   );
 }
 

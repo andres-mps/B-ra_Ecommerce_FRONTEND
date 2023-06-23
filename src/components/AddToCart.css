@@ -29,13 +29,13 @@
   width: 100vw !important;
 }
 
-.tittle-cart {
+.title-cart {
   font-family: var(--font-heading-light);
   font-size: 1.8rem;
   opacity: 0.8;
 }
 
-.subtittle-cart {
+.subtitle-cart {
   font-family: var(--font-heading-light);
   font-size: 0.9rem;
   opacity: 0.8;
