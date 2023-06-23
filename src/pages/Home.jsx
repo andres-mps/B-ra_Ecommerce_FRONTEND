@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 function Home() {
   const [products, setProducts] = useState([]);
   const [hoveredImage, setHoveredImage] = useState(
-    "https://cdn.shopify.com/s/files/1/0266/3704/1767/collections/hoppy-beers.jpg?v=1675247646&width=750",
+    "http://localhost:5173/public/img//home/home_stylesList.webp",
   );
   const [hoveredCategory, setHoveredCategory] = useState(null);
   useEffect(() => {
@@ -36,13 +36,13 @@ function Home() {
         // },
       });
       setCategories(response.data);
-      //console.log(response.data);
+      console.log(response.data);
     }
     getCategories();
   }, []);
 
   const handleHover = (categoryName, categoryImage) => {
-    setHoveredImage(categoryImage);
+    setHoveredImage(`http://localhost:5173/public/img//home/${categoryImage}`);
     setHoveredCategory(categoryName);
   };
 
