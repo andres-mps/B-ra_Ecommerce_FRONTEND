@@ -8,6 +8,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "./Navbar.css";
 import { openDropdown, closeDropdown } from "../redux/DropdownSlice";
+import { logOut } from "../redux/userSlice";
 
 function NavbarBeer() {
   const dispatch = useDispatch();
@@ -73,18 +74,24 @@ function NavbarBeer() {
               </Offcanvas.Header>
               <Offcanvas.Body className="p-0">
                 <Nav className="justify-content-start flex-grow-1">
-                  <NavLink to="/styles " className="nav-link ms-4" onClick={() => dropdownClose()}>
-                    BEER
-                  </NavLink>
-                  <NavLink
-                    to="/about-this-project"
-                    className="nav-link ms-4"
-                    onClick={() => dropdownClose()}
-                  >
-                    ABOUT THIS PROJECT
-                  </NavLink>
-                  <div className="login-container">
-                    {loggedUser === undefined ? (
+                  <div>
+                    <NavLink
+                      to="/styles "
+                      className="nav-link ms-4"
+                      onClick={() => dropdownClose()}
+                    >
+                      BEER
+                    </NavLink>
+                    <NavLink
+                      to="/about-this-project"
+                      className="nav-link ms-4"
+                      onClick={() => dropdownClose()}
+                    >
+                      ABOUT THIS PROJECT
+                    </NavLink>
+                  </div>
+                  {loggedUser === undefined ? (
+                    <div className="login-container">
                       <NavLink
                         to="/login"
                         className="nav-link mb-3 ms-4"
@@ -109,32 +116,35 @@ function NavbarBeer() {
                         </svg>
                         <span className="nav-login">Log in</span>
                       </NavLink>
-                    ) : (
-                      <div>
-                        <NavLink
-                          to=""
-                          className="nav-link mb-3 ms-4"
-                          onClick={() => dropdownClose()}
-                        >
-                          Your Profile
-                        </NavLink>
-                        <NavLink
-                          to="/orders"
-                          className="nav-link mb-3 ms-4"
-                          onClick={() => dropdownClose()}
-                        >
-                          Your Orders
-                        </NavLink>
-                        <NavLink
-                          to=""
-                          className="nav-link mb-3 ms-4"
-                          onClick={() => dropdownClose()}
-                        >
-                          LogOut
-                        </NavLink>
-                      </div>
-                    )}
-                  </div>
+                    </div>
+                  ) : (
+                    <div className="navbar-user-buttons-container">
+                      <NavLink
+                        to="/home"
+                        className="nav-link mb-3 ms-4"
+                        onClick={() => dropdownClose()}
+                      >
+                        <i class="fas fa-user me-3"></i>
+                        {`${loggedUser.firstname} ${loggedUser.lastname}`}
+                      </NavLink>
+                      <NavLink
+                        to="/orders"
+                        className="nav-link mb-3 ms-4"
+                        onClick={() => dropdownClose()}
+                      >
+                        <i class="fas fa-history me-3"></i>
+                        Your Orders
+                      </NavLink>
+                      <NavLink
+                        to="/home"
+                        className="nav-link mb-3 ms-4"
+                        onClick={() => dispatch(logOut()) && dropdownClose()}
+                      >
+                        <i class="fas fa-sign-out-alt me-3"></i>
+                        LogOut
+                      </NavLink>
+                    </div>
+                  )}
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
@@ -165,10 +175,10 @@ function NavbarBeer() {
                     title={`${loggedUser.firstname} ${loggedUser.lastname}`}
                     menuVariant="dark"
                   >
-                    <NavDropdown.Item href="#action/3.1">Your Profile</NavDropdown.Item>
+                    <NavDropdown.Item href="#">Your Profile</NavDropdown.Item>
                     <NavDropdown.Item href="/orders">Your Orders</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">LogOut</NavDropdown.Item>
+                    <NavDropdown.Item onClick={() => dispatch(logOut())}>LogOut</NavDropdown.Item>
                   </NavDropdown>
                 )}
               </div>

@@ -98,7 +98,12 @@ function Home() {
           </div>
           <div
             className="col-md-6 d-md-flex flex-md-column justify-content-md-center order-md-2"
-            style={{ paddingRight: "100px", paddingLeft: "100px" }}
+            style={{
+              paddingRight: "100px",
+              paddingLeft: "100px",
+              paddingTop: "30px",
+              paddingBottom: "30px",
+            }}
           >
             <div className="text-left">
               <h2
@@ -144,7 +149,12 @@ function Home() {
           </div>
           <div
             className="col-md-6 d-md-flex flex-md-column justify-content-md-center order-md-1"
-            style={{ paddingRight: "100px", paddingLeft: "100px" }}
+            style={{
+              paddingRight: "100px",
+              paddingLeft: "100px",
+              paddingTop: "30px",
+              paddingBottom: "30px",
+            }}
           >
             <div className="text-left">
               <h2
@@ -190,7 +200,12 @@ function Home() {
           </div>
           <div
             className="col-md-6 d-md-flex flex-md-column justify-content-md-center order-md-2"
-            style={{ paddingRight: "100px", paddingLeft: "100px" }}
+            style={{
+              paddingRight: "100px",
+              paddingLeft: "100px",
+              marginTop: "30px",
+              marginBottom: "30px",
+            }}
           >
             <div className="text-left">
               <h2
