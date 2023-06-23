@@ -29,15 +29,29 @@ function AddToCart({ product, qty, setCount, hasStock }) {
 
   return hasStock ? (
     <div>
-      <button onClick={handleSubmit} className="add-to-cart btn btn-outline-dark py-2">
-        Add to cart
-      </button>
-      <Cart show={cart.isOpen} onHide={handleClose} />
+      {cart.products.some(
+        (cartProduct) => cartProduct.id === product.id && cartProduct.qty >= cartProduct.stock,
+      ) ? (
+        <button className="add-to-cart btn btn-outline-dark py-2">No stock to add</button>
+      ) : (
+        <div>
+          {product.qty >= product.stock ? (
+            <button className="add-to-cart btn btn-outline-dark py-2">No stock to add</button>
+          ) : (
+            <div>
+              <button onClick={handleSubmit} className="add-to-cart btn btn-outline-dark py-2">
+                Add to cart
+              </button>
+              <Cart show={cart.isOpen} onHide={handleClose} />
+            </div>
+          )}
+        </div>
+      )}
     </div>
   ) : (
     <div>
       {isLoading ? (
-        <button className="add-to-cart btn btn-outline-dark py-2">Thanks! check your email</button>
+        <button className="add-to-cart btn btn-outline-dark py-2">Thanks! Check your email</button>
       ) : (
         <button
           className="add-to-cart btn btn-outline-dark py-2"

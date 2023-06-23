@@ -48,12 +48,8 @@ function Style() {
       const response = await axios({
         method: "GET",
         url: `http://localhost:3000/categories`,
-        // headers: {
-        //   Authorization: `Bearer ${token}`,
-        // },
       });
       setCategories(response.data);
-      //console.log(response.data);
     }
     getCategories();
   }, []);
@@ -71,10 +67,14 @@ function Style() {
               return (
                 <NavLink
                   key={category.id}
-                  className="text-decoration-none"
+                  className="text-decoration-none selected"
                   to={`/styles/${category.slug}`}
                 >
-                  <h2 className="styles-list-header">{category.name}</h2>
+                  {category.slug === params.style ? (
+                    <h2 className="selected-styles-list-header">{category.name}</h2>
+                  ) : (
+                    <h2 className="styles-list-header">{category.name}</h2>
+                  )}
                 </NavLink>
               );
             })

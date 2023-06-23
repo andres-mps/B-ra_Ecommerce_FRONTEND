@@ -1,25 +1,31 @@
 import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import Product from "../components/Product";
 import AddToCart from "../components/AddToCart";
 import { NavLink, useParams } from "react-router-dom";
 import "./ProductDetail.css";
 
 function ProductDetail() {
+  const [featured, setFeatured] = useState([]);
+  const [product, setProduct] = useState("");
+  const params = useParams();
+  const productsInCart = useSelector((state) => state.cart.products);
+  const selectedProduct = productsInCart.find((productInCart) => productInCart.id === product.id);
+
   const [count, setCount] = useState(1);
   const increment = () => {
-    setCount(count + 1);
+    if (count < product.stock - selectedProduct.qty) {
+      setCount(count + 1);
+    }
   };
+
   const decrement = () => {
     if (count > 1) {
       setCount(count - 1);
     }
   };
-
-  const [featured, setFeatured] = useState([]);
-  const [product, setProduct] = useState("");
-  const params = useParams();
 
   useEffect(() => {
     async function getProductInfo() {
@@ -45,7 +51,7 @@ function ProductDetail() {
           <div id="main-row" className="row">
             <div className="col-12 col-md-7">
               <div className="product-detail-img-container">
-                <NavLink to="/home">
+                <NavLink to="/styles">
                   {/* Botón "BACK" vista desktop  */}
                   <button className="back-button  d-none d-xl-inline-block btn btn-dark py-2">
                     <i className="bi bi-arrow-left"></i> Back

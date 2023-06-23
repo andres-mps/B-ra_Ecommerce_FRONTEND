@@ -7,6 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "./Navbar.css";
+import { openDropdown, closeDropdown } from "../redux/DropdownSlice";
 
 function NavbarBeer() {
   const dispatch = useDispatch();
@@ -22,6 +23,14 @@ function NavbarBeer() {
 
   function handleOpen() {
     dispatch(openCart(true));
+  }
+
+  const isDropdownOpen = useSelector((state) => state.dropdown.isOpen);
+  function dropdownOpen() {
+    dispatch(openDropdown());
+  }
+  function dropdownClose() {
+    dispatch(closeDropdown());
   }
 
   return (
@@ -41,16 +50,19 @@ function NavbarBeer() {
               aria-controls={`offcanvasNavbar-expand-${expand}`}
               className="collapse-button"
               style={{ color: "transparent" }}
+              onClick={() => dropdownOpen()}
             />
 
             <Navbar.Offcanvas
+              show={isDropdownOpen}
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="start"
+              onHide={() => dropdownClose()}
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  <NavLink to="/home">
+                  <NavLink to="/home" onClick={() => dropdownClose()}>
                     <img
                       src="/public/img/logo/tool_horizontal_logo_19.webp"
                       alt="Logo"
@@ -61,15 +73,23 @@ function NavbarBeer() {
               </Offcanvas.Header>
               <Offcanvas.Body className="p-0">
                 <Nav className="justify-content-start flex-grow-1">
-                  <NavLink to="/styles " className="nav-link ms-4">
+                  <NavLink to="/styles " className="nav-link ms-4" onClick={() => dropdownClose()}>
                     BEER
                   </NavLink>
-                  <NavLink to="/about-this-project" className="nav-link ms-4">
+                  <NavLink
+                    to="/about-this-project"
+                    className="nav-link ms-4"
+                    onClick={() => dropdownClose()}
+                  >
                     ABOUT THIS PROJECT
                   </NavLink>
                   <div className="login-container">
                     {loggedUser === undefined ? (
-                      <NavLink to="/login" className="nav-link mb-3 ms-4">
+                      <NavLink
+                        to="/login"
+                        className="nav-link mb-3 ms-4"
+                        onClick={() => dropdownClose()}
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           aria-hidden="true"
@@ -91,13 +111,25 @@ function NavbarBeer() {
                       </NavLink>
                     ) : (
                       <div>
-                        <NavLink to="" className="nav-link mb-3 ms-4">
+                        <NavLink
+                          to=""
+                          className="nav-link mb-3 ms-4"
+                          onClick={() => dropdownClose()}
+                        >
                           Your Profile
                         </NavLink>
-                        <NavLink to="/orders" className="nav-link mb-3 ms-4">
+                        <NavLink
+                          to="/orders"
+                          className="nav-link mb-3 ms-4"
+                          onClick={() => dropdownClose()}
+                        >
                           Your Orders
                         </NavLink>
-                        <NavLink to="" className="nav-link mb-3 ms-4">
+                        <NavLink
+                          to=""
+                          className="nav-link mb-3 ms-4"
+                          onClick={() => dropdownClose()}
+                        >
                           LogOut
                         </NavLink>
                       </div>
@@ -143,7 +175,7 @@ function NavbarBeer() {
               <div className="nav-icons">
                 <span onClick={handleOpen}>
                   <svg
-                    class="icon icon-cart"
+                    className="icon icon-cart"
                     aria-hidden="true"
                     focusable="false"
                     role="presentation"
@@ -153,7 +185,7 @@ function NavbarBeer() {
                   >
                     <path
                       fill="currentColor"
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M15.6 6.3V5c0-2-1.6-3.6-3.6-3.6S8.4 3 8.4 5v1.3H4.2v16.3h15.6V6.3h-4.2zM10.4 5c0-.9.7-1.6 1.6-1.6.9 0 1.6.7 1.6 1.6v1.3h-3.2V5zm7.4 15.6H6.2V8.3H17.8v12.3z"
                     ></path>
                   </svg>
