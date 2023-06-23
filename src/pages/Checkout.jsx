@@ -215,13 +215,6 @@ function Checkout() {
                 <span className="checkout-divider-text">or</span>
                 <span className="checkout-divider-line"></span>
               </div>
-              {!token && (
-                <div className="m-0 text-end">
-                  <p className="fs-6">
-                    Already have an account? <NavLink to="/login">Log in</NavLink>
-                  </p>
-                </div>
-              )}
               <form action="" onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">
@@ -312,13 +305,26 @@ function Checkout() {
                   {err}
                 </div>
               )}
-              <span className="d-inline-block mt-1">
-                <i className="fas fa-lock me-3"></i>Payment details stored in plain text
-              </span>
-              <div className="mt-5">
-                <NavLink id="return-to-cart" to={-1} onClick={handleOpen}>
-                  ← Return to cart
-                </NavLink>
+              <div className="row">
+                <div className="col-lg-6 order-lg-2">
+                  {token === undefined && (
+                    <div className="m-0 text-lg-end">
+                      <p className="fs-6">
+                        Already have an account? <NavLink to="/login">Log in</NavLink>
+                      </p>
+                    </div>
+                  )}
+                </div>
+                <div className="col-lg-6 order-lg-1">
+                  <span className="d-inline-block mt-1">
+                    <i className="fas fa-lock me-3"></i>Payment details stored in plain text
+                  </span>
+                  <div className="mt-2">
+                    <NavLink id="return-to-cart" to={-1} onClick={handleOpen}>
+                      ← Return to cart
+                    </NavLink>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

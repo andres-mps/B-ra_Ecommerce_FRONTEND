@@ -75,7 +75,7 @@
 
 .checkout-apple-pay-button {
   display: inline-block;
-  background-color: black;
+  background-color: var(--color-background-dark);
   color: white;
   width: 100%;
   text-align: center;
@@ -85,20 +85,22 @@
 
 .checkout-pay-button {
   display: inline-block;
-  background-color: var(--color-background-secondary);
-  color: var(--color-background-dark);
+  background-color: var(--color-background-dark);
+  color: white;
   width: 100%;
   text-align: center;
   border-radius: 10px;
   font-size: 1.5rem;
   border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .checkout-divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px 0 0 10px;
+  margin: 20px 0 0 20px;
 }
 
 .checkout-divider-line {
