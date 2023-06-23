@@ -27,11 +27,11 @@ function Order({ order }) {
           aria-controls="example-collapse-text"
           aria-expanded={open}
         >
-          <div className="row">
-            <div className="col-3">
+          <div className="row text-start text-sm-center">
+            <div className="col-12 col-sm-3">
               <h5 className="card-title bold-font">Order Id: {order.id}</h5>
             </div>
-            <div className="col-3">
+            <div className="col-12 col-sm-3">
               <p>
                 Date placed{" "}
                 {format(new Date(order.createdAt), "dd MMM yyyy", {
@@ -39,12 +39,12 @@ function Order({ order }) {
                 })}
               </p>
             </div>
-            <div className="col-3">
+            <div className="col-12 col-sm-3">
               <p>
                 {statusIcons()} {order.status}
               </p>
             </div>
-            <div className="col-3 text-end bold-font">
+            <div className="col-12 col-sm-3 text-end bold-font">
               <h5>Total: ${order.totalAmount}</h5>
             </div>
           </div>
@@ -66,9 +66,7 @@ function Order({ order }) {
                     <div className="card-body">
                       <h5 className="card-title bold-font">{product.name}</h5>
                       <p className="card-text font">{product.description}</p>
-                      <p className="card-text light-font">
-                        Precio unitario: ${product.price}
-                      </p>
+                      <p className="card-text light-font">Precio unitario: ${product.price}</p>
                       <p className="card-text light-font">Cant: {product.qty}</p>
                     </div>
                   </div>
