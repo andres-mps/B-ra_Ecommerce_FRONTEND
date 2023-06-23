@@ -5,7 +5,7 @@ import { Button, Collapse, Form } from "react-bootstrap";
 import CheckoutItems from "../components/CheckoutItems";
 import { useSelector, useDispatch } from "react-redux";
 import { Tooltip } from "antd";
-import { closeCart, clearCart, openCart } from "../redux/cartSlice";
+import { clearCart, openCart } from "../redux/cartSlice";
 import axios from "axios";
 
 function Checkout() {
@@ -45,7 +45,6 @@ function Checkout() {
     });
     setTaxes(Math.round(subTotal * 0.09 * 100) / 100);
     setTotal(taxes + subTotal);
-    dispatch(closeCart(false));
   }, [products, taxes, total]);
 
   async function handleSubmit(event) {

@@ -14,7 +14,7 @@ function Cart({ show, onHide }) {
   function calcCartSubtotalPrice() {
     const productPrice = productsInCart.map((product) => product.price * product.qty);
     const subtotalPrice = productPrice.reduce((acc, price) => acc + price, 0);
-    return subtotalPrice;
+    return Math.round(subtotalPrice * 100) / 100;
   }
 
   return (
@@ -53,7 +53,9 @@ function Cart({ show, onHide }) {
                     <div className="row price-cart">
                       <p className="price-cart-p"> Shipping calculated at checkout</p>
                       <NavLink to="/checkout" className="pe-3">
-                        <button className="check-out btn btn-outline-dark py-2">Check out</button>
+                        <button className="check-out btn btn-outline-dark py-2" onClick={onHide}>
+                          Check out
+                        </button>
                       </NavLink>
                     </div>
                   </div>
