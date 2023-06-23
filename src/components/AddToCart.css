@@ -40,3 +40,19 @@
   font-size: 0.9rem;
   opacity: 0.8;
 }
+
+@media (max-width: 991px) {
+  .add-to-cart {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    display: block;
+    opacity: 1;
+  }
+}
+
+/* @media (max-width: 575px) {
+  .add-to-cart {
+
+  }
+} */
