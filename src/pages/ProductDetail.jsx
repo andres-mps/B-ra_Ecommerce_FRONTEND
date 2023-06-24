@@ -16,7 +16,7 @@ function ProductDetail() {
 
   const [count, setCount] = useState(1);
   const increment = () => {
-    if (count < product.stock - selectedProduct.qty) {
+    if (count < product.stock - (selectedProduct === undefined ? 0 : selectedProduct.qty)) {
       setCount(count + 1);
     }
   };

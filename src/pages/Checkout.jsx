@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Tooltip } from "antd";
 import { clearCart, openCart } from "../redux/cartSlice";
 import axios from "axios";
+import { nanoid } from "@reduxjs/toolkit";
 
 function Checkout() {
   const dispatch = useDispatch();
@@ -56,6 +57,7 @@ function Checkout() {
       method: "post",
       url: `http://localhost:3000/orders/${loggedUser.id}`,
       data: {
+        code: nanoid(10),
         products,
         subTotalPrice: subTotal,
         taxes,

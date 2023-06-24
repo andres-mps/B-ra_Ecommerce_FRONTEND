@@ -114,7 +114,7 @@ function NavbarBeer() {
                   ) : (
                     <div className="navbar-user-buttons-container">
                       <NavLink
-                        to="/home"
+                        to="/your-profile"
                         className="nav-link mb-3 ms-4"
                         onClick={() => dropdownClose()}
                       >
@@ -169,7 +169,7 @@ function NavbarBeer() {
                     title={`${loggedUser.firstname} ${loggedUser.lastname}`}
                     menuVariant="dark"
                   >
-                    <NavDropdown.Item href="#">Your Profile</NavDropdown.Item>
+                    <NavDropdown.Item href="/your-profile">Your Profile</NavDropdown.Item>
                     <NavDropdown.Item href="/orders">Your Orders</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item onClick={() => dispatch(logOut())}>LogOut</NavDropdown.Item>
