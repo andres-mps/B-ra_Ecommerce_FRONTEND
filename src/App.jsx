@@ -1,6 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
@@ -17,6 +18,28 @@ import OrderSuccess from "./pages/OrderSuccess";
 import YourProfile from "./pages/YourProfile";
 
 function App() {
+  const [isActive, setIsActive] = useState(true);
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      setIsActive(!document.hidden);
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    const updatePageTitle = () => {
+      document.title = isActive ? "To Øl" : "Don't leave!";
+    };
+    updatePageTitle();
+    return () => {
+      updatePageTitle();
+    };
+  }, [isActive]);
+
   return (
     <>
       <Routes>
