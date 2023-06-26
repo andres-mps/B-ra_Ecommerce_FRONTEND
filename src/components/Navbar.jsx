@@ -172,7 +172,11 @@ function NavbarBeer() {
                     <NavDropdown.Item href="/your-profile">Your Profile</NavDropdown.Item>
                     <NavDropdown.Item href="/orders">Your Orders</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item onClick={() => dispatch(logOut())}>LogOut</NavDropdown.Item>
+                    <NavDropdown.Item onClick={() => dispatch(logOut())}>
+                      <NavLink to="/home" className="text-decoration-none text-white">
+                        LogOut
+                      </NavLink>
+                    </NavDropdown.Item>
                   </NavDropdown>
                 )}
               </div>

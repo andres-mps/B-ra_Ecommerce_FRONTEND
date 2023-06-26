@@ -1,14 +1,43 @@
 import "./YourProfile.css";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
+import { updateData, logOut } from "../redux/userSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function YourProfile() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const token = useSelector((state) => state.user.token);
+
   const [checkProfile, setCheckProfile] = useState(true);
   const [checkAccount, setCheckAccount] = useState(false);
   const [checkSecurity, setCheckSecurity] = useState(false);
+
+  const [render, setRender] = useState(0);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setCheckProfile(true);
+    setCheckAccount(false);
+    setCheckSecurity(false);
+    setErr(null);
+    setPassword("");
+  }, [render]);
+
+  const notify = () =>
+    toast.warn("Sorry, this feature is still under development", {
+      position: "top-right",
+      autoClose: 4000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
 
   function handleCheck(checkWord) {
     setCheckProfile(false);
@@ -30,6 +59,7 @@ function YourProfile() {
   const [email, setEmail] = useState(userData.email);
   const [address, setAddress] = useState(userData.address);
   const [phone, setPhone] = useState(userData.phone);
+  const [password, setPassword] = useState("");
 
   const [err, setErr] = useState(null);
   async function handleProfileSubmit(event) {
@@ -37,9 +67,13 @@ function YourProfile() {
     const response = await axios({
       method: "patch",
       url: `http://localhost:3000/users/${userData.id}`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
       data: {
         firstname,
         lastname,
+        password,
         email,
         address,
         phone,
@@ -49,11 +83,31 @@ function YourProfile() {
       return setErr(response.data.message);
     }
     setErr(null);
-    return navigate("/your-profile");
+    setPassword("");
+    dispatch(updateData(response.data));
+    return setRender((state) => state + 1);
+  }
+
+  async function handleAccountSubmit(event) {
+    event.preventDefault();
+    const response = await axios({
+      method: "delete",
+      url: `http://localhost:3000/users/${userData.id}`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    if (response.data.err === "err") {
+      return setErr(response.data.message);
+    }
+    setErr(null);
+    dispatch(logOut());
+    return navigate("/home");
   }
 
   return (
     <>
+      <ToastContainer />
       <div className="container">
         <nav aria-label="breadcrumb" className="main-breadcrumb">
           <ol className="breadcrumb">
@@ -149,7 +203,7 @@ function YourProfile() {
                     </svg>
                     Security
                   </NavLink>
-                  <NavLink className="your-profile-category-titles">
+                  <NavLink onClick={notify} className="your-profile-category-titles">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -167,7 +221,7 @@ function YourProfile() {
                     </svg>
                     Notification
                   </NavLink>
-                  <NavLink className="your-profile-category-titles">
+                  <NavLink onClick={notify} className="your-profile-category-titles">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -191,8 +245,11 @@ function YourProfile() {
           </div>
           <div className="col-md-8">
             <div className="card mb-5 your-profile-background-color">
-              <div className="card-body your-profile-regular-font">
-                <div style={checkProfile ? { display: "block" } : { display: "none" }} id="profile">
+              <div className="card-body your-profile-regular-font d-flex flex-column gap-5">
+                <div
+                  className={`d-block ${checkProfile ? "d-md-block" : "d-md-none"}`}
+                  id="profile"
+                >
                   <h6 className="your-profile-bold-font">YOUR PROFILE INFORMATION</h6>
                   <hr />
                   <form onSubmit={handleProfileSubmit}>
@@ -285,95 +342,62 @@ function YourProfile() {
                     </div>
                   )}
                 </div>
-                <div style={checkAccount ? { display: "block" } : { display: "none" }} id="account">
-                  <h6>ACCOUNT SETTINGS</h6>
+                <div
+                  className={`d-block ${checkAccount ? "d-md-block" : "d-md-none"}`}
+                  id="account"
+                >
+                  <h6 className="your-profile-bold-font">ACCOUNT SETTINGS</h6>
                   <hr />
-                  <form>
-                    <div className="form-group">
-                      <label htmlFor="username">Username</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="username"
-                        aria-describedby="usernameHelp"
-                        placeholder="Enter your username"
-                        value="kennethvaldez"
-                      />
-                      <small id="usernameHelp" className="form-text text-muted">
-                        After changing your username, your old username becomes available htmlFor
-                        anyone else to claim.
-                      </small>
-                    </div>
-                    <hr />
+                  <form onSubmit={handleAccountSubmit}>
                     <div className="form-group">
                       <label className="d-block text-danger">Delete Account</label>
                       <p className="text-muted font-size-sm">
                         Once you delete your account, there is no going back. Please be certain.
                       </p>
                     </div>
-                    <button className="btn btn-danger" type="button">
+                    <button type="submit" className="btn btn-danger">
                       Delete Account
                     </button>
                   </form>
+                  {err && (
+                    <div class="text-danger mt-2 login-alert" role="alert">
+                      {err}
+                    </div>
+                  )}
                 </div>
                 <div
-                  style={checkSecurity ? { display: "block" } : { display: "none" }}
+                  className={`d-block ${checkSecurity ? "d-md-block" : "d-md-none"}`}
                   id="security"
                 >
                   <h6 className="your-profile-bold-font">SECURITY SETTINGS</h6>
                   <hr />
-                  <form>
+                  <form onSubmit={handleProfileSubmit}>
                     <div className="form-group">
                       <label className="d-block">Change Password</label>
+
                       <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Enter your old password"
-                      />
-                      <input type="text" className="form-control mt-1" placeholder="New password" />
-                      <input
-                        type="text"
+                        type="password"
                         className="form-control mt-1"
-                        placeholder="Confirm new password"
+                        placeholder="New password"
+                        value={password}
+                        onChange={(event) => {
+                          setPassword(event.target.value);
+                        }}
                       />
+                      <small id="fullNameHelp" className="form-text text-muted">
+                        Use a combination of letters, numbers, and special characters to create a
+                        robust password.
+                      </small>
                     </div>
+                    <button type="submit" className="btn btn-dark mt-3">
+                      Change Password
+                    </button>
                   </form>
-                  <hr />
-                  <form>
-                    <div className="form-group">
-                      <label className="d-block">Two Factor Authentication</label>
-                      <button className="btn btn-info" type="button">
-                        Enable two-factor authentication
-                      </button>
-                      <p className="small text-muted mt-2">
-                        Two-factor authentication adds an additional layer of security to your
-                        account by requiring more than just NavLink password to log in.
-                      </p>
+                  {err && (
+                    <div class="text-danger mt-2 login-alert" role="alert">
+                      {err}
                     </div>
-                  </form>
-                  <hr />
-                  <form>
-                    <div className="form-group mb-0">
-                      <label className="d-block">Sessions</label>
-                      <p className="font-size-sm text-secondary">
-                        This is NavLink list of devices that have logged into your account. Revoke
-                        any sessions that you do not recognize.
-                      </p>
-                      <ul className="list-group list-group-sm">
-                        <li className="list-group-item has-icon">
-                          <div>
-                            <h6 className="mb-0">San Francisco City 190.24.335.55</h6>
-                            <small className="text-muted">
-                              Your current session seen in United States
-                            </small>
-                          </div>
-                          <button className="btn btn-light btn-sm ml-auto" type="button">
-                            More info
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                  </form>
+                  )}
                 </div>
               </div>
             </div>

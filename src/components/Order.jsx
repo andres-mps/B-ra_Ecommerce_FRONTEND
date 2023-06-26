@@ -67,8 +67,8 @@ function Order({ order }) {
                     <div className="card-body">
                       <h5 className="card-title bold-font">{product.name}</h5>
                       <p className="card-text font">{product.description}</p>
-                      <p className="card-text light-font">Precio unitario: ${product.price}</p>
-                      <p className="card-text light-font">Cant: {product.qty}</p>
+                      <p className="card-text light-font">Unit price: USD {product.price}</p>
+                      <p className="card-text light-font">Quantity: {product.qty}</p>
                     </div>
                   </div>
                 </div>

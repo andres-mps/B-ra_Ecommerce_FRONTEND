@@ -13,9 +13,12 @@ const userSlice = createSlice({
     logOut(state, action) {
       return (state = {});
     },
+    updateData(state, action) {
+      state.userData = { ...state.userData, ...action.payload };
+    },
   },
 });
 
 const { actions, reducer } = userSlice;
-export const { setToken, ageGate, logOut } = actions;
+export const { setToken, ageGate, logOut, updateData } = actions;
 export default reducer;
