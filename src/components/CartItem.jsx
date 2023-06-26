@@ -13,7 +13,7 @@ function CartItem({ product }) {
           <p className="price-cart">{product.price}</p>
           <QuantityCounter qty={product.qty} id={product.id} product={product} />
         </div>
-        <div className="col-2 d-flex align-items-center justify-content-end">
+        <div className="col-2">
           <h3 className="price-cart">{Math.round(product.price * product.qty * 100) / 100} USD</h3>
         </div>
       </div>
