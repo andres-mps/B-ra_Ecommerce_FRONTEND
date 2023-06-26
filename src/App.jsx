@@ -2,6 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
@@ -16,8 +17,10 @@ import AgeGate from "./pages/AgeGate";
 import Error404 from "./pages/Error404";
 import OrderSuccess from "./pages/OrderSuccess";
 import YourProfile from "./pages/YourProfile";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
+  const token = useSelector((state) => state.user.token);
   const [isActive, setIsActive] = useState(true);
 
   useEffect(() => {
@@ -47,18 +50,39 @@ function App() {
           <Route path="home" element={<Home />} />
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
-          <Route path="orders" element={<YourOrders />} />
           <Route path="beers/:product" element={<ProductDetail />} />
           <Route path="styles" element={<Style />} />
           <Route path="styles/:style" element={<Style />} />
           <Route path="about-this-project" element={<AboutThisProject />} />
-          <Route path="your-profile" element={<YourProfile />} />
+          <Route
+            path="orders"
+            element={
+              <ProtectedRoute token={token} redirectPath="/home">
+                <YourOrders />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="your-profile"
+            element={
+              <ProtectedRoute token={token} redirectPath="/home">
+                <YourProfile />
+              </ProtectedRoute>
+            }
+          />
           <Route path="*" element={<Error404 />} />
         </Route>
 
         <Route path="age-gate" element={<AgeGate />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/order-success" element={<OrderSuccess />} />
+        <Route
+          path="/order-success"
+          element={
+            <ProtectedRoute token={token} redirectPath="/home">
+              <OrderSuccess />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
   );
