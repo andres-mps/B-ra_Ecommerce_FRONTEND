@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState } from "react";
-
+import { motion } from "framer-motion";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import CartItem from "./CartItem";
 import "./AddToCart.css";
