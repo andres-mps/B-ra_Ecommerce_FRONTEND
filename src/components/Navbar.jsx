@@ -9,6 +9,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import "./Navbar.css";
 import { openDropdown, closeDropdown } from "../redux/DropdownSlice";
 import { logOut } from "../redux/userSlice";
+import Cart from "./Cart";
 
 function NavbarBeer() {
   const dispatch = useDispatch();
@@ -205,6 +206,7 @@ function NavbarBeer() {
                 </span>
               </div>
             </div>
+            <Cart />
           </Container>
         </Navbar>
       ))}

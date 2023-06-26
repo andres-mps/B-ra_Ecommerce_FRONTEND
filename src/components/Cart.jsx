@@ -1,28 +1,33 @@
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useSelector, useDispatch } from "react-redux";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import CartItem from "./CartItem";
 import "./AddToCart.css";
+import { closeCart } from "../redux/cartSlice";
 
-function Cart({ show, onHide }) {
-  const [subTotal, setSubTotal] = useState(null);
+function Cart() {
+  const dispatch = useDispatch();
 
   const productsInCart = useSelector((state) => state.cart.products);
+  const isOpen = useSelector((state) => state.cart.isOpen);
 
   function calcCartSubtotalPrice() {
     const productPrice = productsInCart.map((product) => product.price * product.qty);
     const subtotalPrice = productPrice.reduce((acc, price) => acc + price, 0);
     return Math.round(subtotalPrice * 100) / 100;
   }
+
+  const handleClose = () => {
+    dispatch(closeCart(false));
+  };
+
   return (
     <Offcanvas
-      show={show}
-      onHide={onHide}
+      show={isOpen}
+      onHide={handleClose}
       placement="end"
       className="offcanvas-container custom-offcanvas p-4"
-      backdrop={false}
+      backdrop={true}
     >
       <Offcanvas.Header closeButton className="p-0">
         <h2 className="title-cart">Your cart</h2>
@@ -53,7 +58,10 @@ function Cart({ show, onHide }) {
                     <div className="row price-cart">
                       <p className="price-cart-p"> Shipping calculated at checkout</p>
                       <NavLink to="/checkout" className="pe-3">
-                        <button className="check-out btn btn-outline-dark py-2" onClick={onHide}>
+                        <button
+                          className="check-out btn btn-outline-dark py-2"
+                          onClick={handleClose}
+                        >
                           Check out
                         </button>
                       </NavLink>
@@ -67,7 +75,7 @@ function Cart({ show, onHide }) {
           <Offcanvas.Body className="mt-3">
             <div className="cart-empty">
               <h3 className="mb-0">Your cart is empty</h3>
-              <NavLink to="/styles" onClick={onHide} className="continue-shopping">
+              <NavLink to="/styles" onClick={handleClose} className="continue-shopping">
                 <h3 className="mb-0">Continue shopping</h3>
               </NavLink>
             </div>
