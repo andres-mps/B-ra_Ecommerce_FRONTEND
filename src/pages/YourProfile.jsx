@@ -23,7 +23,6 @@ function YourProfile() {
     setCheckProfile(true);
     setCheckAccount(false);
     setCheckSecurity(false);
-    setErr(null);
     setPassword("");
   }, [render]);
 
@@ -61,7 +60,10 @@ function YourProfile() {
   const [phone, setPhone] = useState(userData.phone);
   const [password, setPassword] = useState("");
 
-  const [err, setErr] = useState(null);
+  const [profileErr, setProfileErr] = useState(null);
+  const [accountErr, setAccountErr] = useState(null);
+  const [securityErr, setSecurityErr] = useState(null);
+
   async function handleProfileSubmit(event) {
     event.preventDefault();
     const response = await axios({
@@ -73,17 +75,15 @@ function YourProfile() {
       data: {
         firstname,
         lastname,
-        password,
         email,
         address,
         phone,
       },
     });
     if (response.data.err === "err") {
-      return setErr(response.data.message);
+      return setProfileErr(response.data.message);
     }
-    setErr(null);
-    setPassword("");
+    setProfileErr(null);
     dispatch(updateData(response.data));
     return setRender((state) => state + 1);
   }
@@ -98,13 +98,32 @@ function YourProfile() {
       },
     });
     if (response.data.err === "err") {
-      return setErr(response.data.message);
+      return setAccountErr(response.data.message);
     }
-    setErr(null);
+    setAccountErr(null);
     dispatch(logOut());
     return navigate("/home");
   }
 
+  async function handleSecuritySubmit(event) {
+    event.preventDefault();
+    const response = await axios({
+      method: "patch",
+      url: `http://localhost:3000/users/${userData.id}`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      data: {
+        password,
+      },
+    });
+    if (response.data.err === "err") {
+      return setSecurityErr(response.data.message);
+    }
+    setSecurityErr(null);
+    setPassword("");
+    return setRender((state) => state + 1);
+  }
   return (
     <>
       <ToastContainer />
@@ -336,9 +355,9 @@ function YourProfile() {
                       Update Profile
                     </button>
                   </form>
-                  {err && (
+                  {profileErr && (
                     <div class="text-danger mt-2 login-alert" role="alert">
-                      {err}
+                      {profileErr}
                     </div>
                   )}
                 </div>
@@ -359,9 +378,9 @@ function YourProfile() {
                       Delete Account
                     </button>
                   </form>
-                  {err && (
+                  {accountErr && (
                     <div class="text-danger mt-2 login-alert" role="alert">
-                      {err}
+                      {accountErr}
                     </div>
                   )}
                 </div>
@@ -371,7 +390,7 @@ function YourProfile() {
                 >
                   <h6 className="your-profile-bold-font">SECURITY SETTINGS</h6>
                   <hr />
-                  <form onSubmit={handleProfileSubmit}>
+                  <form onSubmit={handleSecuritySubmit}>
                     <div className="form-group">
                       <label className="d-block">Change Password</label>
 
@@ -393,9 +412,9 @@ function YourProfile() {
                       Change Password
                     </button>
                   </form>
-                  {err && (
+                  {securityErr && (
                     <div class="text-danger mt-2 login-alert" role="alert">
-                      {err}
+                      {securityErr}
                     </div>
                   )}
                 </div>
