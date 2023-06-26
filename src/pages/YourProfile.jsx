@@ -1,7 +1,57 @@
 import "./YourProfile.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import axios from "axios";
 
 function YourProfile() {
+  const navigate = useNavigate();
+  const [checkProfile, setCheckProfile] = useState(true);
+  const [checkAccount, setCheckAccount] = useState(false);
+  const [checkSecurity, setCheckSecurity] = useState(false);
+
+  function handleCheck(checkWord) {
+    setCheckProfile(false);
+    setCheckAccount(false);
+    setCheckSecurity(false);
+    if (checkWord === "Profile") {
+      setCheckProfile(true);
+    }
+    if (checkWord === "Account") {
+      setCheckAccount(true);
+    }
+    if (checkWord === "Security") {
+      setCheckSecurity(true);
+    }
+  }
+  const userData = useSelector((state) => state.user.userData);
+  const [firstname, setFirstname] = useState(userData.firstname);
+  const [lastname, setLastname] = useState(userData.lastname);
+  const [email, setEmail] = useState(userData.email);
+  const [address, setAddress] = useState(userData.address);
+  const [phone, setPhone] = useState(userData.phone);
+
+  const [err, setErr] = useState(null);
+  async function handleProfileSubmit(event) {
+    event.preventDefault();
+    const response = await axios({
+      method: "patch",
+      url: `http://localhost:3000/users/${userData.id}`,
+      data: {
+        firstname,
+        lastname,
+        email,
+        address,
+        phone,
+      },
+    });
+    if (response.data.err === "err") {
+      return setErr(response.data.message);
+    }
+    setErr(null);
+    return navigate("/your-profile");
+  }
+
   return (
     <>
       <div className="container">
@@ -19,10 +69,18 @@ function YourProfile() {
 
         <div className="row gutters-sm">
           <div className="col-md-4 d-none d-md-block">
-            <div className="card p-2">
+            <div className="card p-2 your-profile-background-color">
               <div className="card-body">
                 <nav className="nav flex-column nav-pills nav-gap-y-1">
-                  <NavLink className="your-profile-category-titles">
+                  <NavLink
+                    onClick={() => handleCheck("Profile")}
+                    className="your-profile-category-titles"
+                    style={
+                      checkProfile
+                        ? { backgroundColor: "#121212", color: "rgb(255, 255, 255)" }
+                        : null
+                    }
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -40,7 +98,15 @@ function YourProfile() {
                     </svg>
                     Profile Information
                   </NavLink>
-                  <NavLink className="your-profile-category-titles">
+                  <NavLink
+                    onClick={() => handleCheck("Account")}
+                    className="your-profile-category-titles"
+                    style={
+                      checkAccount
+                        ? { backgroundColor: "#121212", color: "rgb(255, 255, 255)" }
+                        : null
+                    }
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -58,7 +124,15 @@ function YourProfile() {
                     </svg>
                     Account Settings
                   </NavLink>
-                  <NavLink className="your-profile-category-titles">
+                  <NavLink
+                    onClick={() => handleCheck("Security")}
+                    className="your-profile-category-titles"
+                    style={
+                      checkSecurity
+                        ? { backgroundColor: "#121212", color: "rgb(255, 255, 255)" }
+                        : null
+                    }
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -116,85 +190,107 @@ function YourProfile() {
             </div>
           </div>
           <div className="col-md-8">
-            <div className="card mb-5">
+            <div className="card mb-5 your-profile-background-color">
               <div className="card-body your-profile-regular-font">
-                <div className="" id="profile">
+                <div style={checkProfile ? { display: "block" } : { display: "none" }} id="profile">
                   <h6 className="your-profile-bold-font">YOUR PROFILE INFORMATION</h6>
                   <hr />
-                  <form>
+                  <form onSubmit={handleProfileSubmit}>
                     <div className="form-group mb-2">
-                      <label for="fullName">First name</label>
+                      <label htmlFor="firstname">First name</label>
                       <input
                         type="text"
                         className="form-control"
-                        id="fullName"
+                        id="firstname"
                         aria-describedby="fullNameHelp"
-                        value=""
+                        required
+                        value={firstname}
+                        onChange={(event) => {
+                          setFirstname(event.target.value);
+                        }}
                       />
                       <small id="fullNameHelp" className="form-text text-muted">
-                        Your name may appear around here where you are mentioned. You can change or
-                        remove it at any time.
+                        Your first name may appear around here where you are mentioned. You can
+                        change or remove it at any time.
                       </small>
                     </div>
                     <div className="form-group mb-2">
-                      <label for="fullName">Last name</label>
+                      <label htmlFor="lastname">Last name</label>
                       <input
                         type="text"
                         className="form-control"
-                        id="fullName"
+                        id="lastname"
                         aria-describedby="fullNameHelp"
-                        value=""
+                        required
+                        value={lastname}
+                        onChange={(event) => {
+                          setLastname(event.target.value);
+                        }}
                       />
                       <small id="fullNameHelp" className="form-text text-muted">
-                        Your lastname may appear around here where you are mentioned. You can change
-                        or remove it at any time.
+                        Your last name may appear around here where you are mentioned. You can
+                        change or remove it at any time.
                       </small>
                     </div>
                     <div className="form-group mb-2">
-                      <label for="fullName">Email</label>
+                      <label htmlFor="email">Email</label>
                       <input
                         type="email"
                         className="form-control"
-                        id="fullName"
+                        id="email"
                         aria-describedby="fullNameHelp"
-                        value=""
+                        required
+                        value={email}
+                        onChange={(event) => {
+                          setEmail(event.target.value);
+                        }}
                       />
                     </div>
                     <div className="form-group mb-2">
-                      <label for="fullName">Address</label>
+                      <label htmlFor="address">Address</label>
                       <input
                         type="text"
                         className="form-control"
-                        id="fullName"
+                        id="address"
                         aria-describedby="fullNameHelp"
-                        value=""
+                        placeholder={!address && "update your address"}
+                        value={address}
+                        onChange={(event) => {
+                          setAddress(event.target.value);
+                        }}
                       />
                     </div>
                     <div className="form-group mb-3">
-                      <label for="fullName">Phone</label>
+                      <label htmlFor="fullName">Phone</label>
                       <input
                         type="text"
                         className="form-control"
                         id="fullName"
                         aria-describedby="fullNameHelp"
-                        value=""
+                        placeholder={!phone && "update your phone"}
+                        value={phone}
+                        onChange={(event) => {
+                          setPhone(event.target.value);
+                        }}
                       />
                     </div>
 
-                    <button type="button" className="btn btn-primary me-3">
+                    <button type="submit" className="btn btn-primary me-3">
                       Update Profile
                     </button>
-                    <button type="reset" className="btn btn-light">
-                      Reset Changes
-                    </button>
                   </form>
+                  {err && (
+                    <div class="text-danger mt-2 login-alert" role="alert">
+                      {err}
+                    </div>
+                  )}
                 </div>
-                <div className="d-none" id="account">
+                <div style={checkAccount ? { display: "block" } : { display: "none" }} id="account">
                   <h6>ACCOUNT SETTINGS</h6>
                   <hr />
                   <form>
                     <div className="form-group">
-                      <label for="username">Username</label>
+                      <label htmlFor="username">Username</label>
                       <input
                         type="text"
                         className="form-control"
@@ -204,8 +300,8 @@ function YourProfile() {
                         value="kennethvaldez"
                       />
                       <small id="usernameHelp" className="form-text text-muted">
-                        After changing your username, your old username becomes available for anyone
-                        else to claim.
+                        After changing your username, your old username becomes available htmlFor
+                        anyone else to claim.
                       </small>
                     </div>
                     <hr />
@@ -220,7 +316,10 @@ function YourProfile() {
                     </button>
                   </form>
                 </div>
-                <div className="d-none" id="security">
+                <div
+                  style={checkSecurity ? { display: "block" } : { display: "none" }}
+                  id="security"
+                >
                   <h6 className="your-profile-bold-font">SECURITY SETTINGS</h6>
                   <hr />
                   <form>
