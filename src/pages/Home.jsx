@@ -36,7 +36,7 @@ function Home() {
         // },
       });
       setCategories(response.data);
-      console.log(response.data);
+      //console.log(response.data);
     }
     getCategories();
   }, []);

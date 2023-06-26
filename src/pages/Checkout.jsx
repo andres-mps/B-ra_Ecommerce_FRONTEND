@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./Checkout.css";
 import { Button, Collapse, Form } from "react-bootstrap";
@@ -38,8 +38,11 @@ function Checkout() {
   const [open, setOpen] = useState(false);
   const [err, setErr] = useState(null);
 
+  const [direccionAnterior, setDireccionAnterior] = useState("");
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    setDireccionAnterior(location.pathname);
     setSubTotal(0);
     products.map((product) => {
       setSubTotal((prevState) => prevState + product.price * product.qty);
@@ -312,7 +315,15 @@ function Checkout() {
                   {token === undefined && (
                     <div className="m-0 text-lg-end">
                       <p className="fs-6">
-                        Already have an account? <NavLink to="/login">Log in</NavLink>
+                        Already have an account?{" "}
+                        <span
+                          onClick={() => {
+                            navigate("/login", { state: { direccionAnterior } });
+                          }}
+                          className="checkout-span-login"
+                        >
+                          Log in
+                        </span>
                       </p>
                     </div>
                   )}
