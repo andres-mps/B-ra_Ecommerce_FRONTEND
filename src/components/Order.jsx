@@ -29,7 +29,7 @@ function Order({ order }) {
         >
           <div className="row text-start text-sm-center">
             <div className="col-12 col-sm-3">
-              <h5 className="card-title bold-font">Order Id: {order.id}</h5>
+              <h5 className="card-title bold-font">Order: {order.code}</h5>
             </div>
             <div className="col-12 col-sm-3">
               <p>

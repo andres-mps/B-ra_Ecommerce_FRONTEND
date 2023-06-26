@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setToken } from "../redux/userSlice";
 import axios from "axios";
-import { useNavigate, NavLink } from "react-router-dom";
+import { useNavigate, NavLink, useLocation } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector((state) => state.user);
+  const location = useLocation();
+
+  const direccionAnterior = location.state !== null ? location.state.direccionAnterior : null;
 
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
@@ -27,7 +29,14 @@ function Login() {
     if (response.data === "Credenciales incorrectas") {
       return setErr(response.data);
     }
-    return response.data && dispatch(setToken(response.data)) && navigate(-1);
+    dispatch(setToken(response.data));
+    if (direccionAnterior === "/register") {
+      return navigate("/home");
+    }
+    if (direccionAnterior === "/checkout") {
+      return navigate("/checkout");
+    }
+    return navigate(-1);
   }
 
   return (
@@ -72,9 +81,17 @@ function Login() {
               </div>
             )}
             <div>
-              <NavLink id="login-link" to="/register">
-                Don't have an account? Sign up
-              </NavLink>
+              <p>
+                Don't have an account?
+                <span
+                  className="login-span ms-2"
+                  onClick={() => {
+                    navigate("/register", { state: { direccionAnterior } });
+                  }}
+                >
+                  Sign up
+                </span>
+              </p>
             </div>
           </form>
         </div>

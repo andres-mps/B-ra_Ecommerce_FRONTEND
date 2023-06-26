@@ -51,8 +51,8 @@
   }
 }
 
-/* @media (max-width: 575px) {
+@media (max-width: 575px) {
   .add-to-cart {
-
+    font-size: calc(0.9 * 4vw);
   }
-} */
+}

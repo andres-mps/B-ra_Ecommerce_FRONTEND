@@ -158,6 +158,14 @@
   }
 }
 
+.checkout-span-login {
+  color: blue;
+}
+
+.checkout-span-login:hover {
+  text-decoration: underline;
+}
+
 @media (min-width: 767.99px) {
   .checkout-count-section {
     margin-left: 0;

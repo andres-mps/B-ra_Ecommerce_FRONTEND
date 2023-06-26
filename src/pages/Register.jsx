@@ -1,15 +1,23 @@
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import "./Register.css";
 import axios from "axios";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 function Register() {
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
   const [firstnameValue, setFirstnameValue] = useState("");
   const [lastnameValue, setLastnameValue] = useState("");
+  const [err, setErr] = useState("");
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const direccionAnterior =
+    location.state !== null
+      ? location.state.direccionAnterior !== null
+        ? location.state.direccionAnterior
+        : location.pathname
+      : location.pathname;
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -23,7 +31,11 @@ function Register() {
         password: passwordValue,
       },
     });
-    navigate("/login");
+    if (register.data.err === "err") {
+      return setErr(register.data.message);
+    }
+    setErr(null);
+    navigate("/login", { state: { direccionAnterior } });
   }
 
   return (
@@ -45,6 +57,7 @@ function Register() {
                 type="text"
                 className="register-input"
                 placeholder="Firstname"
+                required
                 value={firstnameValue}
                 onChange={(e) => setFirstnameValue(e.target.value)}
               />
@@ -55,6 +68,7 @@ function Register() {
                 type="text"
                 className="register-input"
                 placeholder="Lastname"
+                required
                 value={lastnameValue}
                 onChange={(e) => setLastnameValue(e.target.value)}
               />
@@ -65,6 +79,7 @@ function Register() {
                 type="email"
                 className="register-input"
                 placeholder="Email"
+                required
                 value={emailValue}
                 onChange={(e) => setEmailValue(e.target.value)}
               />
@@ -75,17 +90,31 @@ function Register() {
                 type="password"
                 className="register-input"
                 placeholder="Password"
+                required
                 value={passwordValue}
                 onChange={(e) => setPasswordValue(e.target.value)}
               />
             </div>
             <button type="submit" id="register-button">
-              Sign in
+              Sign up
             </button>
+            {err && (
+              <div class="text-danger mt-2 login-alert" role="alert">
+                {err}
+              </div>
+            )}
             <div>
-              <NavLink id="register-link" to="/login">
-                Already have an account? Log in
-              </NavLink>
+              <p>
+                Already have an account?
+                <span
+                  className="login-span ms-2"
+                  onClick={() => {
+                    navigate("/login", { state: { direccionAnterior } });
+                  }}
+                >
+                  Log in
+                </span>
+              </p>
             </div>
           </form>
         </div>

@@ -1,0 +1,16 @@
+.your-profile-category-titles {
+    text-decoration: none;
+    font-family: var(--font-heading-bold);
+    color: black;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.your-profile-regular-font {
+    font-family: var(--font-heading-light);
+}
+
+.your-profile-bold-font {
+    font-family: var(--font-heading-bold);
+}
