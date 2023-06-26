@@ -19,13 +19,14 @@ function Order({ order }) {
 
   return (
     <div className="order-container pt-3 mb-5">
-      <div className="card container">
+      <div className="card container card-container">
         <Button
           variant="custom"
           active
           onClick={() => setOpen(!open)}
           aria-controls="example-collapse-text"
           aria-expanded={open}
+          className="btn-card"
         >
           <div className="row text-start text-sm-center">
             <div className="col-12 col-sm-3">
