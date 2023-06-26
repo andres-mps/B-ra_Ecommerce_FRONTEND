@@ -91,7 +91,11 @@ function Style() {
             <ProductLoader />
           ) : (
             products.map((product) => {
-              return <Product key={product.id} product={product} />;
+              return (
+                <div className="col-6 col-md-4 col-lg-3">
+                  <Product key={product.id} product={product} />
+                </div>
+              );
             })
           )}
         </div>
