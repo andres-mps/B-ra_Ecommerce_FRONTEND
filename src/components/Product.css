@@ -2,6 +2,12 @@
   margin: 2rem;
 }
 
+.product-link {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
 .product-img {
   width: 80%;
   object-fit: cover;
@@ -36,10 +42,20 @@
 .product-sold-out {
   position: absolute;
   font-family: var(--font-heading-light);
-  bottom: 5%;
-  left: 15%;
+  bottom: 90%;
+  left: 5%;
   color: white;
   background-color: var(--color-background-dark);
   padding: 3px 10px 3px 10px;
   border-radius: 10px;
+}
+
+.product-first-container {
+  width: 300px;
+}
+
+@media (max-width: 576px) {
+  .product-first-container {
+    width: 200px;
+  }
 }
