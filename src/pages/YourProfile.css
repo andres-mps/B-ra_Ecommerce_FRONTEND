@@ -5,6 +5,8 @@
     display: flex;
     gap: 15px;
     margin-bottom: 15px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
 }
 
 .your-profile-regular-font {
@@ -13,4 +15,8 @@
 
 .your-profile-bold-font {
     font-family: var(--font-heading-bold);
+}
+
+.your-profile-background-color {
+    background-color: var(--color-background-secondary);
 }
