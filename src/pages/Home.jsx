@@ -3,6 +3,7 @@ import axios from "axios";
 import Product from "../components/Product";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Home() {
   const [products, setProducts] = useState([]);

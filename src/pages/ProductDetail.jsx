@@ -6,6 +6,7 @@ import Product from "../components/Product";
 import AddToCart from "../components/AddToCart";
 import { NavLink, useParams } from "react-router-dom";
 import "./ProductDetail.css";
+import { motion } from "framer-motion";
 
 function ProductDetail() {
   const [featured, setFeatured] = useState([]);
@@ -47,7 +48,13 @@ function ProductDetail() {
   return (
     product && (
       <>
-        <section id="main-product-container" className="container-fluid p-3 m-0">
+        <motion.section
+          initial={{ opacity: 0, scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.2 }}
+          id="main-product-container"
+          className="container-fluid p-3 m-0"
+        >
           <div id="main-row" className="row">
             <div className="col-12 col-md-7">
               <div className="product-detail-img-container">
@@ -61,8 +68,15 @@ function ProductDetail() {
                     <i className="bi bi-arrow-left"></i>
                   </button>
                 </NavLink>
-                <img
-                  className="product-detail-img"
+                <motion.img
+                  drag
+                  dragConstraints={{
+                    top: -50,
+                    left: -50,
+                    right: 50,
+                    bottom: 50,
+                  }}
+                  className="product-detail-img rounded"
                   src={`http://localhost:3000/img/${product.image}`}
                   alt=""
                 />
@@ -128,7 +142,7 @@ function ProductDetail() {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* featured products */}
         <section id="featured-products" className="container-fluid d-flex flex-row  my-5">

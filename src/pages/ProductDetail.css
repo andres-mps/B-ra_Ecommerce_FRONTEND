@@ -36,10 +36,6 @@
   object-fit: contain;
 }
 
-.product-title {
-  font-family: var(--font-heading-light);
-}
-
 .counter {
   border: 1px solid black;
   width: 40%;

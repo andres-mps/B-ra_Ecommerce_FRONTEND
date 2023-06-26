@@ -43,22 +43,3 @@
   padding: 3px 10px 3px 10px;
   border-radius: 10px;
 }
-
-/* TESTEO TIPOGRAFÍAS. BORRAR*/
-.a {
-  font-family: var(--font-body-family);
-}
-
-.b {
-  font-family: var(--font-heading);
-}
-
-.c {
-  font-family: var(--font-heading-bold);
-}
-
-.d {
-  font-family: var(--font-heading-light);
-}
-
-/* TESTEO TIPOGRAFÍAS. BORRAR*/
