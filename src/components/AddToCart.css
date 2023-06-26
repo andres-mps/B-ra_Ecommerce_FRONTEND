@@ -41,6 +41,7 @@
   opacity: 0.8;
 }
 
+
 @media (max-width: 991px) {
   .add-to-cart {
     background-color: white;
@@ -55,4 +56,8 @@
   .add-to-cart {
     font-size: calc(0.9 * 4vw);
   }
+}
+
+.scroll {
+  overflow-y: auto;
 }
