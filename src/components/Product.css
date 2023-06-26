@@ -17,6 +17,7 @@
 
 .product-imgContainer:hover .img-top {
   display: inline-block;
+}
 .product-link {
   position: relative;
   justify-content: center;
@@ -46,9 +47,9 @@
   text-underline-offset: 2px;
 }
 
-/* .product-container:hover img {
+.product-container:hover img {
   transform: scale(1.02);
-} */
+}
 
 .product-sold-out {
   position: absolute;
