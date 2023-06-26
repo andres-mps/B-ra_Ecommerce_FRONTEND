@@ -16,13 +16,13 @@ function Cart({ show, onHide }) {
     const subtotalPrice = productPrice.reduce((acc, price) => acc + price, 0);
     return Math.round(subtotalPrice * 100) / 100;
   }
-
   return (
     <Offcanvas
       show={show}
       onHide={onHide}
       placement="end"
-      className="offcanvas-container custom-offcanvas container p-4 d-flex overflow-auto"
+      className="offcanvas-container custom-offcanvas p-4"
+      backdrop={false}
     >
       <Offcanvas.Header closeButton className="p-0">
         <h2 className="title-cart">Your cart</h2>
@@ -35,9 +35,9 @@ function Cart({ show, onHide }) {
               <p className="ms-3 subtitle-cart">PRODUCT</p>
               <p className="me-2 subtitle-cart">PRICE</p>
             </div>
-            <Offcanvas.Body className="p-0">
-              <div className="cart">
-                <div className="row overflow-auto" style={{ maxHeight: "400px" }}>
+            <Offcanvas.Body>
+              <div>
+                <div className="row scroll" style={{ maxHeight: "400px" }}>
                   {productsInCart.map((product) => (
                     <CartItem key={product.id} product={product} />
                   ))}

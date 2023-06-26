@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 function Product({ product }) {
   const hasStock = product.stock;
   return (
-    <div className="col-6 col-md-4 col-lg-3">
+    <>
       <div className="product-container d-flex flex-column ">
         <NavLink
-          className="text-decoration-none text-black d-flex flex-column text-center"
+          className="text-decoration-none text-black d-flex flex-column text-center product-link"
           to={`/beers/${product.slug}`}
         >
           <motion.div
@@ -38,7 +38,7 @@ function Product({ product }) {
         </NavLink>
         <AddToCart product={product} qty={1} hasStock={hasStock} />
       </div>
-    </div>
+    </>
   );
 }
 

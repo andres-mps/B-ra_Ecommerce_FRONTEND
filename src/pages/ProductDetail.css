@@ -153,3 +153,7 @@
   margin-right: 2rem;
   border: none;
 }
+
+.counter-container {
+  width: 200px;
+}

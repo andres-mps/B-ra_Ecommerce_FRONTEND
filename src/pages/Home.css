@@ -90,3 +90,9 @@
   text-decoration: underline;
   text-underline-offset: 8px;
 }
+
+.child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

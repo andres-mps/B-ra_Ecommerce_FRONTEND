@@ -4,6 +4,7 @@ import Product from "../components/Product";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+import Marquee from "react-fast-marquee";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -75,13 +76,19 @@ function Home() {
           </div>
         </div>
       </section>
-      <section id="featured-products" className="container-fluid  my-5">
+      <section id="featured-products" className="container-fluid mt-5 mb-3">
         <h2 className="featured-products-heading text-center">Featured Beers</h2>
         <div className="row align-items-end">
-          {products &&
-            products.map((product) => {
-              return <Product key={product.id} product={product} />;
-            })}
+          <Marquee pauseOnHover={true} pauseOnClick={true} speed={200} loop={0} delay={0}>
+            {products &&
+              products.map((product) => {
+                return (
+                  <div className="col-6 col-md-4 col-lg-3 product-first-container">
+                    <Product key={product.id} product={product} />
+                  </div>
+                );
+              })}
+          </Marquee>
         </div>
       </section>
       <section>

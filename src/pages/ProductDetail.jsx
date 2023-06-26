@@ -45,6 +45,7 @@ function ProductDetail() {
     getProductInfo();
   }, [params]);
 
+  const limitFeatured = featured.slice(0, 4);
   return (
     product && (
       <>
@@ -158,8 +159,12 @@ function ProductDetail() {
           <div className="row ">
             <h2 className="featured-products-heading text-center">You may also like</h2>
             {featured &&
-              featured.map((product) => {
-                return <Product key={product.id} product={product} />;
+              limitFeatured.map((product) => {
+                return (
+                  <div className="col-6 col-md-4 col-lg-3">
+                    <Product key={product.id} product={product} />
+                  </div>
+                );
               })}
           </div>
         </section>
