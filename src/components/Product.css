@@ -2,6 +2,22 @@
   margin: 2rem;
 }
 
+.product-imgContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.product-imgContainer .img-top {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.product-imgContainer:hover .img-top {
+  display: inline-block;
+}
 .product-link {
   position: relative;
   justify-content: center;
@@ -33,10 +49,6 @@
 
 .product-container:hover img {
   transform: scale(1.02);
-}
-
-.product-imgContainer {
-  position: relative;
 }
 
 .product-sold-out {

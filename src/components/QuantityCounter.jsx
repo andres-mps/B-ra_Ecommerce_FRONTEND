@@ -24,7 +24,7 @@ function QuantityCounter({ qty, id, product }) {
   return (
     <div className="d-flex align-items-center">
       <div
-        className="d-flex align-items-center justify-content-between border border-dark w-100"
+        className="d-flex align-items-center justify-content-between border border-dark counter-container"
         id="counter-button"
       >
         <button className="btn" onClick={decrement} id="decrement-button">
