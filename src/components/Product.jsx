@@ -21,9 +21,16 @@ function Product({ product }) {
           >
             <img
               className="product-img"
-              src={`http://localhost:3000/img/${product.image}`}
+              src={`http://localhost:3000/img/${product.image[0]}`}
               alt={product.name}
             />
+            {product.image[1] && (
+              <img
+                className="product-img img-top"
+                src={`http://localhost:3000/img/${product.image[1]}`}
+                alt={product.name}
+              />
+            )}
             {!hasStock && <span className="product-sold-out">Sold out</span>}
           </motion.div>
           <span className="product-name">{product.name}</span>
