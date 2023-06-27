@@ -18,7 +18,7 @@ function Order({ order }) {
   }
 
   return (
-    <div className="order-container pt-3 mb-5">
+    <div className="order-container pt-3">
       <div className="card container card-container">
         <Button
           variant="custom"

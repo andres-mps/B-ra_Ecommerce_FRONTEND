@@ -136,7 +136,7 @@ function NavbarBeer() {
                         onClick={() => dispatch(logOut()) && dropdownClose()}
                       >
                         <i class="fas fa-sign-out-alt me-3"></i>
-                        LogOut
+                        Log out
                       </NavLink>
                     </div>
                   )}
@@ -175,7 +175,7 @@ function NavbarBeer() {
                     <NavDropdown.Divider />
                     <NavDropdown.Item onClick={() => dispatch(logOut())}>
                       <NavLink to="/home" className="text-decoration-none text-white">
-                        LogOut
+                        Log out
                       </NavLink>
                     </NavDropdown.Item>
                   </NavDropdown>

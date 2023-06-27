@@ -26,8 +26,7 @@ function Cart() {
       show={isOpen}
       onHide={handleClose}
       placement="end"
-      className="offcanvas-container custom-offcanvas p-4"
-      backdrop={true}
+      className="offcanvas-container custom-offcanvas p-4" 
     >
       <Offcanvas.Header closeButton className="p-0">
         <h2 className="title-cart">Your cart</h2>
@@ -41,7 +40,7 @@ function Cart() {
               <p className="me-2 subtitle-cart">PRICE</p>
             </div>
             <Offcanvas.Body>
-              <div>
+              <div className="">
                 <div className="row scroll" style={{ maxHeight: "400px" }}>
                   {productsInCart.map((product) => (
                     <CartItem key={product.id} product={product} />
