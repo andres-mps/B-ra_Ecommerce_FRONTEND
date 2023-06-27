@@ -12,6 +12,7 @@
 
 .card-container {
     border: none;
+    width: 100%;
 }
 
 .btn-card {
