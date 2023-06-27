@@ -50,17 +50,14 @@ function Home() {
 
   return (
     <main>
-      <section>
-        <NavLink>
+      <section className="home-section">
+        <NavLink to="/styles">
           <div className="hero-container">
             <div className="background-image"></div>
             <div className="background-overlay"></div>
             <div className="hero-content">
               <h1>Want it Hoppy?</h1>
-              <p>Come explore our Hoppy styles</p>
-              <NavLink to="/styles" className="text-white fs-3">
-                SHOP NOW
-              </NavLink>
+              <p>Shop now our Hoppy styles</p>
             </div>
           </div>
         </NavLink>
@@ -101,7 +98,7 @@ function Home() {
           </Marquee>
         </div>
       </section>
-      <section>
+      <section className="section-container">
         <div className="row">
           <div
             className="col-md-6 d-flex align-items-center justify-content-center order-md-1"
