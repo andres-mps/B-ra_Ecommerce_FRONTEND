@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { removeProduct, incrementQuantity, decrementQuantity } from "../redux/cartSlice";
+import {  incrementQuantity, decrementQuantity } from "../redux/cartSlice";
 import "../pages/ProductDetail.css";
 
 function QuantityCounter({ qty, id, product }) {
@@ -17,9 +17,6 @@ function QuantityCounter({ qty, id, product }) {
     }
   };
 
-  function handleRemove() {
-    dispatch(removeProduct(id));
-  }
 
   return (
     <div className="d-flex align-items-center">
@@ -35,7 +32,6 @@ function QuantityCounter({ qty, id, product }) {
           +
         </button>
       </div>
-      <i className="bi bi-trash ms-2" onClick={handleRemove}></i>
     </div>
   );
 }
