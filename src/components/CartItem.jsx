@@ -20,8 +20,8 @@ function CartItem({ product }) {
           <QuantityCounter qty={product.qty} id={product.id} product={product} />
         </div>
 <div className="col-2 d-flex flex-column">
-  <h3 className="price-cart mb-auto">{Math.round(product.price * product.qty * 100) / 100} USD</h3>
-  <i className="bi bi-trash mt-auto" onClick={handleRemove}></i>
+  <i className="bi bi-trash mb-auto" onClick={handleRemove}></i>
+  <h3 className="price-cart mt-auto">{Math.round(product.price * product.qty * 100) / 100} USD</h3>
 </div>
       </div>
     )
