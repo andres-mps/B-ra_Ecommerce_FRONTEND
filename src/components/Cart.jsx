@@ -40,7 +40,7 @@ function Cart() {
               <p className="me-2 subtitle-cart">PRICE</p>
             </div>
             <Offcanvas.Body>
-              <div>
+              <div className="">
                 <div className="row scroll" style={{ maxHeight: "400px" }}>
                   {productsInCart.map((product) => (
                     <CartItem key={product.id} product={product} />
