@@ -56,6 +56,14 @@
   }
 }
 
+@media (max-width: 576px) {
+  .add-to-cart {
+    font-size: 0.9rem;
+
+  }
+}
+
+
 
 .scroll {
   overflow-y: auto;
