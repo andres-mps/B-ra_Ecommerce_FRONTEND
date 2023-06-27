@@ -9,7 +9,7 @@ import Marquee from "react-fast-marquee";
 function Home() {
   const [products, setProducts] = useState([]);
   const [hoveredImage, setHoveredImage] = useState(
-    "http://localhost:5173/public/img//home/home_stylesList.webp",
+    "http://localhost:5174/public/img/home/home_stylesList.webp",
   );
   const [hoveredCategory, setHoveredCategory] = useState(null);
   useEffect(() => {
@@ -44,7 +44,7 @@ function Home() {
   }, []);
 
   const handleHover = (categoryName, categoryImage) => {
-    setHoveredImage(`http://localhost:5173/public/img//home/${categoryImage}`);
+    setHoveredImage(`http://localhost:5174/img/home/${categoryImage}`);
     setHoveredCategory(categoryName);
   };
 
@@ -79,7 +79,14 @@ function Home() {
       <section id="featured-products" className="container-fluid mt-5 mb-3">
         <h2 className="featured-products-heading text-center">Featured Beers</h2>
         <div className="row align-items-end">
-          <Marquee pauseOnHover={true} pauseOnClick={true} speed={200} loop={0} delay={0}>
+          <Marquee
+            pauseOnHover={true}
+            pauseOnClick={true}
+            speed={100}
+            loop={0}
+            delay={0}
+            autoFill={true}
+          >
             {products &&
               products.map((product) => {
                 return (
