@@ -1,6 +1,5 @@
 .about-hero-container {
   position: relative;
-  /* width: 100vw; */
   height: 500px;
   overflow: hidden;
 }
@@ -15,20 +14,6 @@
     url("https://cdn.shopify.com/s/files/1/0266/3704/1767/articles/IMGL4757.jpg?v=1582195625&width=3000");
 }
 
-.about-the-project-hero-content h1 {
-  font-family: var(--font-heading-bold);
-  margin-top: 2rem;
-  font-size: 2rem;
-  color: #fff;
-}
-
-.about-the-project-hero-content p {
-  font-family: var(--font-body);
-  color: #fff;
-  max-width: 500px;
-  text-align: start;
-}
-
 .about-the-project-middle-images {
   position: absolute;
   top: 0;
@@ -38,20 +23,6 @@
   object-fit: cover;
   object-position: top;
   z-index: 10;
-}
-
-@media (max-width: 768px) {
-  .about-the-project-middle-images {
-    object-position: 50% 15%;
-  }
-
-  .about-the-project-middle-images-container {
-    height: 35vh;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    overflow: hidden;
-  }
 }
 
 .about-the-project-middle-images-container {
@@ -85,13 +56,6 @@
   color: white;
 }
 
-/* .about-the-project-card-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-} */
-
 .about-the-project-card-image {
   height: 200px;
   object-fit: cover;
@@ -103,8 +67,6 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  /* background-color: rgba(7, 56, 77, 0.70); */
-  /* background: linear-gradient(rgba(7, 56, 77, 0.7), white); */
   padding: 0px 50px;
   height: 100px;
   font-family: var(--font-heading-light);
@@ -119,32 +81,18 @@
   font-size: 0.5rem;
 }
 
-@media (max-width: 991px) {
-  .about-hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-}
-
-@media (min-width: 992px) {
-  .about-hero-content {
-    position: absolute;
-    bottom: 3rem;
-    left: 3rem;
-    text-align: start;
-  }
-}
 .about-hero-content h1 {
   font-family: var(--font-heading-bold);
+  margin-top: 2rem;
+  font-size: 2rem;
   color: #fff;
 }
 
 .about-hero-content p {
+  font-family: var(--font-heading);
   color: #fff;
-  font-family: var(--font-heading-light);
+  max-width: 500px;
+  text-align: start;
 }
 
 .about-hero-content strong {
@@ -286,6 +234,11 @@
   max-width: 900px;
 }
 
+.admin-link {
+  font-family: var(--font-heading);
+  color: black;
+}
+
 .about-project-icons {
   width: 3rem;
 }
@@ -304,6 +257,15 @@
   background-color: var(--color-background-secondary);
   font-family: var(--font-heading);
   color: black;
+}
+
+.accordion-button:not(.collapsed) span {
+  background-color: var(--color-background-dark);
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  padding-bottom: 0px;
+  padding-top: 0.3rem;
+  color: white;
 }
 
 .accordion-header {
@@ -351,9 +313,23 @@
   border-radius: 5px;
 }
 
+.about-tab-panel-logos {
+  object-fit: contain;
+  height: 300px;
+  margin-left: 3rem;
+  border-radius: 5px;
+}
+
+.marquee-icons {
+  position: absolute;
+  bottom: 0px;
+}
+
 @media (max-width: 1200px) {
   .about-project-container {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .about-tab-panel-img {
@@ -371,6 +347,12 @@
   .about-info-container {
     display: block;
   }
+  .about-hero-content {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    text-align: start;
+  }
 }
 
 @media (max-width: 991px) {
@@ -384,18 +366,39 @@
   .card-mobile {
     border: none;
   }
+  .about-hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-the-project-middle-images {
+    object-position: 50% 15%;
+  }
+
+  .about-the-project-middle-images-container {
+    height: 35vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
 }
 
 @media (max-width: 576px) {
-  .about-the-project-hero-content h1 {
+  .about-hero-content h1 {
     font-family: var(--font-heading-bold);
     margin-top: 2rem;
     font-size: 2rem;
     color: #fff;
   }
 
-  .about-the-project-hero-content p {
-    font-family: var(--font-body);
+  .about-hero-content p {
+    font-family: var(--font-heading-light);
     font-size: 1rem;
     color: #fff;
     width: 80vw;

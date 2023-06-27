@@ -26,7 +26,11 @@ const AgeGate = () => {
       </div>
 
       <div className="container-fluid" id="age-gate-container">
-        <img src="/public/img/logo/tool_horizontal_logo_19.webp" alt="Logo" id="age-gate-logo" />
+        <img
+          src="/public/img/logo/tool_horizontal_logo_19_white.png"
+          alt="Logo"
+          id="age-gate-logo"
+        />
         <div id="age-gate-prompt">
           <div id="age-gate-text">
             {isLoading ? (

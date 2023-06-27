@@ -1,15 +1,15 @@
-import Navbar from "../components/Navbar";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./AboutThisProject.css";
 import Accordion from "react-bootstrap/Accordion";
+import Marquee from "react-fast-marquee";
 
 function AboutThisProject() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const handleTabClick = (index) => {
     setActiveTabIndex(index);
   };
-
+  console.log(activeTabIndex);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -20,7 +20,7 @@ function AboutThisProject() {
           <div className="about-hero-container">
             <div className="about-the-project-background-image"></div>
             <div className="background-overlay"></div>
-            <div className="about-hero-content about-the-project-hero-content">
+            <div className="about-hero-content">
               <h1>Sobre este proyecto</h1>
               <p>
                 El presente sitio de e-commerce es un proyecto desarrollado por estudiantes del{" "}
@@ -206,11 +206,21 @@ function AboutThisProject() {
               <div className="about-project-container">
                 <div className="about-project-paragraph-container">
                   <p className="about-project-paragraph">
-                    Para el Front-End del sitio se desarrolló una aplicación en React (usando
-                    Create-React-App) mientras que para el Back-End se desarrolló una REST API hecha
-                    con Node.js, Express, SQL y Git/GitHub.
+                    En el Back-End se desarrolló una REST API hecha con Node.js, Express, SQL y
+                    Git/GitHub la cual alimenta a dos proyectos de Front-End independientes, uno
+                    para{" "}
+                    <NavLink to="http://localhost:5173/" className="admin-link" target="_blank">
+                      <strong>administradores</strong>
+                    </NavLink>{" "}
+                    y otro para usuarios. Para desarrollarlos se utilizó React, React Router y
+                    Redux.
                   </p>
                 </div>
+                <img
+                  src="/public/img/about-logos.png"
+                  alt="about-logos"
+                  className="ms-3 about-tab-panel-logos"
+                />
               </div>
             </div>
 
@@ -239,7 +249,7 @@ function AboutThisProject() {
 
       <section className="about-info-container-mobile">
         <div className="about-container-mobile">
-          <Accordion defaultActiveKey={["0"]} flush>
+          <Accordion defaultActiveKey={activeTabIndex} flush>
             <Accordion.Item eventKey="0">
               <Accordion.Header>
                 <div className="d-flex align-items-center accordion-header">
@@ -395,11 +405,17 @@ function AboutThisProject() {
                 <div className="about-project-container">
                   <div className="about-project-paragraph-container">
                     <p className="about-project-paragraph-mobile">
-                      Para el Front-End del sitio se desarrolló una aplicación en React (usando
-                      Create-React-App) mientras que para el Back-End se desarrolló una REST API
-                      hecha con Node.js, Express, SQL y Git/GitHub.
+                      En el Back-End se desarrolló una REST API hecha con Node.js, Express, SQL y
+                      Git/GitHub la cual alimenta a dos proyectos de Front-End independientes, uno
+                      para{" "}
+                      <NavLink to="http://localhost:5173/" className="admin-link" target="_blank">
+                        <strong>administradores</strong>
+                      </NavLink>{" "}
+                      y otro para usuarios. Para desarrollarlos se utilizó React, React Router y
+                      Redux.
                     </p>
                   </div>
+                  <img src="/public/img/about-logos.png" alt="about-logos" />
                 </div>
               </Accordion.Body>
             </Accordion.Item>
