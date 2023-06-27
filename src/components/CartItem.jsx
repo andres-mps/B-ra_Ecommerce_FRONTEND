@@ -12,7 +12,11 @@ function CartItem({ product }) {
     product && (
       <div className="row border-top pt-3 pe-0 ps-0 mb-3">
         <div className="col-4 d-flex justify-content-center">
-          <img src={`http://localhost:3000/img/${product.image}`} alt={product.slug} width={100} />
+          <img
+            src={`${import.meta.env.VITE_APP_BACK_IMG + product.image.main}`}
+            alt={product.slug}
+            width={100}
+          />
         </div>
         <div className="col-6">
           <h4 className="title-product">{product.name}</h4>

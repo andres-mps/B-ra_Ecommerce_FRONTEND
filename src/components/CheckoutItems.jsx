@@ -6,7 +6,7 @@ function CheckoutItems({ product }) {
         <div className="d-flex align-items-center gap-3">
           <div className="checkout-product-photo-container">
             <img
-              src={`http://localhost:3000/img/${product.image}`}
+              src={`${import.meta.env.VITE_APP_BACK_IMG + product.image.main}`}
               alt=""
               className="checkout-product-photo"
             />

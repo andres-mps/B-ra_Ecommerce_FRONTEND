@@ -41,14 +41,14 @@ function Register() {
   return (
     <section className="container-fluid">
       <div className="row align-items-center">
-        <div className="col-12 col-lg-6 d-flex align-items-center justify-content-center p-0">
+        <div className="d-none  col-12 col-lg-6 d-sm-flex align-items-center justify-content-center p-0">
           <img
             src="https://cdn.shopify.com/s/files/1/0266/3704/1767/files/Barrels_ToOlCity_d3f23c1e-bc9b-49ea-8b20-a6e4f87c7d21.jpg?v=1622724312&width=1500"
             alt="register image"
             id="register-image"
           />
         </div>
-        <div className="col-12 col-lg-6" id="register-form">
+        <div className="col-12 col-lg-6  border-top border-sm-none" id="register-form">
           <h1 id="register-heading">Sign up</h1>
           <form onSubmit={handleSubmit}>
             <div className="mb-3 input">

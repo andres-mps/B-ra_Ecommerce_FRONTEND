@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setToken } from "../redux/userSlice";
 import axios from "axios";
@@ -9,6 +9,10 @@ function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const direccionAnterior = location.state !== null ? location.state.direccionAnterior : null;
 
@@ -42,14 +46,14 @@ function Login() {
   return (
     <section className="container-fluid">
       <div className="row align-items-center">
-        <div className="col-12 col-lg-6 d-flex align-items-center justify-content-center p-0">
+        <div className="d-none  col-12 col-lg-6 d-sm-flex align-items-center justify-content-center p-0">
           <img
             src="https://cdn.shopify.com/s/files/1/0266/3704/1767/files/Screenshot_2022-06-03_at_13.08.38_1296x_8916243e-13e9-460c-adc7-bcaf1c1c63d6.webp?v=1661867963&width=1500"
             alt="login image"
             id="login-image"
           />
         </div>
-        <div className="col-12 col-lg-6" id="login-form">
+        <div className="col-12 col-lg-6 border-top border-sm-none" id="login-form">
           <h1 id="login-heading">Login</h1>
           <form onSubmit={handleSubmit}>
             <div className="mb-3 input">
