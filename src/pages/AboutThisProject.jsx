@@ -20,7 +20,7 @@ function AboutThisProject() {
           <div className="about-hero-container">
             <div className="about-the-project-background-image"></div>
             <div className="background-overlay"></div>
-            <div className="hero-content about-the-project-hero-content">
+            <div className="about-hero-content about-the-project-hero-content">
               <h1>Sobre este proyecto</h1>
               <p>
                 El presente sitio de e-commerce es un proyecto desarrollado por estudiantes del{" "}
