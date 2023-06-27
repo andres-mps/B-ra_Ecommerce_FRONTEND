@@ -57,7 +57,7 @@ function Order({ order }) {
                 <div className="row">
                   <div className="col-md-3 col-sm-12 text-center mb-3 mb-sm-0">
                     <img
-                      src={`http://localhost:3000/img/${product.image}`}
+                      src={`http://localhost:3000/img/${product.image.main}`}
                       alt="Producto"
                       className="img-fluid product-image"
                       style={{ maxWidth: "150px" }}

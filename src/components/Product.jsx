@@ -21,13 +21,13 @@ function Product({ product }) {
           >
             <img
               className="product-img"
-              src={`http://localhost:3000/img/${product.image[0]}`}
+              src={`${import.meta.env.VITE_APP_BACK_IMG + product.image.main}`}
               alt={product.name}
             />
-            {product.image[1] && (
+            {product.image.alt && (
               <img
                 className="product-img img-top"
-                src={`http://localhost:3000/img/${product.image[1]}`}
+                src={`${import.meta.env.VITE_APP_BACK_IMG + product.image.alt}`}
                 alt={product.name}
               />
             )}

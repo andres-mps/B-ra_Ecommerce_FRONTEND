@@ -78,18 +78,9 @@ function ProductDetail() {
                     bottom: 50,
                   }}
                   className="product-detail-img rounded"
-                  src={`http://localhost:3000/img/${product.image[0]}`}
+                  src={`${import.meta.env.VITE_APP_BACK_IMG + product.image.main}`}
                   alt=""
                 />
-                {/* {product.image[1] && (
-                  <div className="alt-img-thumbnail-container">
-                    <img
-                      className="product-detail-img alt-img"
-                      src={`http://localhost:3000/img/${product.image[1]}`}
-                      alt={product.name}
-                    />
-                  </div>
-                )} */}
               </div>
             </div>
 
