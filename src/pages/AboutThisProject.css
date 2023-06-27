@@ -1,3 +1,10 @@
+.about-hero-container {
+  position: relative;
+  /* width: 100vw; */
+  height: 500px;
+  overflow: hidden;
+}
+
 .about-the-project-background-image {
   position: absolute;
   width: 100%;
@@ -136,8 +143,8 @@
 }
 
 .tab-panel-active {
-  display: block;
-  padding: 1rem;
+  display: flex;
+  padding: 2rem;
 }
 
 .about-tab-0 {
@@ -145,8 +152,7 @@
   justify-content: space-between;
   flex-grow: 1;
   padding: 1rem;
-  border-bottom: 1px solid;
-  border-right: 1px solid;
+
   font-size: 1rem;
   font-family: var(--font-heading);
   cursor: pointer;
@@ -157,8 +163,7 @@
   justify-content: space-between;
   flex-grow: 1;
   padding: 1rem;
-  border-bottom: 1px solid;
-  border-right: 1px solid;
+
   font-size: 1rem;
   font-family: var(--font-heading);
   cursor: pointer;
@@ -168,8 +173,7 @@
   justify-content: space-between;
   flex-grow: 1;
   padding: 1rem;
-  border-bottom: 1px solid;
-  border-right: 1px solid;
+
   font-size: 1rem;
   font-family: var(--font-heading);
   cursor: pointer;
@@ -180,8 +184,6 @@
   justify-content: space-between;
   padding: 1rem;
   flex-grow: 1;
-  border-bottom: 1px solid;
-  border-right: none;
   font-size: 1rem;
   font-family: var(--font-heading);
   cursor: pointer;
@@ -193,8 +195,7 @@
   justify-content: space-between;
   flex-grow: 1;
   padding: 1rem;
-  border-bottom: 1px solid;
-  border-right: 1px solid;
+
   font-size: 1rem;
   font-family: var(--font-heading);
   cursor: pointer;
@@ -231,12 +232,17 @@
   border-radius: 0px;
   padding: 1rem;
   width: fit-content;
-  border: 1px solid rgb(185, 185, 185);
+  border: none;
 }
 
-.about-project-paragraph-container {
-  margin-bottom: 3rem;
+.card-mobile {
+  border: none;
 }
+
+.about-project-container {
+  display: flex;
+}
+
 .about-project-paragraph-title {
   font-family: var(--font-heading);
   margin-bottom: 0px;
@@ -245,11 +251,16 @@
 .about-project-paragraph {
   font-family: var(--font-heading-light);
   font-size: 1.3rem;
-  width: 50%;
+  max-width: 900px;
 }
 
 .about-project-icons {
   width: 3rem;
+}
+
+.about-tareas-paragraph-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .accordion-button:not(.collapsed) {
@@ -293,6 +304,34 @@
   width: 300px;
 }
 
+.card-body {
+  padding: 0;
+}
+
+.card img {
+  border-radius: 0;
+}
+
+.about-tab-panel-img {
+  object-fit: contain;
+  height: 500px;
+  margin-left: 3rem;
+  border-radius: 5px;
+}
+
+@media (max-width: 1200px) {
+  .about-project-container {
+    display: block;
+  }
+
+  .about-tab-panel-img {
+    object-fit: contain;
+    height: 500px;
+    margin-left: 0px;
+    border-radius: 5px;
+  }
+}
+
 @media (min-width: 992px) {
   .about-info-container-mobile {
     display: none;
@@ -309,6 +348,9 @@
   }
   .about-info-container {
     display: none;
+  }
+  .card-mobile {
+    border: none;
   }
 }
 
@@ -330,5 +372,8 @@
 
   .card-mobile {
     width: 60vw;
+    border: none;
+    padding: 0px;
+    margin: 1rem 0;
   }
 }

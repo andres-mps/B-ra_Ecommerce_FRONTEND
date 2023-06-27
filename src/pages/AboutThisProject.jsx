@@ -17,16 +17,20 @@ function AboutThisProject() {
     <>
       <section>
         <NavLink>
-          <div className="hero-container">
+          <div className="about-hero-container">
             <div className="about-the-project-background-image"></div>
             <div className="background-overlay"></div>
             <div className="hero-content about-the-project-hero-content">
               <h1>Sobre este proyecto</h1>
               <p>
-                El presente sitio de e-commerce es un proyecto desarrollado por estudiantes del
-                Coding Bootcamp de Hack Academy. El Bootcamp es un programa educativo extremadamente
-                práctico de 3 meses y full-time, donde los estudiantes invierten más de 600 horas a
-                aprender sobre Node.js, Express, React.js, SQL, MongoDB y Git.
+                El presente sitio de e-commerce es un proyecto desarrollado por estudiantes del{" "}
+                <strong style={{ fontWeight: "600" }}>Coding Bootcamp de Hack Academy</strong>. El
+                Bootcamp es un programa educativo extremadamente práctico de 3 meses y full-time,
+                donde los estudiantes invierten más de{" "}
+                <strong style={{ fontWeight: "600" }}>600 horas</strong> a aprender sobre{" "}
+                <strong style={{ fontWeight: "600" }}>
+                  Node.js, Express, React.js, SQL, MongoDB y Git.
+                </strong>
               </p>
             </div>
           </div>
@@ -163,36 +167,38 @@ function AboutThisProject() {
 
             <div className={`tab-panel tab-panel-${activeTabIndex === 1 ? "active" : ""}`}>
               <div className="about-project-container">
-                <div className="about-project-paragraph-container">
-                  <h3 className="about-project-paragraph-title">Duración</h3>
-                  <p className="about-project-paragraph">
-                    El proyecto fue desarrollado en tan sólo 3 semanas, durante junio de 2023. El
-                    mismo se dividió en sprints (Scrum) de una semana de duración.
-                  </p>
+                <div>
+                  <div className="about-project-paragraph-container">
+                    <h3 className="about-project-paragraph-title">Duración</h3>
+                    <p className="about-project-paragraph">
+                      El proyecto fue desarrollado en tan sólo 3 semanas, durante junio de 2023. El
+                      mismo se dividió en sprints (Scrum) de una semana de duración.
+                    </p>
+                  </div>
+                  <div className="about-project-paragraph-container">
+                    <h3 className="about-project-paragraph-title">Elección del proyecto</h3>
+                    <p className="about-project-paragraph">
+                      La comodidad del diseño y el conocimiento por el producto fue lo que llevó al
+                      equipo a tomar la orientación de este proyecto. Además permitió la aplicación
+                      de diferentes funcionalidades como manejo y validación de stock, autenticación
+                      de usuarios y emular un proceso completo de compra.
+                    </p>
+                  </div>
+                  <div className="about-project-paragraph-container">
+                    <h3 className="about-project-paragraph-title">Experiencia</h3>
+                    <p className="about-project-paragraph">
+                      Los estudiantes del equipo tienen como experiencia los proyectos HackBlog,
+                      HackFlix y clon de twitter, realizados también como estudiantes del curso
+                      Coding Bootcamp de Hack Academy.
+                    </p>
+                    <p className="about-project-paragraph">
+                      El grupo particularmente nunca había trabajado junto, siendo la organización
+                      un tema a resolver. La buena disposición y comunicacion llevó al grupo a sacar
+                      lo mejor de si.
+                    </p>
+                  </div>
                 </div>
-                <div className="about-project-paragraph-container">
-                  <h3 className="about-project-paragraph-title">Elección del proyecto</h3>
-                  <p className="about-project-paragraph">
-                    Se presentó por parte de cada estudiante 3 ideas de posibles proyectos,
-                    conformando un total de 15 proyectos. Los proyectos fueron votados, y el ganador
-                    fue el e-commerce de cerveza. La comodidad del diseño y el conocimiento por el
-                    producto fue lo que llevó al equipo a tomar la decisión.
-                  </p>
-                </div>
-                <div className="about-project-paragraph-container">
-                  <h3 className="about-project-paragraph-title">Experiencia</h3>
-                  <p className="about-project-paragraph">
-                    Se presentó por parte de cada estudiante 3 ideas de posibles proyectos,
-                    conformando un total de 15 proyectos. Los proyectos fueron votados, y el ganador
-                    fue el e-commerce de cerveza. La comodidad del diseño y el conocimiento por el
-                    producto fue lo que llevó al equipo a tomar la decisión.
-                  </p>
-                  <p className="about-project-paragraph">
-                    El grupo particularmente nunca había trabajado junto, siendo la organización un
-                    tema a resolver. La buena disposición y comunicacion llevó al grupo a sacar lo
-                    mejor de si.
-                  </p>
-                </div>
+                <img className="about-tab-panel-img" src="/public/img/MER.png" alt="MER" />
               </div>
             </div>
 
@@ -210,12 +216,20 @@ function AboutThisProject() {
 
             <div className={`tab-panel tab-panel-${activeTabIndex === 3 ? "active" : ""}`}>
               <div className="about-project-container">
-                <div className="about-project-paragraph-container">
-                  <p className="about-project-paragraph">
-                    Para la organización de tareas durante el proyecto se utilizó Trello. Esto
-                    permitió que cada integrante del equipo estuviese permanentemente al tanto del
-                    estado del proyecto así como de las tareas que debía realizar.
-                  </p>
+                <div className="about-tareas-paragraph-container">
+                  <div>
+                    <p className="about-project-paragraph">
+                      Para la organización de tareas durante el proyecto se utilizó{" "}
+                      <strong style={{ fontFamily: "var(--font-heading)" }}>Trello</strong>. Esto
+                      permitió que cada integrante del equipo estuviese permanentemente al tanto del
+                      estado del proyecto así como de las tareas que debía realizar.
+                    </p>
+                    <p className="about-project-paragraph">
+                      Las tareas se dividieron equitativamente entre front-end y back-end para que
+                      cada miembro del equipo pudiera participar en ambos aspectos del proyecto.
+                    </p>
+                  </div>
+                  <img className="about-tab-panel-img" src="/public/img/Trello.png" alt="Trello" />
                 </div>
               </div>
             </div>

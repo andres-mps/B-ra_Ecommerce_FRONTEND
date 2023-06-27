@@ -50,7 +50,7 @@ function Home() {
 
   return (
     <main>
-      <section>
+      <section className="home-section">
         <NavLink>
           <div className="hero-container">
             <div className="background-image"></div>
@@ -98,7 +98,7 @@ function Home() {
           </Marquee>
         </div>
       </section>
-      <section>
+      <section className="section-container">
         <div className="row">
           <div
             className="col-md-6 d-flex align-items-center justify-content-center order-md-1"
