@@ -23,11 +23,11 @@ function OrderSuccess() {
             <>
               <div className="text-center">
                 <i className="fas fa-check-circle order-succes-icon-size"></i>
-                <p>Su compra fue realizada con exito</p>
+                <p>Your order is confirmed!</p>
               </div>
               <div className="order-succes-link">
                 <NavLink to="/home" className=" text-white">
-                  <p>Volver a la pagina principal</p>
+                  <p>Return to home</p>
                 </NavLink>
               </div>
             </>
