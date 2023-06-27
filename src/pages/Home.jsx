@@ -58,6 +58,9 @@ function Home() {
             <div className="hero-content">
               <h1>Want it Hoppy?</h1>
               <p>Come explore our Hoppy styles</p>
+              <NavLink to="/styles" className="text-white fs-3">
+                SHOP NOW
+              </NavLink>
             </div>
           </div>
         </NavLink>
