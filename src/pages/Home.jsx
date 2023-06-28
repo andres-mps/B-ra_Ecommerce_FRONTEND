@@ -17,10 +17,6 @@ function Home() {
       const response = await axios({
         method: "GET",
         url: `${import.meta.env.VITE_APP_BACK}/products/featured`,
-
-        // headers: {
-        //   Authorization: `Bearer ${token}`,
-        // },
       });
       setProducts(response.data);
       //console.log(response.data);
@@ -34,9 +30,6 @@ function Home() {
       const response = await axios({
         method: "GET",
         url: `${import.meta.env.VITE_APP_BACK}/categories`,
-        // headers: {
-        //   Authorization: `Bearer ${token}`,
-        // },
       });
       setCategories(response.data);
       //console.log(response.data);
