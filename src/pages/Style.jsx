@@ -17,7 +17,7 @@ function Style() {
     async function getAllProductInfo() {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:3000/products`,
+        url: `${import.meta.env.VITE_APP_BACK}/products`,
       });
       setErr(null);
       return setProducts(response.data);
@@ -26,7 +26,7 @@ function Style() {
     async function getProductInfo() {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:3000/categories/${params.style}`,
+        url: `${import.meta.env.VITE_APP_BACK}/categories/${params.style}`,
       });
       if (response.data.type === "err") {
         return setErr(response.data.content);
@@ -47,7 +47,7 @@ function Style() {
     async function getCategories() {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:3000/categories`,
+        url: `${import.meta.env.VITE_APP_BACK}/categories`,
       });
       setCategories(response.data);
     }
