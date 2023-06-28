@@ -46,7 +46,7 @@ function Order({ order }) {
               </p>
             </div>
             <div className="col-12 col-sm-3 text-end bold-font">
-              <h5>Total: ${order.totalAmount}</h5>
+              <h5>Total: USD {order.totalAmount}</h5>
             </div>
           </div>
         </Button>

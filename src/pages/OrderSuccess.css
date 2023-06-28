@@ -37,11 +37,7 @@
 }
 
 
-@media (max-width: 400px) {
-    .order-succes-text {
-        width: 90%;
-    }
-}
+
 
 .boton-success {
     font-family: var(--font-heading);
