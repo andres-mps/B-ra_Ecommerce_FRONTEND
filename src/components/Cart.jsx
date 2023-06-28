@@ -1,9 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { Button } from "react-bootstrap";
 import CartItem from "./CartItem";
 import "./AddToCart.css";
 import { closeCart } from "../redux/cartSlice";
+import { FaMinus } from "react-icons/fa";
 
 function Cart() {
   const dispatch = useDispatch();
@@ -28,9 +30,13 @@ function Cart() {
       placement="end"
       className="offcanvas-container custom-offcanvas p-4" 
     >
-      <Offcanvas.Header closeButton className="p-0">
-        <h2 className="title-cart">Your cart</h2>
-      </Offcanvas.Header>
+<Offcanvas.Header className="p-0">
+  <h2 className="title-cart">Your cart</h2>
+  <Button variant="link" className="minimize-button" onClick={handleClose}>
+    <FaMinus />
+  </Button>
+</Offcanvas.Header>
+
 
       <div>
         {productsInCart.length > 0 ? (

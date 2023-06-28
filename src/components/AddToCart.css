@@ -64,6 +64,16 @@
 }
 
 
+.minimize-button {
+  font-size: 1.5rem;
+  color: #000000;
+}
+
+.minimize-button:hover {
+  color: #605d5d;
+}
+
+
 
 .scroll {
   overflow-y: auto;
