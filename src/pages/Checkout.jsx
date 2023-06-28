@@ -125,26 +125,30 @@ function Checkout() {
                 aria-expanded={open}
                 className="checkout-collapse-button"
               >
-                <div className="d-flex justify-content-between">
+                <div className="d-flex justify-content-between pb-2">
                   {!open && (
-                    <p className="fs-6 fw-lighter">
-                      <i className="fas fa-cart-arrow-down me-2"></i> Show order summary
+                    <div className="d-flex me-4 fs-6 fw-lighter align-items-center">
+                      <i className="fas fa-cart-arrow-down me-2"></i>
+                      Show order summary
                       <i className="fas fa-chevron-down ms-2"></i>
-                    </p>
+                    </div>
                   )}
                   {open && (
-                    <p className="fs-6 fw-lighter">
-                      <i className="fas fa-cart-arrow-down me-2"></i> Hide order summary
+                    <div className="d-flex me-4 fs-6 fw-lighter align-items-center">
+                      <i className="fas fa-cart-arrow-down me-2"></i>
+                      Hide order summary
                       <i className="fas fa-chevron-up ms-2"></i>
-                    </p>
+                    </div>
                   )}
-
-                  <p className="text-black fs-6 fw-lighter">USD {total}</p>
+                  <div className="d-flex gap-1 pt-3">
+                    <p className="text-black fs-6 fw-lighter">USD </p>
+                    <p className="text-black fs-6 fw-lighter"> {total}</p>
+                  </div>
                 </div>
               </Button>
               <Collapse in={open}>
                 <div id="example-collapse-text" className="d-md-block">
-                  <section className="mt-5">
+                  <section className="checkout-items-section">
                     {products &&
                       products.map((product) => {
                         return <CheckoutItems product={product} />;
@@ -313,7 +317,7 @@ function Checkout() {
               <div className="row">
                 <div className="col-lg-6 order-lg-2">
                   {token === undefined && (
-                    <div className="m-0 text-lg-end">
+                    <div className="m-1 text-lg-end">
                       <p className="fs-6">
                         Already have an account?{" "}
                         <span
@@ -329,7 +333,7 @@ function Checkout() {
                   )}
                 </div>
                 <div className="col-lg-6 order-lg-1">
-                  <span className="d-inline-block mt-1">
+                  <span className="d-inline-block mt-lg-1">
                     <i className="fas fa-lock me-3"></i>Payment details stored in plain text
                   </span>
                   <div className="mt-2">

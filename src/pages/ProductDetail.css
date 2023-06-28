@@ -102,6 +102,7 @@
   display: inline-block;
   margin: 0 2px 0 2px;
   border: 2px solid white;
+  font-size: 1.2rem;
 }
 
 .product-form-buttons button:hover {

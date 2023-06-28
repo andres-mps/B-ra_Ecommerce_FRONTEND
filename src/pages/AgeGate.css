@@ -45,6 +45,11 @@
   color: white;
 }
 
+#age-gate-pass:hover {
+  background-color: white;
+  color: black;
+}
+
 #age-gate-fail {
   font-family: var(--font-heading);
   margin: 1rem;
@@ -52,6 +57,11 @@
   background-color: transparent;
   border: 2px solid white;
   color: white;
+}
+
+#age-gate-fail:hover {
+  background-color: white;
+  color: black;
 }
 
 

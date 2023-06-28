@@ -1,6 +1,6 @@
 .add-to-cart {
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding-bottom: 0.5rem;
   margin-top: 1rem;
   font-family: var(--font-heading);
@@ -52,8 +52,17 @@
     color: black;
     display: block;
     opacity: 1;
+    padding: 0 5px 0 5px;
   }
 }
+
+@media (max-width: 576px) {
+  .add-to-cart {
+    font-size: 0.9rem;
+
+  }
+}
+
 
 
 .scroll {

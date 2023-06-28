@@ -11,13 +11,11 @@
 .order-succes-text {
     background-color: rgb(0, 0, 0, 0.8);
     font-family: var(--font-heading-bold);
+    font-size: 2rem;
     color: white;
-    border-top: green solid 3px;
-    border-bottom: green solid 3px;
-    width: 400px;
-    height: 50%;
-    padding-left: 20px;
-    padding-right: 20px;
+    width: 100%;
+    height: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,18 +25,35 @@
 
 .order-succes-icon-size {
     font-size: 5rem;
-    color: green;
+    color: white;
+    padding-bottom: 20px;
 }
 
 .order-succes-link {
     font-family: var(--font-heading-light);
     position: absolute;
-    bottom: 15%;
+    bottom: 30%;
     text-align: center;
 }
+
 
 @media (max-width: 400px) {
     .order-succes-text {
         width: 90%;
     }
+}
+
+.boton-success {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    margin: 1rem;
+    padding: 0.5rem 3rem;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.boton-success:hover {
+    background-color: white;
+    color: black;
 }

@@ -16,7 +16,7 @@ function Error404() {
         <p>404</p>
         <p>Page not found</p>
         <NavLink to="/home">
-        <button>Continue shopping</button>
+        <button className="boton-success">Continue shopping</button>
         </NavLink>
       </div>
     </main>
