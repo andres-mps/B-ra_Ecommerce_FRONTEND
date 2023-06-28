@@ -9,14 +9,15 @@ import Marquee from "react-fast-marquee";
 function Home() {
   const [products, setProducts] = useState([]);
   const [hoveredImage, setHoveredImage] = useState(
-    "http://localhost:5174/public/img/home/home_stylesList.webp",
+    `${import.meta.env.VITE_APP_BACK_IMG}home_stylesList.webp`,
   );
   const [hoveredCategory, setHoveredCategory] = useState(null);
   useEffect(() => {
     async function getProductInfo() {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:3000/products/featured`,
+        url: `${import.meta.env.VITE_APP_BACK}/products/featured`,
+
         // headers: {
         //   Authorization: `Bearer ${token}`,
         // },
@@ -32,7 +33,7 @@ function Home() {
     async function getCategories() {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:3000/categories`,
+        url: `${import.meta.env.VITE_APP_BACK}/categories`,
         // headers: {
         //   Authorization: `Bearer ${token}`,
         // },
@@ -44,7 +45,7 @@ function Home() {
   }, []);
 
   const handleHover = (categoryName, categoryImage) => {
-    setHoveredImage(`http://localhost:5174/img/home/${categoryImage}`);
+    setHoveredImage(`${import.meta.env.VITE_APP_BACK_IMG + categoryImage}`);
     setHoveredCategory(categoryName);
   };
 

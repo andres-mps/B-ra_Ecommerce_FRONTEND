@@ -58,7 +58,7 @@ function Checkout() {
     }
     const response = await axios({
       method: "post",
-      url: `http://localhost:3000/orders/${loggedUser.id}`,
+      url: `${import.meta.env.VITE_APP_BACK}/orders/${loggedUser.id}`,
       data: {
         code: nanoid(10),
         products,

@@ -35,12 +35,12 @@ function ProductDetail() {
     async function getProductInfo() {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:3000/products/${params.product}`,
+        url: `${import.meta.env.VITE_APP_BACK}/products/${params.product}`,
       });
       setProduct(response.data);
       const featured = await axios({
         method: "GET",
-        url: `http://localhost:3000/products/featured`,
+        url: `${import.meta.env.VITE_APP_BACK}/products/featured`,
       });
       setFeatured(featured.data);
     }

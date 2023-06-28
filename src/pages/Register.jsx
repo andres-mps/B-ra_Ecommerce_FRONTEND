@@ -23,7 +23,7 @@ function Register() {
     event.preventDefault();
     const register = await axios({
       method: "post",
-      url: `http://localhost:3000/users/`,
+      url: `${import.meta.env.VITE_APP_BACK}/users/`,
       data: {
         firstname: firstnameValue,
         lastname: lastnameValue,

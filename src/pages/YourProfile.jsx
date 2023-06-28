@@ -68,7 +68,7 @@ function YourProfile() {
     event.preventDefault();
     const response = await axios({
       method: "patch",
-      url: `http://localhost:3000/users/${userData.id}`,
+      url: `${import.meta.env.VITE_APP_BACK}/users/${userData.id}`,
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -92,7 +92,7 @@ function YourProfile() {
     event.preventDefault();
     const response = await axios({
       method: "delete",
-      url: `http://localhost:3000/users/${userData.id}`,
+      url: `${import.meta.env.VITE_APP_BACK}/users/${userData.id}`,
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -109,7 +109,7 @@ function YourProfile() {
     event.preventDefault();
     const response = await axios({
       method: "patch",
-      url: `http://localhost:3000/users/${userData.id}`,
+      url: `${import.meta.env.VITE_APP_BACK}/users/${userData.id}`,
       headers: {
         Authorization: `Bearer ${token}`,
       },
