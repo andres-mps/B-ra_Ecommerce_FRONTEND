@@ -42,7 +42,7 @@ function NavbarBeer() {
           <Container fluid>
             <NavLink className="navbar-brand" to="/home">
               <img
-                src="/public/img/logo/tool_horizontal_logo_19.webp"
+                src="/public/img/logo/BRA_logo_black.webp"
                 alt="Logo"
                 style={{ maxWidth: "90px" }}
               />
@@ -66,7 +66,7 @@ function NavbarBeer() {
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                   <NavLink to="/home" onClick={() => dropdownClose()}>
                     <img
-                      src="/public/img/logo/tool_horizontal_logo_19.webp"
+                      src="/public/img/logo/BRA_logo_black.webp"
                       alt="Logo"
                       style={{ maxWidth: "90px" }}
                     />
