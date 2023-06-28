@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 function ProductDetail() {
   const [featured, setFeatured] = useState([]);
   const [product, setProduct] = useState("");
+  const [imgToBox, setImgToBox] = useState("main");
   const params = useParams();
   const productsInCart = useSelector((state) => state.cart.products);
   const selectedProduct = productsInCart.find((productInCart) => productInCart.id === product.id);
@@ -29,6 +30,8 @@ function ProductDetail() {
   };
 
   useEffect(() => {
+    setImgToBox("main");
+
     async function getProductInfo() {
       const response = await axios({
         method: "GET",
@@ -46,6 +49,9 @@ function ProductDetail() {
   }, [params]);
 
   const limitFeatured = featured.slice(0, 4);
+
+  console.log(imgToBox);
+
   return (
     product && (
       <>
@@ -57,7 +63,7 @@ function ProductDetail() {
           className="container-fluid p-3 m-0"
         >
           <div id="main-row" className="row">
-            <div className="col-12 col-md-7">
+            <div className="col-12 col-md-6">
               <div className="product-detail-img-container">
                 <NavLink to="/styles">
                   {/* Botón "BACK" vista desktop  */}
@@ -69,22 +75,51 @@ function ProductDetail() {
                     <i className="bi bi-arrow-left"></i>
                   </button>
                 </NavLink>
-                <motion.img
-                  drag
-                  dragConstraints={{
-                    top: -50,
-                    left: -50,
-                    right: 50,
-                    bottom: 50,
-                  }}
-                  className="product-detail-img rounded"
-                  src={`${import.meta.env.VITE_APP_BACK_IMG + product.image.main}`}
-                  alt=""
-                />
+                <div className="big-img-container">
+                  <motion.img
+                    drag
+                    dragConstraints={{
+                      top: -50,
+                      left: -50,
+                      right: 50,
+                      bottom: 50,
+                    }}
+                    className="product-detail-img rounded"
+                    src={import.meta.env.VITE_APP_BACK_IMG + product.image[imgToBox]}
+                    alt=""
+                  />
+                </div>
+                {product.image.alt && (
+                  <div className="thumbnails-container">
+                    <div
+                      className={`thumbnail ${
+                        imgToBox === "main" ? "thumbnail-container-border" : ""
+                      }`}
+                    >
+                      {" "}
+                      <img
+                        onClick={() => setImgToBox("main")}
+                        src={`${import.meta.env.VITE_APP_BACK_IMG + product.image.main}`}
+                        alt=""
+                      />
+                    </div>
+                    <div
+                      className={`thumbnail ${
+                        imgToBox === "alt" ? "thumbnail-container-border" : ""
+                      }`}
+                    >
+                      <img
+                        onClick={() => setImgToBox("alt")}
+                        src={`${import.meta.env.VITE_APP_BACK_IMG + product.image.alt}`}
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
-            <div className="col-12 col-md-5" style={{ paddingRight: "2rem" }}>
+            <div className="col-12 col-md-6" style={{ paddingRight: "2rem" }}>
               <h2>To Øl</h2>
               <div className="product-title my-4">
                 <h1>{product.name}</h1>

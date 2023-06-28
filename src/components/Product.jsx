@@ -7,7 +7,7 @@ function Product({ product }) {
   const hasStock = product.stock;
   return (
     <>
-      <div className="product-container d-flex flex-column ">
+      <div className="product-container d-flex flex-column">
         <NavLink
           className="text-decoration-none text-black d-flex flex-column text-center product-link"
           to={`/beers/${product.slug}`}

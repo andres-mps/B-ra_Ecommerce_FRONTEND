@@ -4,20 +4,20 @@
 
 .product-imgContainer {
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
 }
 
 .product-imgContainer .img-top {
   display: none;
   position: absolute;
-  top: 0;
-  left: 0;
   z-index: 99;
 }
 
 .product-imgContainer:hover .img-top {
   display: inline-block;
 }
+
 .product-link {
   position: relative;
   justify-content: center;
@@ -26,7 +26,8 @@
 
 .product-img {
   width: 80%;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
   transition: all 0.12s ease-in;
 }
 
@@ -60,6 +61,7 @@
   background-color: var(--color-background-dark);
   padding: 3px 10px 3px 10px;
   border-radius: 10px;
+  z-index: 99;
 }
 
 .product-first-container {
