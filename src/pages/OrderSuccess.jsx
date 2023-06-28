@@ -34,6 +34,10 @@ function OrderSuccess() {
                 <p>Your order is confirmed!</p>
               </div>
             </motion.div>
+            <NavLink to="/orders" className="track-text">
+              <p>Track order</p>
+              </NavLink>
+            
             <div>
               <NavLink to="/home" className="text-white">
                 <button className="boton-success">Return to home</button>
