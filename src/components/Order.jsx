@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./order.css";
+import "./Order.css";
 import { Button, Collapse } from "react-bootstrap";
 import { enUS } from "date-fns/locale";
 import { format } from "date-fns";
