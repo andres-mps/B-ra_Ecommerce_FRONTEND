@@ -54,13 +54,13 @@ function Order({ order }) {
           <div>
             {order.products.map((product, index) => (
               <div key={index} className="card product-card">
-                <div className="row">
+                <div className="row align-items-center">
                   <div className="col-md-3 col-sm-12 text-center mb-3 mb-sm-0">
                     <img
                       src={import.meta.env.VITE_APP_BACK_IMG + product.image.main}
                       alt="Producto"
                       className="img-fluid product-image"
-                      style={{ maxWidth: "150px" }}
+                      style={{ maxHeight: "200px", objectFit: "contain" }}
                     />
                   </div>
                   <div className="col-md-9 col-sm-12">
