@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./AboutThisProject.css";
 import Accordion from "react-bootstrap/Accordion";
 import trello_img from "../assets/Trello.png";
+import profileGB from "../assets/profiles/GonzaloBascans.jpeg";
 
 function AboutThisProject() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -106,10 +107,7 @@ function AboutThisProject() {
                   </div>
                 </div>
                 <div className="card">
-                  <img
-                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-                    alt=""
-                  />
+                  <img src={profileGB} alt="" />
                   <div className="card-body">
                     <h5 className="card-title ">Gonzalo Bascans</h5>
                     <p className="card-text">
