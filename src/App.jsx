@@ -37,7 +37,7 @@ function App() {
 
   useEffect(() => {
     const updatePageTitle = () => {
-      document.title = isActive ? "To Øl" : "Hey! Come back!";
+      document.title = isActive ? "B.RA" : "Hey! Come back!";
     };
     updatePageTitle();
     return () => {
