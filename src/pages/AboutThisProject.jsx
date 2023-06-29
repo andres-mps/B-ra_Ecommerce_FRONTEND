@@ -2,6 +2,10 @@ import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./AboutThisProject.css";
 import Accordion from "react-bootstrap/Accordion";
+import trello_img from "../assets/Trello.png";
+import mer_img from "../assets/MER.png";
+import about_logos_img from "../assets/about-logos.png";
+import profileGB from "../assets/profiles/GonzaloBascans.jpeg";
 
 function AboutThisProject() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -105,19 +109,28 @@ function AboutThisProject() {
                   </div>
                 </div>
                 <div className="card">
-                  <img
-                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-                    alt=""
-                  />
+                  <img src={profileGB} alt="" />
                   <div className="card-body">
-                    <h5 className="card-title ">Andres Mendaro</h5>
+                    <h5 className="card-title ">Gonzalo Bascans</h5>
                     <p className="card-text">
-                      Some quick example text to build on the card title and make up the bulk of the
-                      card's content.
+                      I am a Civil Engineer converted to Full Stack Developer. I started this
+                      exiting transition in January 2023.
                     </p>
                     <p className="card-text d-flex gap-2">
-                      <i className="fab fa-github"></i>
-                      <i className="fab fa-linkedin"></i>
+                      <NavLink
+                        target="blank"
+                        to="https://github.com/gbascans"
+                        className="text-decoration-none text-black"
+                      >
+                        <i className="fab fa-github"></i>
+                      </NavLink>
+                      <NavLink
+                        target="blank"
+                        to="https://www.linkedin.com/in/gbascans/"
+                        className="text-decoration-none text-black"
+                      >
+                        <i className="fab fa-linkedin"></i>
+                      </NavLink>
                     </p>
                   </div>
                 </div>
@@ -191,7 +204,7 @@ function AboutThisProject() {
                     </p>
                   </div>
                 </div>
-                <img className="about-tab-panel-img" src="/public/img/MER.png" alt="MER" />
+                <img className="about-tab-panel-img" src={mer_img} alt="MER" />
               </div>
             </div>
 
@@ -214,7 +227,7 @@ function AboutThisProject() {
                   </p>
                 </div>
                 <img
-                  src="/public/img/about-logos.png"
+                  src={about_logos_img}
                   alt="about-logos"
                   className="ms-3 about-tab-panel-logos"
                 />
@@ -236,7 +249,7 @@ function AboutThisProject() {
                       member could participate in both aspects of the project.
                     </p>
                   </div>
-                  <img className="about-tab-panel-img" src="/public/img/Trello.png" alt="Trello" />
+                  <img className="about-tab-panel-img" src={trello_img} alt="Trello" />
                 </div>
               </div>
             </div>

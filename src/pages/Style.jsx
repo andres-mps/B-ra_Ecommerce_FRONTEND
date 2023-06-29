@@ -91,7 +91,7 @@ function Style() {
             <ProductLoader />
           ) : products.length < 1 ? (
             <p class="d-block text-center checkout-regular-text text-success mt-2" role="success">
-              This style remains in prodution! came back later for the newest beers!
+              This style remains in production! came back later for the newest beers!
             </p>
           ) : (
             products.map((product) => {

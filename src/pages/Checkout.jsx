@@ -10,6 +10,7 @@ import axios from "axios";
 import { nanoid } from "@reduxjs/toolkit";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import BRA_logo_black from "../assets/logos/BRA_logo_black.webp";
 
 function Checkout() {
   const dispatch = useDispatch();
@@ -56,7 +57,7 @@ function Checkout() {
   async function handleSubmit(event) {
     event.preventDefault();
     if (loggedUser === undefined) {
-      setErr("inicia sesion para realizar una compra");
+      setErr("Sign in to your account");
     }
     const response = await axios({
       method: "post",
@@ -101,7 +102,7 @@ function Checkout() {
       <ToastContainer />
       <section className="container-fluid checkout-navbar-container">
         <NavLink className="checkout-navbar-logo" to="/home">
-          <img src="/public/img/logo/BRA_logo_black.webp" alt="Logo" style={{ maxWidth: "90px" }} />
+          <img src={BRA_logo_black} alt="Logo" style={{ maxWidth: "90px" }} />
         </NavLink>
         <div className="checkout-regular-text pt-3 d-flex align-items-center gap-3">
           <NavLink to="/styles" className="text-decoration-none text-black">
@@ -117,7 +118,7 @@ function Checkout() {
       </section>
       <section className="container checkout-navbar-container-md">
         <NavLink className="" to="/home">
-          <img src="/public/img/logo/BRA_logo_black.webp" alt="Logo" style={{ maxWidth: "90px" }} />
+          <img src={BRA_logo_black} alt="Logo" style={{ maxWidth: "90px" }} />
         </NavLink>
       </section>
       <section className="container-fluid">
