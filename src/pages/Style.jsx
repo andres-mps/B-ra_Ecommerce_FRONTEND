@@ -89,6 +89,10 @@ function Style() {
         <div className="row align-items-end">
           {!products ? (
             <ProductLoader />
+          ) : products.length < 1 ? (
+            <p class="d-block text-center checkout-regular-text text-success mt-2" role="success">
+              This style remains in prodution! came back later for the newest beers!
+            </p>
           ) : (
             products.map((product) => {
               return (
