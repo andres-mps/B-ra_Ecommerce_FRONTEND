@@ -223,7 +223,7 @@ function AboutThisProject() {
                   <p className="about-project-paragraph">
                     The back-end was developed using Node.js, Express, SQL, and Git/GitHub to create
                     a REST API. This API serves as the data source for two separate front-end
-                    projects, one for
+                    projects, one for{" "}
                     <NavLink
                       to="https://b-ra-admin.vercel.app/"
                       className="admin-link"
