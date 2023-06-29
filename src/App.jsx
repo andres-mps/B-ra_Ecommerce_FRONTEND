@@ -48,7 +48,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/age-gate" element={<AgeGate />} />
+        {/* <Route path="/age-gate" element={<AgeGate />} /> */}
 
         <Route path="/" element={<Page />}>
           <Route path="home" element={<Home />} />
