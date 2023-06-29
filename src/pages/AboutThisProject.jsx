@@ -110,14 +110,26 @@ function AboutThisProject() {
                     alt=""
                   />
                   <div className="card-body">
-                    <h5 className="card-title ">Andres Mendaro</h5>
+                    <h5 className="card-title ">Gonzalo Bascans</h5>
                     <p className="card-text">
-                      Some quick example text to build on the card title and make up the bulk of the
-                      card's content.
+                      I am a Civil Engineer converted to Full Stack Developer. I started this
+                      exiting transition in January 2023.
                     </p>
                     <p className="card-text d-flex gap-2">
-                      <i className="fab fa-github"></i>
-                      <i className="fab fa-linkedin"></i>
+                      <NavLink
+                        target="blank"
+                        to="https://github.com/gbascans"
+                        className="text-decoration-none text-black"
+                      >
+                        <i className="fab fa-github"></i>
+                      </NavLink>
+                      <NavLink
+                        target="blank"
+                        to="https://www.linkedin.com/in/gbascans/"
+                        className="text-decoration-none text-black"
+                      >
+                        <i className="fab fa-linkedin"></i>
+                      </NavLink>
                     </p>
                   </div>
                 </div>
