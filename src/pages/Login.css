@@ -70,9 +70,10 @@
 }
 
 .login-span {
-  color: blue;
+  color: rgb(0, 0, 0);
 }
 
 .login-span:hover {
   text-decoration: underline;
+  cursor: pointer;
 }

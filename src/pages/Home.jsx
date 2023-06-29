@@ -1,12 +1,39 @@
 import "./Home.css";
 import axios from "axios";
 import Product from "../components/Product";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 
 function Home() {
+  const [dragging, setDragging] = useState(false);
+  const [startXPosition, setStartXPosition] = useState(null);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const marqueeRef = useRef(null);
+
+  const handleMouseDown = (e) => {
+    setDragging(true);
+    setStartXPosition(e.clientX);
+    setScrollLeft(marqueeRef.current.scrollLeft);
+  };
+
+  const handleMouseUp = () => {
+    setDragging(false);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!dragging) return;
+    e.preventDefault();
+    const x = e.clientX;
+    const dragOffset = x - startXPosition;
+    marqueeRef.current.scrollLeft = scrollLeft - dragOffset;
+  };
+
+  const handleMouseLeave = () => {
+    if (dragging) setDragging(false);
+  };
+
   const [products, setProducts] = useState([]);
   const [hoveredImage, setHoveredImage] = useState(
     `${import.meta.env.VITE_APP_BACK_IMG}home_stylesList.webp`,
@@ -19,7 +46,6 @@ function Home() {
         url: `${import.meta.env.VITE_APP_BACK}/products/featured`,
       });
       setProducts(response.data);
-      //console.log(response.data);
     }
     getProductInfo();
   }, []);
@@ -32,7 +58,6 @@ function Home() {
         url: `${import.meta.env.VITE_APP_BACK}/categories`,
       });
       setCategories(response.data);
-      //console.log(response.data);
     }
     getCategories();
   }, []);
@@ -57,7 +82,7 @@ function Home() {
         </NavLink>
         <div className="row hero-stats">
           <div className="d-none d-md-block col-md-6 col-lg-3">
-            <p>Brewed in Denmark 🇩🇰</p>
+            <p>Brewed in Uruguay 🇺🇾</p>
           </div>
           <div className="d-none d-md-block col-md-6 col-lg-3">
             <p>High-quality ingredients 🍻</p>
@@ -72,69 +97,49 @@ function Home() {
       </section>
       <section id="featured-products" className="container-fluid mt-5 mb-3">
         <h2 className="featured-products-heading text-center">Featured Beers</h2>
-        <div className="row align-items-end">
-          <Marquee
-            pauseOnHover={true}
-            pauseOnClick={true}
-            speed={100}
-            loop={0}
-            delay={0}
-            autoFill={true}
-          >
-            {products &&
-              products.map((product) => {
-                return (
-                  <div className="col-6 col-md-4 col-lg-3 product-first-container">
-                    <Product key={product.id} product={product} />
-                  </div>
-                );
-              })}
-          </Marquee>
+        <div
+          className="row align-items-end"
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="col p-0">
+            <Marquee
+              pauseOnHover={true}
+              speed={100}
+              loop={0}
+              delay={0}
+              autoFill={true}
+              gradientWidth={0}
+              gradientColor={[0, 0, 0, 0]}
+              ref={marqueeRef}
+            >
+              {products &&
+                products.map((product) => {
+                  return (
+                    <div className="col-6 col-md-4 col-lg-3 product-first-container">
+                      <Product key={product.id} product={product} />
+                    </div>
+                  );
+                })}
+            </Marquee>
+          </div>
         </div>
       </section>
       <section className="section-container">
         <div className="row">
-          <div
-            className="col-md-6 d-flex align-items-center justify-content-center order-md-1"
-            style={{ padding: "0px" }}
-          >
+          <div className="col-md-6 order-md-1 home-images-container">
             <img
               src="../../public/img/home/home_destilery_img.webp"
-              alt="Imagen"
-              className="object-fit-cover"
-              style={{ minHeight: "100%", minWidth: "100%" }}
+              alt="brewery-image"
+              className="home-images"
             />
           </div>
-          <div
-            className="col-md-6 d-md-flex flex-md-column justify-content-md-center order-md-2"
-            style={{
-              paddingRight: "100px",
-              paddingLeft: "100px",
-              paddingTop: "30px",
-              paddingBottom: "30px",
-            }}
-          >
-            <div className="text-left">
-              <h2
-                style={{
-                  fontFamily: "var(--font-heading-bold)",
-                  fontSize: "40px",
-                  paddingBottom: "20px",
-                  textAlign: "left",
-                }}
-              >
-                Craft beer to the people
-              </h2>
-              <p
-                style={{
-                  fontFamily: "var(--font-heading-light)",
-                  opacity: 0.9,
-                  lineHeight: "1.6",
-                  fontSize: "1rem",
-                  fontWeight: "lighter",
-                  letterSpacing: "3px",
-                }}
-              >
+          <div className="col-md-6 order-md-2 home-text-box">
+            <div>
+              <h2 className="home-subtitles">Craft beer to the people</h2>
+              <p className="home-text">
                 Starting out as a home brewing project back in 2005, To Øl was permanently
                 established in 2010 working as a gypsy brewery lending in on other breweries spare
                 capacity for the following decade. In 2019 we took over a former food factory in the
@@ -145,47 +150,17 @@ function Home() {
           </div>
         </div>
         <div className="row">
-          <div
-            className="col-md-6 d-flex align-items-center justify-content-center order-md-2"
-            style={{ padding: "0px" }}
-          >
+          <div className="col-md-6 order-md-2 home-images-container">
             <img
               src="../../public/img/home/beer_club_box.webp"
               alt="Imagen"
-              className="object-fit-cover"
-              style={{ maxWidth: "100%", minWidth: "100%" }}
+              className="home-images"
             />
           </div>
-          <div
-            className="col-md-6 d-md-flex flex-md-column justify-content-md-center order-md-1"
-            style={{
-              paddingRight: "100px",
-              paddingLeft: "100px",
-              paddingTop: "30px",
-              paddingBottom: "30px",
-            }}
-          >
+          <div className="col-md-6 order-md-1 home-text-box">
             <div className="text-left">
-              <h2
-                style={{
-                  fontFamily: "var(--font-heading-bold)",
-                  fontSize: "40px",
-                  paddingBottom: "20px",
-                  textAlign: "left",
-                }}
-              >
-                To Øl Beer Club
-              </h2>
-              <p
-                style={{
-                  fontFamily: "var(--font-heading-light)",
-                  opacity: 0.9,
-                  lineHeight: "1.6",
-                  fontSize: "1rem",
-                  fontWeight: "lighter",
-                  letterSpacing: "3px",
-                }}
-              >
+              <h2 className="home-subtitles">To Øl Beer Club</h2>
+              <p className="home-text">
                 Be a part of To Øl’s monthly beer club! A club for eager hop heads, curious beer
                 enthusiasts and everything in between. Every month you get a box with 6 carefully
                 selected beers, freshly brewed and packed by us. <br />
@@ -196,44 +171,14 @@ function Home() {
           </div>
         </div>
         <div className="row">
-          <div
-            className="col-md-6 d-flex align-items-center justify-content-center order-md-1"
-            style={{ padding: "0px" }}
-          >
-            <img
-              src={hoveredImage}
-              alt="Imagen"
-              className="object-fit-cover"
-              style={{ minHeight: "100%", minWidth: "100%" }}
-            />
+          <div className="col-md-6 order-md-1 home-images-container">
+            <img src={hoveredImage} alt="Imagen" className="home-images" />
           </div>
-          <div
-            className="col-md-6 d-md-flex flex-md-column justify-content-md-center order-md-2"
-            style={{
-              paddingRight: "100px",
-              paddingLeft: "100px",
-              marginTop: "30px",
-              marginBottom: "30px",
-            }}
-          >
+          <div className="col-md-6 order-md-2 home-text-box">
             <div className="text-left">
-              <h2
-                style={{
-                  fontFamily: "var(--font-heading-bold)",
-                  fontSize: "2rem",
-                  paddingBottom: "20px",
-                  textAlign: "left",
-                }}
-              >
-                We got the goods
-              </h2>
-              <div
-                style={{
-                  fontFamily: "var(--font-body-family: Regular, Helvetica)",
-                  fontSize: "17px",
-                }}
-              >
-                <table style={{ width: "100%", fontSize: "25px" }}>
+              <h2 className="home-subtitles">We got the goods</h2>
+              <div>
+                <table className="home-style-list">
                   <tbody>
                     {categories &&
                       categories.map((category) => {

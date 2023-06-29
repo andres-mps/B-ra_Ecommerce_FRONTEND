@@ -2,14 +2,12 @@ import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./AboutThisProject.css";
 import Accordion from "react-bootstrap/Accordion";
-import Marquee from "react-fast-marquee";
 
 function AboutThisProject() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const handleTabClick = (index) => {
     setActiveTabIndex(index);
   };
-  console.log(activeTabIndex);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -18,7 +16,7 @@ function AboutThisProject() {
       <section>
         <NavLink>
           <div className="about-hero-container">
-            <div className="about-the-project-background-image"></div>
+            <div className="about-background-image"></div>
             <div className="background-overlay"></div>
             <div className="about-hero-content">
               <h1>Sobre este proyecto</h1>
@@ -76,15 +74,14 @@ function AboutThisProject() {
                   <img
                     src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
                     alt=""
-                    className="card-img-top about-the-project-card-image"
                   />
                   <div className="card-body">
-                    <h5 className="card-title about-the-project-title-font">Andres Mendaro</h5>
-                    <p className="card-text about-the-project-content-font">
+                    <h5 className="card-title ">Andres Mendaro</h5>
+                    <p className="card-text">
                       Some quick example text to build on the card title and make up the bulk of the
                       card's content.
                     </p>
-                    <p className="card-text about-the-project-content-font d-flex gap-2">
+                    <p className="card-text d-flex gap-2">
                       <i className="fab fa-github"></i>
                       <i className="fab fa-linkedin"></i>
                     </p>
@@ -94,15 +91,14 @@ function AboutThisProject() {
                   <img
                     src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
                     alt=""
-                    className="card-img-top about-the-project-card-image"
                   />
                   <div className="card-body">
-                    <h5 className="card-title about-the-project-title-font">Andres Mendaro</h5>
-                    <p className="card-text about-the-project-content-font">
+                    <h5 className="card-title ">Andres Mendaro</h5>
+                    <p className="card-text">
                       Some quick example text to build on the card title and make up the bulk of the
                       card's content.
                     </p>
-                    <p className="card-text about-the-project-content-font d-flex gap-2">
+                    <p className="card-text d-flex gap-2">
                       <i className="fab fa-github"></i>
                       <i className="fab fa-linkedin"></i>
                     </p>
@@ -112,15 +108,14 @@ function AboutThisProject() {
                   <img
                     src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
                     alt=""
-                    className="card-img-top about-the-project-card-image"
                   />
                   <div className="card-body">
-                    <h5 className="card-title about-the-project-title-font">Andres Mendaro</h5>
-                    <p className="card-text about-the-project-content-font">
+                    <h5 className="card-title ">Andres Mendaro</h5>
+                    <p className="card-text">
                       Some quick example text to build on the card title and make up the bulk of the
                       card's content.
                     </p>
-                    <p className="card-text about-the-project-content-font d-flex gap-2">
+                    <p className="card-text d-flex gap-2">
                       <i className="fab fa-github"></i>
                       <i className="fab fa-linkedin"></i>
                     </p>
@@ -130,15 +125,14 @@ function AboutThisProject() {
                   <img
                     src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
                     alt=""
-                    className="card-img-top about-the-project-card-image"
                   />
                   <div className="card-body">
-                    <h5 className="card-title about-the-project-title-font">Andres Mendaro</h5>
-                    <p className="card-text about-the-project-content-font">
+                    <h5 className="card-title ">Andres Mendaro</h5>
+                    <p className="card-text">
                       Some quick example text to build on the card title and make up the bulk of the
                       card's content.
                     </p>
-                    <p className="card-text about-the-project-content-font d-flex gap-2">
+                    <p className="card-text d-flex gap-2">
                       <i className="fab fa-github"></i>
                       <i className="fab fa-linkedin"></i>
                     </p>
@@ -148,15 +142,14 @@ function AboutThisProject() {
                   <img
                     src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
                     alt=""
-                    className="card-img-top about-the-project-card-image"
                   />
                   <div className="card-body">
-                    <h5 className="card-title about-the-project-title-font">Andres Mendaro</h5>
-                    <p className="card-text about-the-project-content-font">
+                    <h5 className="card-title ">Andres Mendaro</h5>
+                    <p className="card-text">
                       Some quick example text to build on the card title and make up the bulk of the
                       card's content.
                     </p>
-                    <p className="card-text about-the-project-content-font d-flex gap-2">
+                    <p className="card-text d-flex gap-2">
                       <i className="fab fa-github"></i>
                       <i className="fab fa-linkedin"></i>
                     </p>
@@ -263,15 +256,14 @@ function AboutThisProject() {
                     <img
                       src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
                       alt=""
-                      className="card-img-top about-the-project-card-image"
                     />
                     <div className="card-body">
-                      <h5 className="card-title about-the-project-title-font">Andres Mendaro</h5>
-                      <p className="card-text about-the-project-content-font">
+                      <h5 className="card-title ">Andres Mendaro</h5>
+                      <p className="card-text ">
                         Some quick example text to build on the card title and make up the bulk of
                         the card's content.
                       </p>
-                      <p className="card-text about-the-project-content-font d-flex gap-2">
+                      <p className="card-text  d-flex gap-2">
                         <i className="fab fa-github"></i>
                         <i className="fab fa-linkedin"></i>
                       </p>
@@ -281,15 +273,14 @@ function AboutThisProject() {
                     <img
                       src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
                       alt=""
-                      className="card-img-top about-the-project-card-image"
                     />
                     <div className="card-body">
-                      <h5 className="card-title about-the-project-title-font">Andres Mendaro</h5>
-                      <p className="card-text about-the-project-content-font">
+                      <h5 className="card-title ">Andres Mendaro</h5>
+                      <p className="card-text">
                         Some quick example text to build on the card title and make up the bulk of
                         the card's content.
                       </p>
-                      <p className="card-text about-the-project-content-font d-flex gap-2">
+                      <p className="card-text d-flex gap-2">
                         <i className="fab fa-github"></i>
                         <i className="fab fa-linkedin"></i>
                       </p>
@@ -299,15 +290,14 @@ function AboutThisProject() {
                     <img
                       src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
                       alt=""
-                      className="card-img-top about-the-project-card-image"
                     />
                     <div className="card-body">
-                      <h5 className="card-title about-the-project-title-font">Andres Mendaro</h5>
-                      <p className="card-text about-the-project-content-font">
+                      <h5 className="card-title ">Andres Mendaro</h5>
+                      <p className="card-text">
                         Some quick example text to build on the card title and make up the bulk of
                         the card's content.
                       </p>
-                      <p className="card-text about-the-project-content-font d-flex gap-2">
+                      <p className="card-text d-flex gap-2">
                         <i className="fab fa-github"></i>
                         <i className="fab fa-linkedin"></i>
                       </p>
@@ -317,15 +307,14 @@ function AboutThisProject() {
                     <img
                       src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
                       alt=""
-                      className="card-img-top about-the-project-card-image"
                     />
                     <div className="card-body">
-                      <h5 className="card-title about-the-project-title-font">Andres Mendaro</h5>
-                      <p className="card-text about-the-project-content-font">
+                      <h5 className="card-title ">Andres Mendaro</h5>
+                      <p className="card-text">
                         Some quick example text to build on the card title and make up the bulk of
                         the card's content.
                       </p>
-                      <p className="card-text about-the-project-content-font d-flex gap-2">
+                      <p className="card-text d-flex gap-2">
                         <i className="fab fa-github"></i>
                         <i className="fab fa-linkedin"></i>
                       </p>
@@ -335,15 +324,14 @@ function AboutThisProject() {
                     <img
                       src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
                       alt=""
-                      className="card-img-top about-the-project-card-image"
                     />
                     <div className="card-body">
-                      <h5 className="card-title about-the-project-title-font">Andres Mendaro</h5>
-                      <p className="card-text about-the-project-content-font">
+                      <h5 className="card-title ">Andres Mendaro</h5>
+                      <p className="card-text">
                         Some quick example text to build on the card title and make up the bulk of
                         the card's content.
                       </p>
-                      <p className="card-text about-the-project-content-font d-flex gap-2">
+                      <p className="card-text d-flex gap-2">
                         <i className="fab fa-github"></i>
                         <i className="fab fa-linkedin"></i>
                       </p>

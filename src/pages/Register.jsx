@@ -48,7 +48,7 @@ function Register() {
             id="register-image"
           />
         </div>
-        <div className="col-12 col-lg-6  border-top border-sm-none" id="register-form">
+        <div className="col-12 col-lg-6 border-sm-none" id="register-form">
           <h1 id="register-heading">Sign up</h1>
           <form onSubmit={handleSubmit}>
             <div className="mb-3 input">

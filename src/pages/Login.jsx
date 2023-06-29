@@ -53,7 +53,7 @@ function Login() {
             id="login-image"
           />
         </div>
-        <div className="col-12 col-lg-6 border-top border-sm-none" id="login-form">
+        <div className="col-12 col-lg-6 border-sm-none" id="login-form">
           <h1 id="login-heading">Login</h1>
           <form onSubmit={handleSubmit}>
             <div className="mb-3 input">
