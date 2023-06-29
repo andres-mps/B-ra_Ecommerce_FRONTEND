@@ -7,6 +7,13 @@ import mer_img from "../assets/MER.png";
 import profileGB from "../assets/profiles/GonzaloBascans.jpeg";
 import profileEG from "../assets/profiles/EmilianoGaucher.jpg";
 import reactLogo from "../assets/icons/react.svg";
+import reduxLogo from "../assets/icons/redux.svg";
+import cssLogo from "../assets/icons/css.svg";
+import bootstrapLogo from "../assets/icons/bootstrap.svg";
+import sequelizeLogo from "../assets/icons/sequelize.svg";
+import jwtLogo from "../assets/icons/jwt.svg";
+import nodeLogo from "../assets/icons/node.svg";
+import expressLogo from "../assets/icons/express.svg";
 
 function AboutThisProject() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -242,31 +249,31 @@ function AboutThisProject() {
                     <p>React</p>
                   </div>
                   <div className="technology-applied">
-                    <img src="/src/assets/icons/redux.svg" alt="redux-logo" />
+                    <img src={reduxLogo} alt="redux-logo" />
                     <p>Redux</p>
                   </div>
                   <div className="technology-applied">
-                    <img src="/src/assets/icons/css.svg" alt="css-logo" />
+                    <img src={cssLogo} alt="css-logo" />
                     <p>CSS</p>
                   </div>
                   <div className="technology-applied">
-                    <img src="/src/assets/icons/bootstrap.svg" alt="bootstrap-logo" />
+                    <img src={bootstrapLogo} alt="bootstrap-logo" />
                     <p>Bootstrap</p>
                   </div>
                   <div className="technology-applied">
-                    <img src="/src/assets/icons/sequelize.svg" alt="sequelize-logo" />
+                    <img src={sequelizeLogo} alt="sequelize-logo" />
                     <p>Sequelize</p>
                   </div>
                   <div className="technology-applied">
-                    <img src="/src/assets/icons/jwt.svg" alt="jwt-logo" />
+                    <img src={jwtLogo} alt="jwt-logo" />
                     <p>JWT</p>
                   </div>
                   <div className="technology-applied">
-                    <img src="/src/assets/icons/node.svg" alt="node-logo" />
+                    <img src={nodeLogo} alt="node-logo" />
                     <p>Node.js</p>
                   </div>
                   <div className="technology-applied">
-                    <img src="/src/assets/icons/express.svg" alt="express-logo" />
+                    <img src={expressLogo} alt="express-logo" />
                     <p>Express</p>
                   </div>
                 </div>
