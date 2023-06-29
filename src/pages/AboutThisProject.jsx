@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./AboutThisProject.css";
 import Accordion from "react-bootstrap/Accordion";
+import trello_img from "../assets/Trello.png";
 
 function AboutThisProject() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -236,7 +237,7 @@ function AboutThisProject() {
                       member could participate in both aspects of the project.
                     </p>
                   </div>
-                  <img className="about-tab-panel-img" src="/src/assets/Trello.png" alt="Trello" />
+                  <img className="about-tab-panel-img" src={trello_img} alt="Trello" />
                 </div>
               </div>
             </div>
