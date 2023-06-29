@@ -6,6 +6,7 @@ import trello_img from "../assets/Trello.png";
 import mer_img from "../assets/MER.png";
 import profileGB from "../assets/profiles/GonzaloBascans.jpeg";
 import profileEG from "../assets/profiles/EmilianoGaucher.jpg";
+import reactLogo from "../assets/icons/react.svg";
 
 function AboutThisProject() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -237,7 +238,7 @@ function AboutThisProject() {
                 </div>
                 <div className="technologies-icons">
                   <div className="technology-applied">
-                    <img src="/src/assets/icons/react.svg" alt="react-logo" />
+                    <img src={reactLogo} alt="react-logo" />
                     <p>React</p>
                   </div>
                   <div className="technology-applied">
