@@ -34,6 +34,26 @@ function Home() {
     if (dragging) setDragging(false);
   };
 
+  const handleTouchStart = (e) => {
+    const touch = e.touches[0];
+    setDragging(true);
+    setStartXPosition(touch.clientX);
+    setScrollLeft(marqueeRef.current.scrollLeft);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!dragging) return;
+    e.preventDefault();
+    const touch = e.touches[0];
+    const x = touch.clientX;
+    const dragOffset = x - startXPosition;
+    marqueeRef.current.scrollLeft = scrollLeft - dragOffset;
+  };
+
+  const handleTouchEnd = () => {
+    setDragging(false);
+  };
+
   const [products, setProducts] = useState([]);
   const [hoveredImage, setHoveredImage] = useState(
     `${import.meta.env.VITE_APP_BACK_IMG}home_stylesList.webp`,
@@ -103,6 +123,9 @@ function Home() {
           onMouseUp={handleMouseUp}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           <div className="col p-0">
             <Marquee
