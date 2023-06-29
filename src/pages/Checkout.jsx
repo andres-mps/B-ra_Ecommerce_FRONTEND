@@ -156,10 +156,7 @@ function Checkout() {
                         />
                       </div>
                       <div className="col-3">
-                        <button
-                          type="submit"
-                          className="btn btn-secondary mb-3 checkout-discount-button"
-                        >
+                        <button className="btn btn-secondary mb-3 checkout-discount-button">
                           Apply
                         </button>
                       </div>
