@@ -236,7 +236,7 @@ function AboutThisProject() {
                       member could participate in both aspects of the project.
                     </p>
                   </div>
-                  <img className="about-tab-panel-img" src="/public/img/Trello.png" alt="Trello" />
+                  <img className="about-tab-panel-img" src="/src/assets/Trello.png" alt="Trello" />
                 </div>
               </div>
             </div>
