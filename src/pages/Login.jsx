@@ -30,7 +30,7 @@ function Login() {
         password: passwordValue,
       },
     });
-    if (response.data === "Credenciales incorrectas") {
+    if (response.data === "Please check your credentials and try again.") {
       return setErr(response.data);
     }
     dispatch(setToken(response.data));

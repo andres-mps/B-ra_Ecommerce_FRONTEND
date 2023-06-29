@@ -57,7 +57,7 @@ function Checkout() {
   async function handleSubmit(event) {
     event.preventDefault();
     if (loggedUser === undefined) {
-      setErr("inicia sesion para realizar una compra");
+      setErr("Sign in to your account");
     }
     const response = await axios({
       method: "post",
