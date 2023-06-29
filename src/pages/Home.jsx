@@ -154,7 +154,7 @@ function Home() {
         <div className="row">
           <div className="col-md-6 order-md-1 home-images-container">
             <img
-              src="../../public/img/home/home_destilery_img.webp"
+              src={`${import.meta.env.VITE_APP_BACK_IMG + "home_destilery_img.webp"}`}
               alt="brewery-image"
               className="home-images"
             />
@@ -175,7 +175,7 @@ function Home() {
         <div className="row">
           <div className="col-md-6 order-md-2 home-images-container">
             <img
-              src="../../public/img/home/beer_club_box.webp"
+              src={`${import.meta.env.VITE_APP_BACK_IMG + "beer_club_box.webp"}`}
               alt="Imagen"
               className="home-images"
             />
