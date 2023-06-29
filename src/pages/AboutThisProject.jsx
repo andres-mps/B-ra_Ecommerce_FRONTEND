@@ -226,11 +226,45 @@ function AboutThisProject() {
                     React Router, and Redux.
                   </p>
                 </div>
-                <img
+                <div className="technologies-icons">
+                  <div className="technology-applied">
+                    <img src="/src/assets/icons/react.svg" alt="react-logo" />
+                    <p>React</p>
+                  </div>
+                  <div className="technology-applied">
+                    <img src="/src/assets/icons/redux.svg" alt="redux-logo" />
+                    <p>Redux</p>
+                  </div>
+                  <div className="technology-applied">
+                    <img src="/src/assets/icons/css.svg" alt="css-logo" />
+                    <p>CSS</p>
+                  </div>
+                  <div className="technology-applied">
+                    <img src="/src/assets/icons/bootstrap.svg" alt="bootstrap-logo" />
+                    <p>Bootstrap</p>
+                  </div>
+                  <div className="technology-applied">
+                    <img src="/src/assets/icons/sequelize.svg" alt="sequelize-logo" />
+                    <p>Sequelize</p>
+                  </div>
+                  <div className="technology-applied">
+                    <img src="/src/assets/icons/jwt.svg" alt="jwt-logo" />
+                    <p>JWT</p>
+                  </div>
+                  <div className="technology-applied">
+                    <img src="/src/assets/icons/node.svg" alt="node-logo" />
+                    <p>Node.js</p>
+                  </div>
+                  <div className="technology-applied">
+                    <img src="/src/assets/icons/express.svg" alt="express-logo" />
+                    <p>Express</p>
+                  </div>
+                </div>
+                {/* <img
                   src={about_logos_img}
                   alt="about-logos"
                   className="ms-3 about-tab-panel-logos"
-                />
+                /> */}
               </div>
             </div>
 
@@ -423,7 +457,40 @@ function AboutThisProject() {
                       React, React Router, and Redux.
                     </p>
                   </div>
-                  <img src="/public/img/about-logos.png" alt="about-logos" />
+                  <div className="technologies-icons">
+                    <div className="technology-applied">
+                      <img src="/src/assets/icons/react.svg" alt="react-logo" />
+                      <p>React</p>
+                    </div>
+                    <div className="technology-applied">
+                      <img src="/src/assets/icons/redux.svg" alt="redux-logo" />
+                      <p>Redux</p>
+                    </div>
+                    <div className="technology-applied">
+                      <img src="/src/assets/icons/css.svg" alt="css-logo" />
+                      <p>CSS</p>
+                    </div>
+                    <div className="technology-applied">
+                      <img src="/src/assets/icons/bootstrap.svg" alt="bootstrap-logo" />
+                      <p>Bootstrap</p>
+                    </div>
+                    <div className="technology-applied">
+                      <img src="/src/assets/icons/sequelize.svg" alt="sequelize-logo" />
+                      <p>Sequelize</p>
+                    </div>
+                    <div className="technology-applied">
+                      <img src="/src/assets/icons/jwt.svg" alt="jwt-logo" />
+                      <p>JWT</p>
+                    </div>
+                    <div className="technology-applied">
+                      <img src="/src/assets/icons/node.svg" alt="node-logo" />
+                      <p>Node.js</p>
+                    </div>
+                    <div className="technology-applied">
+                      <img src="/src/assets/icons/express.svg" alt="express-logo" />
+                      <p>Express</p>
+                    </div>
+                  </div>
                 </div>
               </Accordion.Body>
             </Accordion.Item>
