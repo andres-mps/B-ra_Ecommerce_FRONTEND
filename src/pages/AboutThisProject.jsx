@@ -226,7 +226,7 @@ function AboutThisProject() {
             </div>
 
             <div className={`tab-panel tab-panel-${activeTabIndex === 2 ? "active" : ""}`}>
-              <div className="about-project-container">
+              <div className="about-project-container-technologies">
                 <div className="about-project-paragraph-container">
                   <p className="about-project-paragraph">
                     The back-end was developed using Node.js, Express, SQL, and Git/GitHub to create
@@ -277,11 +277,6 @@ function AboutThisProject() {
                     <p>Express</p>
                   </div>
                 </div>
-                {/* <img
-                  src={about_logos_img}
-                  alt="about-logos"
-                  className="ms-3 about-tab-panel-logos"
-                /> */}
               </div>
             </div>
 
@@ -476,35 +471,35 @@ function AboutThisProject() {
                   </div>
                   <div className="technologies-icons">
                     <div className="technology-applied">
-                      <img src="/src/assets/icons/react.svg" alt="react-logo" />
+                      <img src={reactLogo} alt="react-logo" />
                       <p>React</p>
                     </div>
                     <div className="technology-applied">
-                      <img src="/src/assets/icons/redux.svg" alt="redux-logo" />
+                      <img src={reduxLogo} alt="redux-logo" />
                       <p>Redux</p>
                     </div>
                     <div className="technology-applied">
-                      <img src="/src/assets/icons/css.svg" alt="css-logo" />
+                      <img src={cssLogo} alt="css-logo" />
                       <p>CSS</p>
                     </div>
                     <div className="technology-applied">
-                      <img src="/src/assets/icons/bootstrap.svg" alt="bootstrap-logo" />
+                      <img src={bootstrapLogo} alt="bootstrap-logo" />
                       <p>Bootstrap</p>
                     </div>
                     <div className="technology-applied">
-                      <img src="/src/assets/icons/sequelize.svg" alt="sequelize-logo" />
+                      <img src={sequelizeLogo} alt="sequelize-logo" />
                       <p>Sequelize</p>
                     </div>
                     <div className="technology-applied">
-                      <img src="/src/assets/icons/jwt.svg" alt="jwt-logo" />
+                      <img src={jwtLogo} alt="jwt-logo" />
                       <p>JWT</p>
                     </div>
                     <div className="technology-applied">
-                      <img src="/src/assets/icons/node.svg" alt="node-logo" />
+                      <img src={nodeLogo} alt="node-logo" />
                       <p>Node.js</p>
                     </div>
                     <div className="technology-applied">
-                      <img src="/src/assets/icons/express.svg" alt="express-logo" />
+                      <img src={expressLogo} alt="express-logo" />
                       <p>Express</p>
                     </div>
                   </div>
