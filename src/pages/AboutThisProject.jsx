@@ -4,7 +4,6 @@ import "./AboutThisProject.css";
 import Accordion from "react-bootstrap/Accordion";
 import trello_img from "../assets/Trello.png";
 import mer_img from "../assets/MER.png";
-import about_logos_img from "../assets/about-logos.png";
 import profileGB from "../assets/profiles/GonzaloBascans.jpeg";
 import profileEG from "../assets/profiles/EmilianoGaucher.jpg";
 
@@ -93,10 +92,7 @@ function AboutThisProject() {
                   </div>
                 </div>
                 <div className="card">
-                  <img
-                    src={profileEG}
-                    alt="Foto de perfil de Emiliano"
-                  />
+                  <img src={profileEG} alt="Foto de perfil de Emiliano" />
                   <div className="card-body">
                     <h5 className="card-title ">Emiliano Gaucher</h5>
                     <p className="card-text">
@@ -104,7 +100,7 @@ function AboutThisProject() {
                       card's content.
                     </p>
                     <p className="card-text d-flex gap-2">
-                    <NavLink
+                      <NavLink
                         target="blank"
                         to="https://github.com/emigaucher"
                         className="text-decoration-none text-black"
