@@ -12,27 +12,27 @@ function Product({ product }) {
           className="text-decoration-none text-black d-flex flex-column text-center product-link"
           to={`/beers/${product.slug}`}
         >
-          {/* <motion.div
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
             viewport={{ once: true }}
             className="product-imgContainer"
-          > */}
-          <img
-            className="product-img"
-            src={`${import.meta.env.VITE_APP_BACK_IMG + product.image.main}`}
-            alt={product.name}
-          />
-          {product.image.alt && (
+          >
             <img
-              className="product-img img-top"
-              src={`${import.meta.env.VITE_APP_BACK_IMG + product.image.alt}`}
+              className="product-img"
+              src={`${import.meta.env.VITE_APP_BACK_IMG + product.image.main}`}
               alt={product.name}
             />
-          )}
-          {!hasStock && <span className="product-sold-out">Sold out</span>}
-          {/* </motion.div> */}
+            {product.image.alt && (
+              <img
+                className="product-img img-top"
+                src={`${import.meta.env.VITE_APP_BACK_IMG + product.image.alt}`}
+                alt={product.name}
+              />
+            )}
+            {!hasStock && <span className="product-sold-out">Sold out</span>}
+          </motion.div>
           <span className="product-name">{product.name}</span>
           <span id="product-price">{product.price} USD</span>
         </NavLink>
