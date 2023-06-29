@@ -19,15 +19,15 @@ function AboutThisProject() {
             <div className="about-background-image"></div>
             <div className="background-overlay"></div>
             <div className="about-hero-content">
-              <h1>Sobre este proyecto</h1>
+              <h1>About this project</h1>
               <p>
-                El presente sitio de e-commerce es un proyecto desarrollado por estudiantes del{" "}
-                <strong style={{ fontWeight: "600" }}>Coding Bootcamp de Hack Academy</strong>. El
-                Bootcamp es un programa educativo extremadamente práctico de 3 meses y full-time,
-                donde los estudiantes invierten más de{" "}
-                <strong style={{ fontWeight: "600" }}>600 horas</strong> a aprender sobre{" "}
+                This e-commerce site is a project developed by students of{" "}
+                <strong style={{ fontWeight: "600" }}>Hack Academy's Coding Bootcamp.</strong> The
+                Bootcamp is an extremely hands-on, 3-month, full-time educational program, where
+                students invest more than <strong style={{ fontWeight: "600" }}>600 hours</strong>{" "}
+                learning about{" "}
                 <strong style={{ fontWeight: "600" }}>
-                  Node.js, Express, React.js, SQL, MongoDB y Git.
+                  Node.js, Express, React.js, SQL, MongoDB and Git.
                 </strong>
               </p>
             </div>
@@ -42,28 +42,28 @@ function AboutThisProject() {
               className={`about-tab-0 tab${activeTabIndex === 0 ? "active" : ""}`}
               onClick={() => handleTabClick(0)}
             >
-              <h3 className="tab-title m-0">Equipo</h3>
+              <h3 className="tab-title m-0">Team</h3>
               <span className="tab-number m-0">01</span>
             </div>
             <div
               className={`about-tab-1 tab${activeTabIndex === 1 ? "active" : ""}`}
               onClick={() => handleTabClick(1)}
             >
-              <h3 className="tab-title m-0">Proyecto</h3>
+              <h3 className="tab-title m-0">Project</h3>
               <span className="tab-number m-0">02</span>
             </div>
             <div
               className={`about-tab-2 tab${activeTabIndex === 2 ? "active" : ""}`}
               onClick={() => handleTabClick(2)}
             >
-              <h3 className="tab-title m-0">Tecnologías</h3>
+              <h3 className="tab-title m-0">Technologies</h3>
               <span className="tab-number m-0">03</span>
             </div>
             <div
               className={`about-tab-3 tab${activeTabIndex === 3 ? "active" : ""}`}
               onClick={() => handleTabClick(3)}
             >
-              <h3 className="tab-title m-0">División de tareas</h3>
+              <h3 className="tab-title m-0">Task division</h3>
               <span className="tab-number m-0">04</span>
             </div>
           </div>
@@ -162,32 +162,32 @@ function AboutThisProject() {
               <div className="about-project-container">
                 <div>
                   <div className="about-project-paragraph-container">
-                    <h3 className="about-project-paragraph-title">Duración</h3>
+                    <h3 className="about-project-paragraph-title">Duration</h3>
                     <p className="about-project-paragraph">
-                      El proyecto fue desarrollado en tan sólo 3 semanas, durante junio de 2023. El
-                      mismo se dividió en sprints (Scrum) de una semana de duración.
+                      The project was developed in 3 weeks, where each member contributed
+                      approximately 150 hours. The project was divided into one-week sprints
+                      (Scrum).
                     </p>
                   </div>
                   <div className="about-project-paragraph-container">
-                    <h3 className="about-project-paragraph-title">Elección del proyecto</h3>
+                    <h3 className="about-project-paragraph-title">Project selection</h3>
                     <p className="about-project-paragraph">
-                      La comodidad del diseño y el conocimiento por el producto fue lo que llevó al
-                      equipo a tomar la orientación de este proyecto. Además permitió la aplicación
-                      de diferentes funcionalidades como manejo y validación de stock, autenticación
-                      de usuarios y emular un proceso completo de compra.
+                      The minimalist design orientation and knowledge of the product led the team to
+                      choose this particular direction for the project. It also allowed the
+                      implementation of different functionalities such as stock management and
+                      validation, user authentication and emulating a complete purchasing process.
                     </p>
                   </div>
                   <div className="about-project-paragraph-container">
-                    <h3 className="about-project-paragraph-title">Experiencia</h3>
+                    <h3 className="about-project-paragraph-title">Experience</h3>
                     <p className="about-project-paragraph">
-                      Los estudiantes del equipo tienen como experiencia los proyectos HackBlog,
-                      HackFlix y clon de twitter, realizados también como estudiantes del curso
-                      Coding Bootcamp de Hack Academy.
+                      The team members had the previous experience of building projects such as
+                      HackBlog, HackFlix and Twitter clone, all of them made during the Bootcamp.
                     </p>
                     <p className="about-project-paragraph">
-                      El grupo particularmente nunca había trabajado junto, siendo la organización
-                      un tema a resolver. La buena disposición y comunicacion llevó al grupo a sacar
-                      lo mejor de si.
+                      The group had never worked together before, being the organization and task
+                      division an issue to be solved. Great willingness and communication led the
+                      group to get the best out of each other.
                     </p>
                   </div>
                 </div>
@@ -199,14 +199,18 @@ function AboutThisProject() {
               <div className="about-project-container">
                 <div className="about-project-paragraph-container">
                   <p className="about-project-paragraph">
-                    En el Back-End se desarrolló una REST API hecha con Node.js, Express, SQL y
-                    Git/GitHub la cual alimenta a dos proyectos de Front-End independientes, uno
-                    para{" "}
-                    <NavLink to="http://localhost:5173/" className="admin-link" target="_blank">
-                      <strong>administradores</strong>
+                    The back-end was developed using Node.js, Express, SQL, and Git/GitHub to create
+                    a REST API. This API serves as the data source for two separate front-end
+                    projects, one for
+                    <NavLink
+                      to="https://b-ra-admin.vercel.app/"
+                      className="admin-link"
+                      target="_blank"
+                    >
+                      <strong>administrators</strong>
                     </NavLink>{" "}
-                    y otro para usuarios. Para desarrollarlos se utilizó React, React Router y
-                    Redux.
+                    and the other for users. To develop these front-end projects, we utilized React,
+                    React Router, and Redux.
                   </p>
                 </div>
                 <img
@@ -222,14 +226,14 @@ function AboutThisProject() {
                 <div className="about-tareas-paragraph-container">
                   <div>
                     <p className="about-project-paragraph">
-                      Para la organización de tareas durante el proyecto se utilizó{" "}
-                      <strong style={{ fontFamily: "var(--font-heading)" }}>Trello</strong>. Esto
-                      permitió que cada integrante del equipo estuviese permanentemente al tanto del
-                      estado del proyecto así como de las tareas que debía realizar.
+                      <strong style={{ fontFamily: "var(--font-heading)" }}>Trello</strong> was used
+                      to organize tasks during the project. This allowed each team member to be
+                      constantly aware of the status of the project as well as the tasks to be
+                      performed.
                     </p>
                     <p className="about-project-paragraph">
-                      Las tareas se dividieron equitativamente entre front-end y back-end para que
-                      cada miembro del equipo pudiera participar en ambos aspectos del proyecto.
+                      Tasks were divided equally between front-end and back-end so that each team
+                      member could participate in both aspects of the project.
                     </p>
                   </div>
                   <img className="about-tab-panel-img" src="/public/img/Trello.png" alt="Trello" />
@@ -246,7 +250,7 @@ function AboutThisProject() {
             <Accordion.Item eventKey="0">
               <Accordion.Header>
                 <div className="d-flex align-items-center accordion-header">
-                  <h3 className="tab-title-mobile m-0">Equipo</h3>
+                  <h3 className="tab-title-mobile m-0">Team</h3>
                   <span className="tab-number-mobile m-0">01</span>
                 </div>
               </Accordion.Header>
@@ -343,40 +347,39 @@ function AboutThisProject() {
             <Accordion.Item eventKey="1">
               <Accordion.Header>
                 <div className="d-flex align-items-center accordion-header">
-                  <h3 className="tab-title-mobile m-0">Proyecto</h3>
+                  <h3 className="tab-title-mobile m-0">Project</h3>
                   <span className="tab-number-mobile m-0">02</span>
                 </div>
               </Accordion.Header>
               <Accordion.Body>
                 <div className="about-project-container">
                   <div className="about-project-paragraph-container">
-                    <h3 className="about-project-paragraph-title">Duración</h3>
+                    <h3 className="about-project-paragraph-title">Duration</h3>
                     <p className="about-project-paragraph-mobile">
-                      El proyecto fue desarrollado en tan sólo 3 semanas, durante junio de 2023. El
-                      mismo se dividió en sprints (Scrum) de una semana de duración.
+                      The project was developed in 3 weeks, where each member contributed
+                      approximately 150 hours. The project was divided into one-week sprints
+                      (Scrum).
                     </p>
                   </div>
                   <div className="about-project-paragraph-container">
-                    <h3 className="about-project-paragraph-title">Elección del proyecto</h3>
+                    <h3 className="about-project-paragraph-title">Project selection</h3>
                     <p className="about-project-paragraph-mobile">
-                      Se presentó por parte de cada estudiante 3 ideas de posibles proyectos,
-                      conformando un total de 15 proyectos. Los proyectos fueron votados, y el
-                      ganador fue el e-commerce de cerveza. La comodidad del diseño y el
-                      conocimiento por el producto fue lo que llevó al equipo a tomar la decisión.
+                      The minimalist design orientation and knowledge of the product led the team to
+                      choose this particular direction for the project. It also allowed the
+                      implementation of different functionalities such as stock management and
+                      validation, user authentication and emulating a complete purchasing process.
                     </p>
                   </div>
                   <div className="about-project-paragraph-container">
-                    <h3 className="about-project-paragraph-title">Experiencia</h3>
+                    <h3 className="about-project-paragraph-title">Experience</h3>
                     <p className="about-project-paragraph-mobile">
-                      Se presentó por parte de cada estudiante 3 ideas de posibles proyectos,
-                      conformando un total de 15 proyectos. Los proyectos fueron votados, y el
-                      ganador fue el e-commerce de cerveza. La comodidad del diseño y el
-                      conocimiento por el producto fue lo que llevó al equipo a tomar la decisión.
+                      The team members had the previous experience of building projects such as
+                      HackBlog, HackFlix and Twitter clone, all of them made during the Bootcamp.
                     </p>
                     <p className="about-project-paragraph-mobile">
-                      El grupo particularmente nunca había trabajado junto, siendo la organización
-                      un tema a resolver. La buena disposición y comunicacion llevó al grupo a sacar
-                      lo mejor de si.
+                      The group had never worked together before, being the organization and task
+                      division an issue to be solved. Great willingness and communication led the
+                      group to get the best out of each other.
                     </p>
                   </div>
                 </div>
@@ -385,7 +388,7 @@ function AboutThisProject() {
             <Accordion.Item eventKey="2">
               <Accordion.Header>
                 <div className="d-flex align-items-center accordion-header">
-                  <h3 className="tab-title-mobile m-0">Tecnología</h3>
+                  <h3 className="tab-title-mobile m-0">Technologies</h3>
                   <span className="tab-number-mobile m-0">03</span>
                 </div>
               </Accordion.Header>
@@ -393,14 +396,18 @@ function AboutThisProject() {
                 <div className="about-project-container">
                   <div className="about-project-paragraph-container">
                     <p className="about-project-paragraph-mobile">
-                      En el Back-End se desarrolló una REST API hecha con Node.js, Express, SQL y
-                      Git/GitHub la cual alimenta a dos proyectos de Front-End independientes, uno
-                      para{" "}
-                      <NavLink to="http://localhost:5173/" className="admin-link" target="_blank">
-                        <strong>administradores</strong>
+                      The back-end was developed using Node.js, Express, SQL, and Git/GitHub to
+                      create a REST API. This API serves as the data source for two separate
+                      front-end projects, one for{" "}
+                      <NavLink
+                        to="https://b-ra-admin.vercel.app/"
+                        className="admin-link"
+                        target="_blank"
+                      >
+                        <strong>administrators</strong>
                       </NavLink>{" "}
-                      y otro para usuarios. Para desarrollarlos se utilizó React, React Router y
-                      Redux.
+                      and the other for users. To develop these front-end projects, we utilized
+                      React, React Router, and Redux.
                     </p>
                   </div>
                   <img src="/public/img/about-logos.png" alt="about-logos" />
@@ -410,7 +417,7 @@ function AboutThisProject() {
             <Accordion.Item eventKey="3">
               <Accordion.Header>
                 <div className="d-flex align-items-center accordion-header hola">
-                  <h3 className="tab-title-mobile m-0">División de tareas</h3>
+                  <h3 className="tab-title-mobile m-0">Task division</h3>
                   <span className="tab-number-mobile m-0">04</span>
                 </div>
               </Accordion.Header>
@@ -418,9 +425,14 @@ function AboutThisProject() {
                 <div className="about-project-container">
                   <div className="about-project-paragraph-container">
                     <p className="about-project-paragraph-mobile">
-                      Para la organización de tareas durante el proyecto se utilizó Trello. Esto
-                      permitió que cada integrante del equipo estuviese permanentemente al tanto del
-                      estado del proyecto así como de las tareas que debía realizar.
+                      <strong style={{ fontFamily: "var(--font-heading)" }}>Trello</strong> was used
+                      to organize tasks during the project. This allowed each team member to be
+                      constantly aware of the status of the project as well as the tasks to be
+                      performed.
+                    </p>
+                    <p className="about-project-paragraph-mobile">
+                      Tasks were divided equally between front-end and back-end so that each team
+                      member could participate in both aspects of the project.
                     </p>
                   </div>
                 </div>

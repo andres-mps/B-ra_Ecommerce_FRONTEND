@@ -10,6 +10,7 @@
   text-decoration: none;
   transition: all 0.2s ease-in;
   opacity: 0.1;
+  border: 1px solid white;
 }
 
 .product-container:hover .add-to-cart {
@@ -27,7 +28,6 @@
   /* Personaliza el ancho deseado */
 }
 
-
 .custom-offcanvas {
   width: 100vw !important;
 }
@@ -44,7 +44,6 @@
   opacity: 0.8;
 }
 
-
 @media (max-width: 991px) {
   .add-to-cart {
     background-color: white;
@@ -59,10 +58,8 @@
 @media (max-width: 576px) {
   .add-to-cart {
     font-size: 0.9rem;
-
   }
 }
-
 
 .minimize-button {
   font-size: 1.5rem;
@@ -72,8 +69,6 @@
 .minimize-button:hover {
   color: #605d5d;
 }
-
-
 
 .scroll {
   overflow-y: auto;

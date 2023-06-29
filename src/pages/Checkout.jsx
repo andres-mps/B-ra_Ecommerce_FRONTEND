@@ -8,6 +8,8 @@ import { Tooltip } from "antd";
 import { clearCart, openCart } from "../redux/cartSlice";
 import axios from "axios";
 import { nanoid } from "@reduxjs/toolkit";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Checkout() {
   const dispatch = useDispatch();
@@ -82,8 +84,21 @@ function Checkout() {
     return navigate("/order-success");
   }
 
+  const notify = () =>
+    toast.warn("Sorry, this feature is still under development", {
+      position: "top-right",
+      autoClose: 4000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
   return (
     <>
+      <ToastContainer />
       <section className="container-fluid checkout-navbar-container">
         <NavLink className="checkout-navbar-logo" to="/home">
           <img src="/public/img/logo/BRA_logo_black.webp" alt="Logo" style={{ maxWidth: "90px" }} />
@@ -156,9 +171,12 @@ function Checkout() {
                         />
                       </div>
                       <div className="col-3">
-                        <button className="btn btn-secondary mb-3 checkout-discount-button">
+                        <p
+                          onClick={notify}
+                          className="btn btn-secondary mb-3 checkout-discount-button"
+                        >
                           Apply
-                        </button>
+                        </p>
                       </div>
                     </form>
                   </section>
