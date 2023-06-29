@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import "./AboutThisProject.css";
 import Accordion from "react-bootstrap/Accordion";
 import trello_img from "../assets/Trello.png";
+import mer_img from "../assets/MER.png";
+import about_logos_img from "../assets/about-logos.png";
 
 function AboutThisProject() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -192,7 +194,7 @@ function AboutThisProject() {
                     </p>
                   </div>
                 </div>
-                <img className="about-tab-panel-img" src="/public/img/MER.png" alt="MER" />
+                <img className="about-tab-panel-img" src={mer_img} alt="MER" />
               </div>
             </div>
 
@@ -215,7 +217,7 @@ function AboutThisProject() {
                   </p>
                 </div>
                 <img
-                  src="/public/img/about-logos.png"
+                  src={about_logos_img}
                   alt="about-logos"
                   className="ms-3 about-tab-panel-logos"
                 />
