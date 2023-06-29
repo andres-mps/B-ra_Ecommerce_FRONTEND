@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setToken } from "../redux/userSlice";
 import axios from "axios";
 import { useNavigate, NavLink, useLocation } from "react-router-dom";
@@ -16,8 +16,12 @@ function Login() {
 
   const direccionAnterior = location.state !== null ? location.state.direccionAnterior : null;
 
-  const [emailValue, setEmailValue] = useState("");
-  const [passwordValue, setPasswordValue] = useState("");
+  const queryParams = new URLSearchParams(location.search);
+  const preFilledEmail = queryParams.get("user");
+  const preFilledPassword = queryParams.get("password");
+
+  const [emailValue, setEmailValue] = useState(preFilledEmail || "");
+  const [passwordValue, setPasswordValue] = useState(preFilledPassword || "");
   const [err, setErr] = useState(null);
 
   async function handleSubmit(event) {

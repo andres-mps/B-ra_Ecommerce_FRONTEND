@@ -1,0 +1,40 @@
+.btnOffCanvas {
+  background-color: black;
+  color: white;
+  border-color: white;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-weight: bold;
+  border-radius: 0px;
+}
+.btnOffCanvas:hover {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+.offcanvasContainer {
+  background-color: white;
+  opacity: 0.9;
+  color: white;
+  border-color: white;
+  vertical-align: 50%;
+}
+
+.offcanvas-body {
+  text-align: center;
+}
+.offcanvas-title {
+  color: black;
+}
+h6 {
+  padding: 20px;
+}
+.button-about-container {
+  font-family: var(--font-heading);
+}
+.offcanvas-header {
+  display: flex;
+  flex-direction: column;
+}
