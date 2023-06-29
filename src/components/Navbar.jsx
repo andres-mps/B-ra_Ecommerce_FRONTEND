@@ -10,6 +10,7 @@ import "./Navbar.css";
 import { openDropdown, closeDropdown } from "../redux/DropdownSlice";
 import { logOut } from "../redux/userSlice";
 import Cart from "./Cart";
+import BRA_logo_black from "../assets/logos/BRA_logo_black.webp";
 
 function NavbarBeer() {
   const dispatch = useDispatch();
@@ -41,11 +42,7 @@ function NavbarBeer() {
         <Navbar sticky="" key={expand} bg="white" expand={expand} className="navbar">
           <Container fluid>
             <NavLink className="navbar-brand" to="/home">
-              <img
-                src="/public/img/logo/BRA_logo_black.webp"
-                alt="Logo"
-                style={{ maxWidth: "90px" }}
-              />
+              <img src={BRA_logo_black} alt="Logo" style={{ maxWidth: "90px" }} />
             </NavLink>
 
             <Navbar.Toggle
@@ -65,11 +62,7 @@ function NavbarBeer() {
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                   <NavLink to="/home" onClick={() => dropdownClose()}>
-                    <img
-                      src="/public/img/logo/BRA_logo_black.webp"
-                      alt="Logo"
-                      style={{ maxWidth: "90px" }}
-                    />
+                    <img src={BRA_logo_black} alt="Logo" style={{ maxWidth: "90px" }} />
                   </NavLink>
                 </Offcanvas.Title>
               </Offcanvas.Header>

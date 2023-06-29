@@ -1,10 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./AgeGate.css";
-import videoFile from "../../public/videos/videoBgBeer.mp4";
+import videoFile from "../assets/videos/videoBgBeer.mp4";
 import { useDispatch } from "react-redux";
 import { isAge } from "../redux/ageGateSlice";
 import { useState, useEffect } from "react";
+import BRA_logo_white from "../assets/logos/BRA_logo_white.webp";
 
 const AgeGate = () => {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ const AgeGate = () => {
       </div>
 
       <div className="container-fluid" id="age-gate-container">
-        <img src="/public/img/logo/BRA_logo_white.webp" alt="Logo" id="age-gate-logo" />
+        <img src={BRA_logo_white} alt="Logo" id="age-gate-logo" />
         <div id="age-gate-prompt">
           <div id="age-gate-text">
             {isLoading ? (

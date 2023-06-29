@@ -144,6 +144,11 @@
   display: flex;
 }
 
+.about-project-container-technologies {
+  display: flex;
+  flex-direction: column;
+}
+
 .about-project-paragraph-title {
   font-family: var(--font-heading);
   margin-bottom: 0px;
@@ -245,10 +250,39 @@
   padding-bottom: 1rem;
 }
 
+.technologies-icons {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 0px 20px;
+  margin-top: 2rem;
+}
+
+.technology-applied {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.technology-applied img {
+  height: 100px;
+  margin-bottom: 0.5rem;
+}
+
+.technology-applied p {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+}
+
 @media (max-width: 1200px) {
   .about-project-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-project-container-technologies {
     justify-content: center;
   }
 
@@ -297,6 +331,10 @@
     transform: translate(-50%, -50%);
     text-align: center;
   }
+
+  .technology-applied img {
+    height: 70px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -320,5 +358,10 @@
     border: none;
     padding: 0px;
     margin: 1rem 0;
+  }
+
+  .technologies-icons {
+    justify-content: center;
+    margin-top: 0px;
   }
 }
