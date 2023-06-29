@@ -4,9 +4,10 @@ import axios from "axios";
 import Order from "../components/Order";
 import "./YourOrders.css";
 import { NavLink } from "react-router-dom";
+import YourOrdersLoader from "../components/YourOrdersLoader";
 
 function YourOrders() {
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState(null);
   const loggedUser = useSelector((state) => state.user.userData);
   const token = useSelector((state) => state.user.token);
 
@@ -31,7 +32,9 @@ function YourOrders() {
   return (
     <div className="container">
       <h2>Order history</h2>
-      {orders.length === 0 ? (
+      {!orders ? (
+        <YourOrdersLoader />
+      ) : orders.length === 0 ? (
         <div className="no-orders-message">
           <div>
             <p>
