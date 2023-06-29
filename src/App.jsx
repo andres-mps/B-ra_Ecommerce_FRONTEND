@@ -48,47 +48,47 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="age-gate" element={<AgeGate />} />
+        <Route path="/age-gate" element={<AgeGate />} />
 
-        <Route path="/" element={<AgeGateVerify isAge={isAge} redirectPath="/age-gate" />}>
-          <Route path="/" element={<Page />}>
-            <Route path="home" element={<Home />} />
-            <Route path="register" element={<Register />} />
-            <Route path="login" element={<Login />} />
-            <Route path="beers/:product" element={<ProductDetail />} />
-            <Route path="styles" element={<Style />} />
-            <Route path="styles/:style" element={<Style />} />
-            <Route path="about-this-project" element={<AboutThisProject />} />
-            <Route
-              path="orders"
-              element={
-                <ProtectedRoute token={token} redirectPath="/not-found">
-                  <YourOrders />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              path="your-profile"
-              element={
-                <ProtectedRoute token={token} redirectPath="/not-found">
-                  <YourProfile />
-                </ProtectedRoute>
-              }
-            />
-            <Route path="*" element={<Error404 />} />
-          </Route>
-
-          <Route path="checkout" element={<Checkout />} />
+        <Route path="/" element={<Page />}>
+          <Route path="home" element={<Home />} />
+          <Route path="register" element={<Register />} />
+          <Route path="login" element={<Login />} />
+          <Route path="beers/:product" element={<ProductDetail />} />
+          <Route path="styles" element={<Style />} />
+          <Route path="styles/:style" element={<Style />} />
+          <Route path="about-this-project" element={<AboutThisProject />} />
           <Route
-            path="order-success"
+            path="orders"
             element={
               <ProtectedRoute token={token} redirectPath="/not-found">
-                <OrderSuccess />
+                <YourOrders />
               </ProtectedRoute>
             }
           />
+
+          <Route
+            path="your-profile"
+            element={
+              <ProtectedRoute token={token} redirectPath="/not-found">
+                <YourProfile />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<Error404 />} />
         </Route>
+
+        <Route path="/checkout" element={<Checkout />} />
+        <Route
+          path="/order-success"
+          element={
+            <ProtectedRoute token={token} redirectPath="/not-found">
+              <OrderSuccess />
+            </ProtectedRoute>
+          }
+        />
+        {/* <Route path="/" element={<AgeGateVerify isAge={isAge} redirectPath="/age-gate" />}>
+        </Route> */}
       </Routes>
     </>
   );
