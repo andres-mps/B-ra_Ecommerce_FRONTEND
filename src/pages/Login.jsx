@@ -63,6 +63,7 @@ function Login() {
                 className="login-input"
                 placeholder="Email"
                 value={emailValue}
+                required
                 onChange={(event) => setEmailValue(event.target.value)}
               />
             </div>
