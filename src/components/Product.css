@@ -21,9 +21,6 @@
 .product-img-mobile {
   display: none;
 }
-.product-img-desktop {
-  /* display: inline-block; */
-}
 
 .product-link {
   position: relative;
