@@ -141,7 +141,7 @@ function YourProfile() {
         </nav>
 
         <div className="row gutters-sm">
-          <div className="col-md-4 d-none d-md-block">
+          <div className="col-md-4 d-none d-md-block mb-5">
             <div className="card p-2 your-profile-background-color">
               <div className="card-body">
                 <nav className="nav flex-column nav-pills nav-gap-y-1">
