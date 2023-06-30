@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
+import ButtonAbout from "../components/ButtonAbout";
 
 function Home() {
   const [dragging, setDragging] = useState(false);
@@ -228,6 +229,7 @@ function Home() {
           </div>
         </div>
       </section>
+      <ButtonAbout />
     </main>
   );
 }
