@@ -17,7 +17,7 @@ function CheckoutItems({ product }) {
           </NavLink>
         </div>
         <div className="d-flex gap-1">
-          <p>kr</p>
+          <p>USD</p>
           <p>{product.price}</p>
         </div>
       </div>
