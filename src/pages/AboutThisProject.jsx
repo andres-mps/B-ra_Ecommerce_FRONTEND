@@ -194,8 +194,7 @@ function AboutThisProject() {
                   <div className="card-body">
                     <h5 className="card-title ">Juan Esteves</h5>
                     <p className="card-text">
-                      Some quick example text to build on the card title and make up the bulk of the
-                      card's content.
+                    IT consultant in implementation and development of ERP and CRM systems. Now full stack developer too, pursuing new challenges!
                     </p>
                     <p className="card-text d-flex gap-2">
                       <NavLink
@@ -458,8 +457,7 @@ function AboutThisProject() {
                     <div className="card-body">
                       <h5 className="card-title ">Juan Esteves</h5>
                       <p className="card-text">
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
+                      IT consultant in implementation and development of ERP and CRM systems. Now full stack developer too, pursuing new challenges!
                       </p>
                       <p className="card-text d-flex gap-2">
                         <NavLink
