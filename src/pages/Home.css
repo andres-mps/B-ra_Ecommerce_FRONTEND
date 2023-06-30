@@ -194,4 +194,8 @@
   .home-text-box {
     padding: 50px 50px;
   }
+
+  .hero-content h4 {
+    margin-top: 1rem;
+  }
 }
