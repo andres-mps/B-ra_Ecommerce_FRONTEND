@@ -146,7 +146,8 @@ function AboutThisProject() {
                   <div className="card-body">
                     <h5 className="card-title ">Emiliano Gaucher</h5>
                     <p className="card-text">
-                    I have experience in sales and graphic design. Now, as a full-stack developer, I have found my true passion.
+                      I have experience in sales and graphic design. Now, as a full-stack developer,
+                      I have found my true passion.
                     </p>
                     <p className="card-text d-flex gap-2">
                       <NavLink
@@ -375,10 +376,7 @@ function AboutThisProject() {
               <Accordion.Body>
                 <div className="d-flex about-card-container-mobile">
                   <div className="card-mobile">
-                    <img
-                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-                      alt=""
-                    />
+                    <img src={profileGS_BW} alt="" />
                     <div className="card-body">
                       <h5 className="card-title ">Guillermo Sánchez</h5>
                       <p className="card-text ">
@@ -405,69 +403,116 @@ function AboutThisProject() {
                   </div>
                   <div className="card-mobile">
                     <img
-                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                      className="profile-img"
+                      src={profileEG_BW}
+                      alt="Foto de perfil de Emiliano"
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title ">Emiliano Gaucher</h5>
+                      <p className="card-text">
+                        I have experience in sales and graphic design. Now, as a full-stack
+                        developer, I have found my true passion.
+                      </p>
+                      <p className="card-text  d-flex gap-2">
+                        <NavLink
+                          target="blank"
+                          to="https://github.com/emigaucher"
+                          className="text-decoration-none text-black"
+                        >
+                          <i className="fab fa-github"></i>
+                        </NavLink>
+                        <NavLink
+                          target="blank"
+                          to="https://www.linkedin.com/in/emiliano-gaucher/"
+                          className="text-decoration-none text-black"
+                        >
+                          <i className="fab fa-linkedin"></i>
+                        </NavLink>
+                        </p>
+                    </div>
+                  </div>
+                  <div className="card-mobile">
+                    <img
+                      src={profileGB_BW}
                       alt=""
                     />
                     <div className="card-body">
-                      <h5 className="card-title ">Andres Mendaro</h5>
+                      <h5 className="card-title ">Gonzalo Bascans</h5>
+                      <p className="card-text">
+                      I am a Civil Engineer converted to Full Stack Developer. I started this exciting transition in January 2023.
+                      </p>
+                      <p className="card-text  d-flex gap-2">
+                      <NavLink
+                        target="blank"
+                        to="https://github.com/gbascans"
+                        className="text-decoration-none text-black"
+                      >
+                        <i className="fab fa-github"></i>
+                      </NavLink>
+                      <NavLink
+                        target="blank"
+                        to="https://www.linkedin.com/in/gbascans/"
+                        className="text-decoration-none text-black"
+                      >
+                        <i className="fab fa-linkedin"></i>
+                      </NavLink>
+                        </p>
+                    </div>
+                  </div>
+                  <div className="card-mobile">
+                    <img
+                      src={profileJE_BW}
+                      alt=""
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title ">Juan Esteves</h5>
                       <p className="card-text">
                         Some quick example text to build on the card title and make up the bulk of
                         the card's content.
                       </p>
                       <p className="card-text d-flex gap-2">
+                      <NavLink
+                        target="blank"
+                        to="https://github.com/JuanEstevess"
+                        className="text-decoration-none text-black"
+                      >
                         <i className="fab fa-github"></i>
+                      </NavLink>
+                      <NavLink
+                        target="blank"
+                        to="https://www.linkedin.com/in/juan-ignacio-esteves/"
+                        className="text-decoration-none text-black"
+                      >
                         <i className="fab fa-linkedin"></i>
+                      </NavLink>
                       </p>
                     </div>
                   </div>
                   <div className="card-mobile">
                     <img
-                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                      src={profileAM_BW}
                       alt=""
                     />
                     <div className="card-body">
                       <h5 className="card-title ">Andres Mendaro</h5>
                       <p className="card-text">
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
+                      Experienced Data Analyst Economist and Ecommerce Manager, now Full Stack Developer seeking IT challenges.
                       </p>
                       <p className="card-text d-flex gap-2">
+                      <NavLink
+                        target="blank"
+                        to="https://github.com/andres-mps"
+                        className="text-decoration-none text-black"
+                      >
                         <i className="fab fa-github"></i>
+                      </NavLink>
+                      <NavLink
+                        target="blank"
+                        to="https://www.linkedin.com/in/andres-mendaro/"
+                        className="text-decoration-none text-black"
+                      >
                         <i className="fab fa-linkedin"></i>
-                      </p>
-                    </div>
-                  </div>
-                  <div className="card-mobile">
-                    <img
-                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-                      alt=""
-                    />
-                    <div className="card-body">
-                      <h5 className="card-title ">Andres Mendaro</h5>
-                      <p className="card-text">
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                      </p>
-                      <p className="card-text d-flex gap-2">
-                        <i className="fab fa-github"></i>
-                        <i className="fab fa-linkedin"></i>
-                      </p>
-                    </div>
-                  </div>
-                  <div className="card-mobile">
-                    <img
-                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-                      alt=""
-                    />
-                    <div className="card-body">
-                      <h5 className="card-title ">Andres Mendaro</h5>
-                      <p className="card-text">
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                      </p>
-                      <p className="card-text d-flex gap-2">
-                        <i className="fab fa-github"></i>
-                        <i className="fab fa-linkedin"></i>
+                      </NavLink>
                       </p>
                     </div>
                   </div>
