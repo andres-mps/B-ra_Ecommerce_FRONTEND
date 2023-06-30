@@ -161,7 +161,7 @@ function AboutThisProject() {
                   </div>
                 </div>
                 <div className="card">
-                  <img src={profileJE} alt="" />
+                  <img src={profileJE_BW} alt="" />
                   <div className="card-body">
                     <h5 className="card-title ">Juan Ignacio Esteves</h5>
                     <p className="card-text">
@@ -187,9 +187,9 @@ function AboutThisProject() {
                   </div>
                 </div>
                 <div className="card">
-                  <img src={profileJE_BW} alt="" />
+                  <img src={profileAM_BW} alt="" />
                   <div className="card-body">
-                    <h5 className="card-title ">Juani Esteves</h5>
+                    <h5 className="card-title ">Andrés Mendaro</h5>
                     <p className="card-text">
                       Some quick example text to build on the card title and make up the bulk of the
                       card's content.
