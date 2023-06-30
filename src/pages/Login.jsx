@@ -34,8 +34,8 @@ function Login() {
         password: passwordValue,
       },
     });
-    if (response.data === "Please check your credentials and try again.") {
-      return setErr(response.data);
+    if (response.data.err === "err") {
+      return setErr(response.data.message);
     }
     dispatch(setToken(response.data));
     if (direccionAnterior === "/register") {

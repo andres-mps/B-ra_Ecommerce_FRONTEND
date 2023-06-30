@@ -57,7 +57,7 @@ function Checkout() {
   async function handleSubmit(event) {
     event.preventDefault();
     if (loggedUser === undefined) {
-      setErr("Sign in to your account");
+      setErr("Please sign in to complete your purchase");
     }
     const response = await axios({
       method: "post",
@@ -224,7 +224,7 @@ function Checkout() {
           </div>
           <div className="col-md-6 order-md-1">
             <div className="container mt-3 mb-5 checkout-payment-container">
-              <button className="checkout-apple-pay-button">
+              <button onClick={notify} className="checkout-apple-pay-button">
                 <i className="fab fa-apple-pay"></i>
               </button>
               <div className="checkout-divider">
