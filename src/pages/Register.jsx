@@ -1,4 +1,6 @@
 import { useLayoutEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { setToken } from "../redux/userSlice";
 import "./Register.css";
 import axios from "axios";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
@@ -10,6 +12,7 @@ function Register() {
   const [lastnameValue, setLastnameValue] = useState("");
   const [err, setErr] = useState("");
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
   const direccionAnterior =
@@ -35,7 +38,19 @@ function Register() {
       return setErr(register.data.message);
     }
     setErr(null);
-    navigate("/login", { state: { direccionAnterior } });
+    const login = await axios({
+      method: "post",
+      url: `${import.meta.env.VITE_APP_BACK}/users/token`,
+      data: {
+        email: emailValue,
+        password: passwordValue,
+      },
+    });
+    if (login.data.err === "err") {
+      return setErr(login.data.message);
+    }
+    dispatch(setToken(login.data));
+    navigate("/home", { state: { direccionAnterior } });
   }
 
   return (
