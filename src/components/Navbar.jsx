@@ -68,12 +68,16 @@ function NavbarBeer() {
               </Offcanvas.Header>
               <Offcanvas.Body className="p-0">
                 <Nav className="justify-content-start flex-grow-1">
-                  <NavLink to="/styles " className="nav-link ms-4" onClick={() => dropdownClose()}>
+                  <NavLink
+                    to="/styles "
+                    className="nav-link hover-underline ms-4"
+                    onClick={() => dropdownClose()}
+                  >
                     BEER
                   </NavLink>
                   <NavLink
                     to="/about-this-project"
-                    className="nav-link ms-4"
+                    className="nav-link hover-underline ms-4"
                     onClick={() => dropdownClose()}
                   >
                     ABOUT THIS PROJECT

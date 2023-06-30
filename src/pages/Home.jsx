@@ -213,7 +213,9 @@ function Home() {
                             onMouseLeave={() => setHoveredImage(defaultImage)}
                           >
                             <NavLink to={`/styles/${category.slug}`} id="style-list-link">
-                              <td id="style-name">{category.name}</td>
+                              <td id="style-name" className="hover-underline">
+                                {category.name}
+                              </td>
                               <td id="style-amount">{category.products.length}</td>
                             </NavLink>
                           </tr>

@@ -83,11 +83,11 @@
   color: black;
 }
 
-#style-list-link:hover {
+/* #style-list-link:hover {
   font-family: var(--font-heading);
   text-decoration: underline;
   text-underline-offset: 8px;
-}
+} */
 
 .child {
   display: flex;
