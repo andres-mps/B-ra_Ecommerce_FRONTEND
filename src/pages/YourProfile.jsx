@@ -81,6 +81,8 @@ function YourProfile() {
       },
     });
     if (response.data.err === "err") {
+      setAccountErr(null);
+      setSecurityErr(null);
       return setProfileErr(response.data.message);
     }
     setProfileErr(null);
@@ -98,6 +100,8 @@ function YourProfile() {
       },
     });
     if (response.data.err === "err") {
+      setProfileErr(null);
+      setSecurityErr(null);
       return setAccountErr(response.data.message);
     }
     setAccountErr(null);
@@ -118,6 +122,8 @@ function YourProfile() {
       },
     });
     if (response.data.err === "err") {
+      setAccountErr(null);
+      setProfileErr(null);
       return setSecurityErr(response.data.message);
     }
     setSecurityErr(null);
