@@ -98,7 +98,7 @@ function Style() {
           ) : (
             products.map((product) => {
               return (
-                <div className="col-6 col-md-4 col-lg-3">
+                <div className="col-6 col-md-4 col-lg-3 product-styles-container">
                   <Product key={product.id} product={product} />
                 </div>
               );

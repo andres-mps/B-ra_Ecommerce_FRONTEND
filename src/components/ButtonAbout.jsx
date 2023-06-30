@@ -27,23 +27,11 @@ function ButtonAbout() {
     <>
       <div className="button-about-container">
         <button
-          className="btn btn-primary btn-outline-white fw-bold  fixed-right m-3 me-0 btnOffCanvas "
-          style={{
-            backgroundColor: "black",
-            color: "white",
-            borderColor: "white",
-            position: "fixed",
-            top: "50%",
-            right: "0px",
-            transform: "translateY(-50%)",
-            writingMode: "vertical-lr",
-            textOrientation: "mixed",
-            height: "200px",
-            width: "50px",
-          }}
+          className="btn btn-primary btn-outline-white open-about-button"
           onClick={handleOffcanvasToggle}
         >
-          About This Project
+          <span className="d-none d-sm-block"> About This Project</span>
+          <span className="d-sm-none"> About </span>
         </button>
         {isOffcanvasOpen && (
           <div className="offcanvas offcanvas-end show" tabIndex="-1">

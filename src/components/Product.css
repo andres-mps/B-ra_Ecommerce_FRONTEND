@@ -18,6 +18,10 @@
   display: inline-block;
 }
 
+.product-img-mobile {
+  display: none;
+}
+
 .product-link {
   position: relative;
   justify-content: center;
@@ -65,11 +69,27 @@
 }
 
 .product-first-container {
-  width: 300px;
+  width: 250px;
 }
 
 @media (max-width: 576px) {
   .product-first-container {
-    width: 200px;
+    width: 220px;
+  }
+  .product-styles-container {
+    width: 50%;
+    padding: 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .product-img-mobile {
+    display: block;
+  }
+  .product-img-desktop {
+    display: none;
+  }
+  .product-container {
+    margin: 1rem;
   }
 }

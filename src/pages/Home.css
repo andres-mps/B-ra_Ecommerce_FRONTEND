@@ -33,13 +33,21 @@
 .hero-content h1 {
   font-family: var(--font-heading-bold);
   color: #fff;
+  margin-bottom: 0;
 }
 
 .hero-content p {
+  font-family: var(--font-heading-light);
+  color: #fff;
+  font-size: 1rem;
+}
+
+.hero-content h4 {
   font-family: var(--font-heading);
   text-decoration: underline;
   text-underline-offset: 4px;
   color: #fff;
+  font-size: 2rem;
 }
 
 .hero-stats {

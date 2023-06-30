@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { openCart } from "../redux/cartSlice";
 import Container from "react-bootstrap/Container";
@@ -13,6 +13,7 @@ import Cart from "./Cart";
 import BRA_logo_black from "../assets/logos/BRA_logo_black.webp";
 
 function NavbarBeer() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const productsInCart = useSelector((state) => state.cart.products);
 
@@ -130,7 +131,7 @@ function NavbarBeer() {
                       <NavLink
                         to="/home"
                         className="nav-link mb-3 ms-4"
-                        onClick={() => dispatch(logOut()) && dropdownClose()}
+                        onClick={() => dispatch(logOut()) && dropdownClose() && navigate("home")}
                       >
                         <i class="fas fa-sign-out-alt me-3"></i>
                         Log out
@@ -170,7 +171,7 @@ function NavbarBeer() {
                     <NavDropdown.Item href="/your-profile">Your Profile</NavDropdown.Item>
                     <NavDropdown.Item href="/orders">Your Orders</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item onClick={() => dispatch(logOut())}>
+                    <NavDropdown.Item onClick={() => dispatch(logOut()) && navigate("home")}>
                       <NavLink to="/home" className="text-decoration-none text-white">
                         Log out
                       </NavLink>

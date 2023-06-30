@@ -17,7 +17,7 @@ function Product({ product }) {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
             viewport={{ once: true }}
-            className="product-imgContainer"
+            className="product-imgContainer product-img-desktop"
           >
             <img
               className="product-img"
@@ -33,6 +33,23 @@ function Product({ product }) {
             )}
             {!hasStock && <span className="product-sold-out">Sold out</span>}
           </motion.div>
+
+          <div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+            viewport={{ once: true }}
+            className="product-imgContainer product-img-mobile"
+          >
+            <img
+              className="product-img"
+              src={`${import.meta.env.VITE_APP_BACK_IMG + product.image.main}`}
+              alt={product.name}
+            />
+
+            {!hasStock && <span className="product-sold-out">Sold out</span>}
+          </div>
+
           <span className="product-name">{product.name}</span>
           <span id="product-price">{product.price} USD</span>
         </NavLink>

@@ -90,13 +90,13 @@ function Home() {
   return (
     <main>
       <section className="home-section">
-        <NavLink to="/styles">
+        <NavLink to="/styles/ipa">
           <div className="hero-container">
             <div className="background-image"></div>
             <div className="background-overlay"></div>
             <div className="hero-content">
               <h1>Want it Hoppy?</h1>
-              <p>Shop now our Hoppy styles</p>
+              <h4>Shop now!</h4>
             </div>
           </div>
         </NavLink>
@@ -210,7 +210,6 @@ function Home() {
                             id="style-list"
                             key={category.id}
                             onMouseEnter={() => handleHover(category.name, category.image)}
-                            onMouseLeave={() => setHoveredImage(defaultImage)}
                           >
                             <NavLink to={`/styles/${category.slug}`} id="style-list-link">
                               <td className="hover-underline-subheading">{category.name}</td>

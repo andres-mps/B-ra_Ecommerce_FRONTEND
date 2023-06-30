@@ -83,7 +83,7 @@ function App() {
           <Route
             path="/order-success"
             element={
-              <ProtectedRoute token={token} redirectPath="/not-found">
+              <ProtectedRoute token={token} redirectPath="home">
                 <OrderSuccess />
               </ProtectedRoute>
             }

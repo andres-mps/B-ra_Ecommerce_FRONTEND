@@ -1,3 +1,35 @@
+.open-about-button {
+  background-color: transparent;
+  backdrop-filter: blur(20px) brightness(70%);
+  -webkit-backdrop-filter: blur(20px) brightness(70%);
+  -ms-backdrop-filter: blur(20px) brightness(70%);
+  position: fixed;
+  border-color: white;
+  border-right: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 50px;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  border-radius: 0px;
+  z-index: 1000;
+}
+
+.open-about-button span {
+  transform: rotate(-90deg);
+  white-space: nowrap;
+}
+
+.open-about-button:hover {
+  background-color: white;
+  color: black;
+  border-right: none;
+  border-color: black;
+}
+
 .btnOffCanvas {
   background-color: black;
   color: white;
@@ -5,10 +37,10 @@
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  font-weight: bold;
   border-radius: 0px;
   z-index: 1000;
 }
+
 .btnOffCanvas:hover {
   background-color: white;
   color: black;
@@ -37,4 +69,19 @@ h6 {
 }
 .button-about-container {
   font-family: var(--font-heading);
+}
+
+@media (max-width: 576px) {
+  .open-about-button {
+    /* display: none; */
+    height: 100px;
+    width: 25px;
+    font-size: 1rem;
+    padding-right: 2rem;
+    padding-left: 0.5rem;
+  }
+
+  .open-about-button span {
+    padding-top: 1.5rem;
+  }
 }
