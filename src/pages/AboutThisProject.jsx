@@ -39,18 +39,18 @@ function AboutThisProject() {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleGuestLogin = () => {
-    const queryParams = new URLSearchParams(location.search);
-    queryParams.set("user", "maria@gmail.com");
-    queryParams.set("password", "1234");
-    navigate(`login?${queryParams.toString()}`);
-    console.log("Login como usuario");
-  };
-  const handleAdminLogin = () => {
-    const url = "https://b-ra-admin.vercel.app/login?user=admin@gmail.com&password=1234";
-    window.open(url, "_blank");
-    console.log("Login como administrador");
-  };
+  // const handleGuestLogin = () => {
+  //   const queryParams = new URLSearchParams(location.search);
+  //   queryParams.set("user", "maria@gmail.com");
+  //   queryParams.set("password", "1234");
+  //   navigate(`login?${queryParams.toString()}`);
+  //   console.log("Login como usuario");
+  // };
+  // const handleAdminLogin = () => {
+  //   const url = "https://b-ra-admin.vercel.app/login?user=admin@gmail.com&password=1234";
+  //   window.open(url, "_blank");
+  //   console.log("Login como administrador");
+  // };
 
   return (
     <>
@@ -424,42 +424,37 @@ function AboutThisProject() {
                         >
                           <i className="fab fa-linkedin"></i>
                         </NavLink>
-                        </p>
+                      </p>
                     </div>
                   </div>
                   <div className="card-mobile">
-                    <img
-                      src={profileGB_BW}
-                      alt=""
-                    />
+                    <img src={profileGB_BW} alt="" />
                     <div className="card-body">
                       <h5 className="card-title ">Gonzalo Bascans</h5>
                       <p className="card-text">
-                      I am a Civil Engineer converted to Full Stack Developer. I started this exciting transition in January 2023.
+                        I am a Civil Engineer converted to Full Stack Developer. I started this
+                        exciting transition in January 2023.
                       </p>
                       <p className="card-text  d-flex gap-2">
-                      <NavLink
-                        target="blank"
-                        to="https://github.com/gbascans"
-                        className="text-decoration-none text-black"
-                      >
-                        <i className="fab fa-github"></i>
-                      </NavLink>
-                      <NavLink
-                        target="blank"
-                        to="https://www.linkedin.com/in/gbascans/"
-                        className="text-decoration-none text-black"
-                      >
-                        <i className="fab fa-linkedin"></i>
-                      </NavLink>
-                        </p>
+                        <NavLink
+                          target="blank"
+                          to="https://github.com/gbascans"
+                          className="text-decoration-none text-black"
+                        >
+                          <i className="fab fa-github"></i>
+                        </NavLink>
+                        <NavLink
+                          target="blank"
+                          to="https://www.linkedin.com/in/gbascans/"
+                          className="text-decoration-none text-black"
+                        >
+                          <i className="fab fa-linkedin"></i>
+                        </NavLink>
+                      </p>
                     </div>
                   </div>
                   <div className="card-mobile">
-                    <img
-                      src={profileJE_BW}
-                      alt=""
-                    />
+                    <img src={profileJE_BW} alt="" />
                     <div className="card-body">
                       <h5 className="card-title ">Juan Esteves</h5>
                       <p className="card-text">
@@ -467,48 +462,46 @@ function AboutThisProject() {
                         the card's content.
                       </p>
                       <p className="card-text d-flex gap-2">
-                      <NavLink
-                        target="blank"
-                        to="https://github.com/JuanEstevess"
-                        className="text-decoration-none text-black"
-                      >
-                        <i className="fab fa-github"></i>
-                      </NavLink>
-                      <NavLink
-                        target="blank"
-                        to="https://www.linkedin.com/in/juan-ignacio-esteves/"
-                        className="text-decoration-none text-black"
-                      >
-                        <i className="fab fa-linkedin"></i>
-                      </NavLink>
+                        <NavLink
+                          target="blank"
+                          to="https://github.com/JuanEstevess"
+                          className="text-decoration-none text-black"
+                        >
+                          <i className="fab fa-github"></i>
+                        </NavLink>
+                        <NavLink
+                          target="blank"
+                          to="https://www.linkedin.com/in/juan-ignacio-esteves/"
+                          className="text-decoration-none text-black"
+                        >
+                          <i className="fab fa-linkedin"></i>
+                        </NavLink>
                       </p>
                     </div>
                   </div>
                   <div className="card-mobile">
-                    <img
-                      src={profileAM_BW}
-                      alt=""
-                    />
+                    <img src={profileAM_BW} alt="" />
                     <div className="card-body">
                       <h5 className="card-title ">Andres Mendaro</h5>
                       <p className="card-text">
-                      Experienced Data Analyst Economist and Ecommerce Manager, now Full Stack Developer seeking IT challenges.
+                        Experienced Data Analyst Economist and Ecommerce Manager, now Full Stack
+                        Developer seeking IT challenges.
                       </p>
                       <p className="card-text d-flex gap-2">
-                      <NavLink
-                        target="blank"
-                        to="https://github.com/andres-mps"
-                        className="text-decoration-none text-black"
-                      >
-                        <i className="fab fa-github"></i>
-                      </NavLink>
-                      <NavLink
-                        target="blank"
-                        to="https://www.linkedin.com/in/andres-mendaro/"
-                        className="text-decoration-none text-black"
-                      >
-                        <i className="fab fa-linkedin"></i>
-                      </NavLink>
+                        <NavLink
+                          target="blank"
+                          to="https://github.com/andres-mps"
+                          className="text-decoration-none text-black"
+                        >
+                          <i className="fab fa-github"></i>
+                        </NavLink>
+                        <NavLink
+                          target="blank"
+                          to="https://www.linkedin.com/in/andres-mendaro/"
+                          className="text-decoration-none text-black"
+                        >
+                          <i className="fab fa-linkedin"></i>
+                        </NavLink>
                       </p>
                     </div>
                   </div>
@@ -652,25 +645,20 @@ function AboutThisProject() {
           To simplify access to the application, the following test users are provided:
         </p>
         <div>
-          <button
+          <NavLink
+            to="/login"
             className="btn btn-primary btnOffCanvas me-3 mt-3"
             style={{ fontFamily: "var(--font-heading-light)" }}
-            onClick={() => {
-              handleGuestLogin();
-            }}
           >
             Login as user
-          </button>
-          <button
+          </NavLink>
+          <NavLink
+            to="https://b-ra-admin.vercel.app/login"
             className="btn btn-primary btnOffCanvas mt-3"
             style={{ fontFamily: "var(--font-heading-light)" }}
-            onClick={() => {
-              handleOffcanvasToggle();
-              handleAdminLogin();
-            }}
           >
             Login as administrator
-          </button>
+          </NavLink>
         </div>
       </section>
     </>
