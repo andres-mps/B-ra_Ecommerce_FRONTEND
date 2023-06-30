@@ -27,7 +27,7 @@ function ButtonAbout() {
     <>
       <div className="button-about-container">
         <button
-          className="btn btn-primary btn-outline-white fixed-right m-3 me-0 open-about-button"
+          className="btn btn-primary btn-outline-white open-about-button"
           onClick={handleOffcanvasToggle}
         >
           About This Project
