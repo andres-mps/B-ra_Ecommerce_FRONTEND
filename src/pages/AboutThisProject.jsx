@@ -160,18 +160,29 @@ function AboutThisProject() {
                     </p>
                   </div>
                 </div>
-                <div className="card profile-img-container">
-                  <img className="profile-img" src={profileAM_BW} alt="Foto de perfil de Andres" />
-
+                <div className="card">
+                  <img src={profileJE} alt="" />
                   <div className="card-body">
-                    <h5 className="card-title ">Andrés Mendaro</h5>
+                    <h5 className="card-title ">Juan Ignacio Esteves</h5>
                     <p className="card-text">
                       Some quick example text to build on the card title and make up the bulk of the
                       card's content.
                     </p>
                     <p className="card-text d-flex gap-2">
-                      <i className="fab fa-github"></i>
-                      <i className="fab fa-linkedin"></i>
+                      <NavLink
+                        target="blank"
+                        to="https://github.com/JuanEstevess"
+                        className="text-decoration-none text-black"
+                      >
+                        <i className="fab fa-github"></i>
+                      </NavLink>
+                      <NavLink
+                        target="blank"
+                        to="https://www.linkedin.com/in/juan-ignacio-esteves/"
+                        className="text-decoration-none text-black"
+                      >
+                        <i className="fab fa-linkedin"></i>
+                      </NavLink>
                     </p>
                   </div>
                 </div>
