@@ -70,5 +70,8 @@ h6 {
   .open-about-button {
     height: 100px;
     width: 25px;
+    font-size: 1rem;
+    padding-right: 2rem;
+    padding-left: 0.5rem;
   }
 }
