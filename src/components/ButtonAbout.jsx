@@ -27,10 +27,11 @@ function ButtonAbout() {
     <>
       <div className="button-about-container">
         <button
-          className="btn btn-primary btn-outline-white fixed-right m-3 me-0 open-about-button"
+          className="btn btn-primary btn-outline-white open-about-button"
           onClick={handleOffcanvasToggle}
         >
-          About This Project
+          <span className="d-none d-sm-block"> About This Project</span>
+          <span className="d-sm-none"> About </span>
         </button>
         {isOffcanvasOpen && (
           <div className="offcanvas offcanvas-end show" tabIndex="-1">

@@ -1,19 +1,26 @@
 .open-about-button {
   background-color: transparent;
   backdrop-filter: blur(20px) brightness(70%);
+  -webkit-backdrop-filter: blur(20px) brightness(70%);
+  -ms-backdrop-filter: blur(20px) brightness(70%);
   position: fixed;
-  writing-mode: vertical-lr;
   border-color: white;
   border-right: none;
-  text-orientation: mixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 200px;
   width: 50px;
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  font-weight: bold;
   border-radius: 0px;
   z-index: 1000;
+}
+
+.open-about-button span {
+  transform: rotate(-90deg);
+  white-space: nowrap;
 }
 
 .open-about-button:hover {
@@ -65,7 +72,16 @@ h6 {
 }
 
 @media (max-width: 576px) {
-  .button-about-container {
-    display: none;
+  .open-about-button {
+    /* display: none; */
+    height: 100px;
+    width: 25px;
+    font-size: 1rem;
+    padding-right: 2rem;
+    padding-left: 0.5rem;
+  }
+
+  .open-about-button span {
+    padding-top: 1.5rem;
   }
 }
