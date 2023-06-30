@@ -1,6 +1,7 @@
 .open-about-button {
   background-color: transparent;
   backdrop-filter: blur(20px) brightness(70%);
+  -webkit-text-orientaion: blur(20px) brightness(70%);
   position: fixed;
   writing-mode: vertical-lr;
   -webkit-writing-mode: vertical-lr;
