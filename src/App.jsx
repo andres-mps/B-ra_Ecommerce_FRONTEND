@@ -62,7 +62,7 @@ function App() {
             <Route
               path="orders"
               element={
-                <ProtectedRoute token={token} redirectPath="/not-found">
+                <ProtectedRoute token={token} redirectPath="/home">
                   <YourOrders />
                 </ProtectedRoute>
               }
@@ -71,7 +71,7 @@ function App() {
             <Route
               path="your-profile"
               element={
-                <ProtectedRoute token={token} redirectPath="/not-found">
+                <ProtectedRoute token={token} redirectPath="/home">
                   <YourProfile />
                 </ProtectedRoute>
               }
