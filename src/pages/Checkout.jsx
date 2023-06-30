@@ -318,7 +318,7 @@ function Checkout() {
                 <button className="checkout-pay-button">Total USD {total}</button>
               </form>
               {err && (
-                <div class="checkout-regular-text text-danger mt-2 checkout-alert" role="alert">
+                <div className="checkout-regular-text text-danger mt-2 checkout-alert" role="alert">
                   {err}
                 </div>
               )}

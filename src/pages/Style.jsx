@@ -83,7 +83,7 @@ function Style() {
           )}
         </div>
         {err && (
-          <div id="error" class="alert alert-danger text-center" role="alert">
+          <div id="error" className="alert alert-danger text-center" role="alert">
             {err}
           </div>
         )}
@@ -92,7 +92,10 @@ function Style() {
           {!products ? (
             <ProductLoader />
           ) : products.length < 1 ? (
-            <p class="d-block text-center checkout-regular-text text-success mt-2" role="success">
+            <p
+              className="d-block text-center checkout-regular-text text-success mt-2"
+              role="success"
+            >
               This style remains in production! came back later for the newest beers!
             </p>
           ) : (
