@@ -194,7 +194,7 @@ function AboutThisProject() {
                   <div className="card-body">
                     <h5 className="card-title ">Juan Esteves</h5>
                     <p className="card-text">
-                    IT consultant in implementation and development of ERP and CRM systems. Now full stack developer too, pursuing new challenges!
+                    Consultant in implementation and development of ERP. Now full stack developer too, pursuing new challenges!
                     </p>
                     <p className="card-text d-flex gap-2">
                       <NavLink
@@ -457,7 +457,7 @@ function AboutThisProject() {
                     <div className="card-body">
                       <h5 className="card-title ">Juan Esteves</h5>
                       <p className="card-text">
-                      IT consultant in implementation and development of ERP and CRM systems. Now full stack developer too, pursuing new challenges!
+                      Consultant in implementation and development of ERP. Now full stack developer too, pursuing new challenges!
                       </p>
                       <p className="card-text d-flex gap-2">
                         <NavLink
