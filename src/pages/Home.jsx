@@ -201,27 +201,25 @@ function Home() {
             <div className="text-left">
               <h2 className="home-subtitles">We got the goods</h2>
               <div>
-                <table className="home-style-list">
-                  <tbody>
-                    {categories &&
-                      categories.map((category) => {
-                        return (
-                          <tr
-                            id="style-list"
-                            key={category.id}
-                            onMouseEnter={() => handleHover(category.name, category.image)}
-                          >
-                            <NavLink to={`/styles/${category.slug}`} id="style-list-link">
-                              <td className="hover-underline-subheading">{category.name}</td>
-                              <td className="hover-underline-subheading">
-                                {category.products.length}
-                              </td>
-                            </NavLink>
-                          </tr>
-                        );
-                      })}
-                  </tbody>
-                </table>
+                <div className="home-style-list">
+                  {categories &&
+                    categories.map((category) => {
+                      return (
+                        <div
+                          id="style-list"
+                          key={category.id}
+                          onMouseEnter={() => handleHover(category.name, category.image)}
+                        >
+                          <NavLink to={`/styles/${category.slug}`} id="style-list-link">
+                            <span className="hover-underline-subheading">{category.name}</span>
+                            <span className="hover-underline-subheading">
+                              {category.products.length}
+                            </span>
+                          </NavLink>
+                        </div>
+                      );
+                    })}
+                </div>
               </div>
             </div>
           </div>
