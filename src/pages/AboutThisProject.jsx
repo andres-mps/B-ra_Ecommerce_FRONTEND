@@ -221,8 +221,8 @@ function AboutThisProject() {
                   <div className="card-body">
                     <h5 className="card-title ">Andrés Mendaro</h5>
                     <p className="card-text">
-                      Some quick example text to build on the card title and make up the bulk of the
-                      card's content.
+                      Experienced Data Analyst Economist and Ecommerce Manager, now Full Stack
+                      Developer seeking IT challenges.
                     </p>
                     <p className="card-text d-flex gap-2">
                       <i className="fab fa-github"></i>
