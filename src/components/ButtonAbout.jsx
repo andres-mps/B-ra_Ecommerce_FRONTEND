@@ -11,16 +11,16 @@ function ButtonAbout() {
     setIsOffcanvasOpen(!isOffcanvasOpen);
   };
   const handleGuestLogin = () => {
-    const queryParams = new URLSearchParams(location.search);
-    queryParams.set("user", "maria@gmail.com");
-    queryParams.set("password", "1234");
-    navigate(`login?${queryParams.toString()}`);
-    console.log("Login como usuario");
+    //const queryParams = new URLSearchParams(location.search);
+    //queryParams.set("user", "maria@gmail.com");
+    //queryParams.set("password", "1234");
+    navigate(`/login`);
+    //console.log("Login como usuario");
   };
   const handleAdminLogin = () => {
-    const url = "https://b-ra-admin.vercel.app/login?user=admin@gmail.com&password=1234";
+    const url = "https://b-ra-admin.vercel.app/login"; //?user=admin@gmail.com&password=1234
     window.open(url, "_blank");
-    console.log("Login como administrador");
+    //console.log("Login como administrador");
   };
 
   return (
