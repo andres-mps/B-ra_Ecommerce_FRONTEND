@@ -7,11 +7,13 @@
   transform: translateY(-50%);
   font-weight: bold;
   border-radius: 0px;
+  z-index: 1000;
 }
 .btnOffCanvas:hover {
   background-color: white;
   color: black;
   font-weight: bold;
+  border-color: black;
 }
 
 .offcanvasContainer {
@@ -24,9 +26,14 @@
 
 .offcanvas-title {
   color: black;
+  font-family: var(--font-heading-bold);
 }
 h6 {
   padding: 15px;
+}
+
+.offcanvas-body-credentials {
+  padding: 1rem;
 }
 .button-about-container {
   font-family: var(--font-heading);
