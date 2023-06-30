@@ -37,6 +37,7 @@ function ButtonAbout() {
             right: "0px",
             transform: "translateY(-50%)",
             writingMode: "vertical-lr",
+            WebkitWritingMode: "vertical-lr",
             height: "200px",
             width: "50px",
           }}
