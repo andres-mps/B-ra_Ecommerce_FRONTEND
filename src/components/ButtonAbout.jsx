@@ -11,7 +11,7 @@ function ButtonAbout() {
     setIsOffcanvasOpen(!isOffcanvasOpen);
   };
   const handleGuestLogin = () => {
-    const queryParams = new URLSearchParams(location.search); // Obtiene los parámetros de consulta actuales
+    const queryParams = new URLSearchParams(location.search);
     queryParams.set("user", "maria@gmail.com");
     queryParams.set("password", "1234");
     navigate(`login?${queryParams.toString()}`);

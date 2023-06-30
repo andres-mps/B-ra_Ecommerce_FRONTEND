@@ -6,6 +6,7 @@ import trello_img from "../assets/Trello.png";
 import mer_img from "../assets/MER.png";
 import profileGB from "../assets/profiles/GonzaloBascans.jpeg";
 import profileEG from "../assets/profiles/EmilianoGaucher.jpg";
+import profileJE from "../assets/profiles/JuanEsteves.jpg";
 import reactLogo from "../assets/icons/react.svg";
 import reduxLogo from "../assets/icons/redux.svg";
 import cssLogo from "../assets/icons/css.svg";
@@ -152,19 +153,28 @@ function AboutThisProject() {
                   </div>
                 </div>
                 <div className="card">
-                  <img
-                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-                    alt=""
-                  />
+                  <img src={profileJE} alt="" />
                   <div className="card-body">
-                    <h5 className="card-title ">Andres Mendaro</h5>
+                    <h5 className="card-title ">Juan Ignacio Esteves</h5>
                     <p className="card-text">
                       Some quick example text to build on the card title and make up the bulk of the
                       card's content.
                     </p>
                     <p className="card-text d-flex gap-2">
-                      <i className="fab fa-github"></i>
-                      <i className="fab fa-linkedin"></i>
+                      <NavLink
+                        target="blank"
+                        to="https://github.com/JuanEstevess"
+                        className="text-decoration-none text-black"
+                      >
+                        <i className="fab fa-github"></i>
+                      </NavLink>
+                      <NavLink
+                        target="blank"
+                        to="https://www.linkedin.com/in/juan-ignacio-esteves/"
+                        className="text-decoration-none text-black"
+                      >
+                        <i className="fab fa-linkedin"></i>
+                      </NavLink>
                     </p>
                   </div>
                 </div>
