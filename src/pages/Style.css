@@ -18,11 +18,11 @@
   color: black;
 }
 
-.styles-list-header:hover {
+/* .styles-list-header:hover {
   text-decoration: underline;
   text-underline-offset: 8px;
   color: black;
-}
+} */
 
 .selected-styles-list-header {
   font-family: var(--font-heading);

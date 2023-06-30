@@ -85,8 +85,30 @@
 
 #style-list-link:hover {
   font-family: var(--font-heading);
-  text-decoration: underline;
-  text-underline-offset: 8px;
+}
+
+.hover-underline-subheading {
+  display: inline-block;
+  position: relative;
+  color: #000000;
+}
+
+.hover-underline-subheading::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 2px;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-subheading:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .child {

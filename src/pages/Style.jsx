@@ -73,7 +73,9 @@ function Style() {
                   {category.slug === params.style ? (
                     <h2 className="selected-styles-list-header">{category.name}</h2>
                   ) : (
-                    <h2 className="styles-list-header">{category.name}</h2>
+                    <h2 className="styles-list-header hover-underline-subheading">
+                      {category.name}
+                    </h2>
                   )}
                 </NavLink>
               );

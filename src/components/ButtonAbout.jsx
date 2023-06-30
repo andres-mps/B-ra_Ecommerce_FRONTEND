@@ -61,8 +61,8 @@ function ButtonAbout() {
                 onClick={handleOffcanvasToggle}
               ></button>
               <div style={{ paddingTop: "30px", paddingLeft: "10px" }}>
-                <h5 className="offcanvas-title">Info about this project</h5>
-                <p>
+                <h5 className="offcanvas-title">About this project</h5>
+                <p className="mt-3">
                   This e-commerce site is a project developed by students of{" "}
                   <strong style={{ fontWeight: "600" }}>Hack Academy's Coding Bootcamp.</strong> The
                   Bootcamp is an extremely hands-on, 3-month, full-time educational program, where
@@ -72,50 +72,44 @@ function ButtonAbout() {
                     Node.js, Express, React.js, SQL, MongoDB and Git.
                   </strong>
                 </p>
-              </div>
-            </div>
-            <div
-              className="offcanvas-body d-flex flex-column align-items-center"
-              style={{ textAlign: "center" }}
-            >
-              <section>
-                <h6>Navigate to the resume</h6>
-                <p></p>
                 <button
-                  className="btn btn-primary btn-outline-white btnOffCanvas"
+                  className="btn btn-primary btn-outline-white btnOffCanvas mt-3"
                   onClick={() => {
                     handleOffcanvasToggle();
                     navigate("about-this-project");
                   }}
                 >
-                  More info about this project
-                </button>
-              </section>
-              <section>
-                <h6>Login as guest</h6>
-
-                <button
-                  className="btn btn-primary btnOffCanvas"
-                  onClick={() => {
-                    handleOffcanvasToggle();
-                    handleGuestLogin();
-                  }}
-                >
-                  Ingresar como invitado
-                </button>
-              </section>
-              <section>
-                <h6>Login as administrator</h6>
-                <button
-                  className="btn btn-primary btnOffCanvas"
-                  onClick={() => {
-                    handleOffcanvasToggle();
-                    handleAdminLogin();
-                  }}
-                >
-                  Ingresar como administrador
-                </button>
-              </section>
+                  Learn more about this project!
+                </button>{" "}
+              </div>
+            </div>
+            <hr className="solid mx-4" />
+            <div className="offcanvas-body-credentials d-flex flex-column">
+              <div style={{ paddingLeft: "10px" }}>
+                <h5 className="offcanvas-title mb-4">Login credentials</h5>
+                <section>
+                  <button
+                    className="btn btn-primary btnOffCanvas mb-2 mt-3"
+                    onClick={() => {
+                      handleOffcanvasToggle();
+                      handleGuestLogin();
+                    }}
+                  >
+                    Login as user
+                  </button>
+                </section>
+                <section>
+                  <button
+                    className="btn btn-primary btnOffCanvas"
+                    onClick={() => {
+                      handleOffcanvasToggle();
+                      handleAdminLogin();
+                    }}
+                  >
+                    Login as administrator
+                  </button>
+                </section>
+              </div>
             </div>
           </div>
         )}
