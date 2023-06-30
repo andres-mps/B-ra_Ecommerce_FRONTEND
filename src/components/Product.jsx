@@ -46,13 +46,7 @@ function Product({ product }) {
               src={`${import.meta.env.VITE_APP_BACK_IMG + product.image.main}`}
               alt={product.name}
             />
-            {product.image.alt && (
-              <img
-                className="product-img img-top"
-                src={`${import.meta.env.VITE_APP_BACK_IMG + product.image.alt}`}
-                alt={product.name}
-              />
-            )}
+
             {!hasStock && <span className="product-sold-out">Sold out</span>}
           </div>
 
