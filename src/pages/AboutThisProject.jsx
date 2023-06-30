@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 import "./AboutThisProject.css";
 import Accordion from "react-bootstrap/Accordion";
+
 import trello_img from "../assets/Trello.png";
 import mer_img from "../assets/MER.png";
 import profileGB from "../assets/profiles/GonzaloBascans.jpeg";
@@ -15,6 +16,8 @@ import profileAM from "../assets/profiles/AndresMendaro.jpeg";
 import profileAM_BW from "../assets/profiles/AndresMendaro_B&W.jpeg";
 import profileJE from "../assets/profiles/JuanIgnacioEsteves.jpeg";
 import profileJE_BW from "../assets/profiles/JuanIgnacioEsteves_B&W.jpeg";
+import profileGS from "../assets/profiles/GuillermoSanchez.jpeg";
+import profileGS_BW from "../assets/profiles/GuillermoSanchez_B&W.jpeg";
 
 import reactLogo from "../assets/icons/react.svg";
 import reduxLogo from "../assets/icons/redux.svg";
@@ -109,7 +112,7 @@ function AboutThisProject() {
             <div className={`tab-panel tab-panel-${activeTabIndex === 0 ? "active" : ""}`}>
               <div className="d-flex about-card-container">
                 <div className="card">
-                  <img src={profileJE_BW} alt="" />
+                  <img src={profileGS_BW} alt="" />
                   <div className="card-body">
                     <h5 className="card-title ">Guillermo Sánchez</h5>
                     <p className="card-text">
