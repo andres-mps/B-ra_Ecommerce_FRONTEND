@@ -356,7 +356,7 @@ function YourProfile() {
                     </button>
                   </form>
                   {profileErr && (
-                    <div class="text-danger mt-2 login-alert" role="alert">
+                    <div className="text-danger mt-2 login-alert" role="alert">
                       {profileErr}
                     </div>
                   )}
@@ -379,7 +379,7 @@ function YourProfile() {
                     </button>
                   </form>
                   {accountErr && (
-                    <div class="text-danger mt-2 login-alert" role="alert">
+                    <div className="text-danger mt-2 login-alert" role="alert">
                       {accountErr}
                     </div>
                   )}
@@ -413,7 +413,7 @@ function YourProfile() {
                     </button>
                   </form>
                   {securityErr && (
-                    <div class="text-danger mt-2 login-alert" role="alert">
+                    <div className="text-danger mt-2 login-alert" role="alert">
                       {securityErr}
                     </div>
                   )}
