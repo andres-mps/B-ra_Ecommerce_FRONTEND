@@ -17,11 +17,11 @@ function Login() {
   const direccionAnterior = location.state !== null ? location.state.direccionAnterior : null;
 
   const queryParams = new URLSearchParams(location.search);
-  const preFilledEmail = queryParams.get("user");
-  const preFilledPassword = queryParams.get("password");
+  //const preFilledEmail = queryParams.get("user");
+  //const preFilledPassword = queryParams.get("password");
 
-  const [emailValue, setEmailValue] = useState(preFilledEmail || "");
-  const [passwordValue, setPasswordValue] = useState(preFilledPassword || "");
+  const [emailValue, setEmailValue] = useState("maria@gmail.com");
+  const [passwordValue, setPasswordValue] = useState("1234");
   const [err, setErr] = useState(null);
 
   async function handleSubmit(event) {
