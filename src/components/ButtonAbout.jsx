@@ -45,7 +45,7 @@ function ButtonAbout() {
           About This Project
         </button>
         {isOffcanvasOpen && (
-          <div className="offcanvas offcanvas-end show" tabIndex="-1" style={{}}>
+          <div className="offcanvas offcanvas-end show" tabIndex="-1">
             <div className="offcanvas-header">
               <button
                 type="button"
@@ -59,17 +59,19 @@ function ButtonAbout() {
                 className="btn-close"
                 onClick={handleOffcanvasToggle}
               ></button>
-              <h5 className="offcanvas-title">Info about this project</h5>
-              <p>
-                This e-commerce site is a project developed by students of{" "}
-                <strong style={{ fontWeight: "600" }}>Hack Academy's Coding Bootcamp.</strong> The
-                Bootcamp is an extremely hands-on, 3-month, full-time educational program, where
-                students invest more than <strong style={{ fontWeight: "600" }}>600 hours</strong>{" "}
-                learning about{" "}
-                <strong style={{ fontWeight: "600" }}>
-                  Node.js, Express, React.js, SQL, MongoDB and Git.
-                </strong>
-              </p>
+              <div style={{ paddingTop: "30px", paddingLeft: "10px" }}>
+                <h5 className="offcanvas-title">Info about this project</h5>
+                <p>
+                  This e-commerce site is a project developed by students of{" "}
+                  <strong style={{ fontWeight: "600" }}>Hack Academy's Coding Bootcamp.</strong> The
+                  Bootcamp is an extremely hands-on, 3-month, full-time educational program, where
+                  students invest more than <strong style={{ fontWeight: "600" }}>600 hours</strong>{" "}
+                  learning about{" "}
+                  <strong style={{ fontWeight: "600" }}>
+                    Node.js, Express, React.js, SQL, MongoDB and Git.
+                  </strong>
+                </p>
+              </div>
             </div>
             <div
               className="offcanvas-body d-flex flex-column align-items-center"
