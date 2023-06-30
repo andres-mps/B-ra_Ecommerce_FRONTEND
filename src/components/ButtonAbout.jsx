@@ -18,7 +18,7 @@ function ButtonAbout() {
     console.log("Login como usuario");
   };
   const handleAdminLogin = () => {
-    navigate("https://b-ra-admin.vercel.app/login?user=admin@gmail.com&password=1234");
+    window.location.href = "https://b-ra-admin.vercel.app/login?user=admin@gmail.com&password=1234";
     console.log("Login como administrador");
   };
 
