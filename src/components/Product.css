@@ -18,6 +18,13 @@
   display: inline-block;
 }
 
+.product-img-mobile {
+  display: none;
+}
+.product-img-desktop {
+  display: block;
+}
+
 .product-link {
   position: relative;
   justify-content: center;
@@ -71,5 +78,14 @@
 @media (max-width: 576px) {
   .product-first-container {
     width: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-img-mobile {
+    display: block;
+  }
+  .product-img-desktop {
+    display: none;
   }
 }

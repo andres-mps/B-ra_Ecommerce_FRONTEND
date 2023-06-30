@@ -225,8 +225,20 @@ function AboutThisProject() {
                       Developer seeking IT challenges.
                     </p>
                     <p className="card-text d-flex gap-2">
-                      <i className="fab fa-github"></i>
-                      <i className="fab fa-linkedin"></i>
+                      <NavLink
+                        target="blank"
+                        to="https://github.com/andres-mps"
+                        className="text-decoration-none text-black"
+                      >
+                        <i className="fab fa-github"></i>
+                      </NavLink>
+                      <NavLink
+                        target="blank"
+                        to="https://www.linkedin.com/in/andres-mendaro/"
+                        className="text-decoration-none text-black"
+                      >
+                        <i className="fab fa-linkedin"></i>
+                      </NavLink>
                     </p>
                   </div>
                 </div>
