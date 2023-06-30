@@ -146,8 +146,7 @@ function AboutThisProject() {
                   <div className="card-body">
                     <h5 className="card-title ">Emiliano Gaucher</h5>
                     <p className="card-text">
-                      Some quick example text to build on the card title and make up the bulk of the
-                      card's content.
+                    I have experience in sales and graphic design. Now, as a full-stack developer, I have found my true passion.
                     </p>
                     <p className="card-text d-flex gap-2">
                       <NavLink
