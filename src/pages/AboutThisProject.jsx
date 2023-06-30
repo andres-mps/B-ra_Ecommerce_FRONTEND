@@ -137,16 +137,13 @@ function AboutThisProject() {
                     </p>
                   </div>
                 </div>
-                <div className="card profile-img-containers">
-                  <img
-                    className="profile-img"
-                    src={profileEG_BW}
-                    alt="Foto de perfil de Emiliano"
-                  />
+                <div className="card">
+                  <img src={profileEG_BW} alt="Foto de perfil de Emiliano" />
                   <div className="card-body">
                     <h5 className="card-title ">Emiliano Gaucher</h5>
                     <p className="card-text">
-                    I have experience in sales and graphic design. Now, as a full-stack developer, I have found my true passion.
+                      I have experience in sales and graphic design. Now, as a full-stack developer,
+                      I have found my true passion.
                     </p>
                     <p className="card-text d-flex gap-2">
                       <NavLink
@@ -166,8 +163,8 @@ function AboutThisProject() {
                     </p>
                   </div>
                 </div>
-                <div className="card profile-img-container">
-                  <img className="profile-img" src={profileGB_BW} alt="Foto de perfil de Gonzalo" />
+                <div className="card">
+                  <img src={profileGB_BW} alt="Foto de perfil de Gonzalo" />
                   <div className="card-body">
                     <h5 className="card-title ">Gonzalo Bascans</h5>
                     <p className="card-text">
@@ -195,7 +192,7 @@ function AboutThisProject() {
                 <div className="card">
                   <img src={profileJE_BW} alt="" />
                   <div className="card-body">
-                    <h5 className="card-title ">Juan Ignacio Esteves</h5>
+                    <h5 className="card-title ">Juan Esteves</h5>
                     <p className="card-text">
                       Some quick example text to build on the card title and make up the bulk of the
                       card's content.
