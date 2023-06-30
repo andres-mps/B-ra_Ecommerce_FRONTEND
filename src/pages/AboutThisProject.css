@@ -128,6 +128,13 @@
   gap: 1rem;
 }
 
+.profile-img-container {
+  height: 510px;
+}
+.profile-img {
+  object-fit: contain;
+}
+
 .tab-number {
   padding-top: 0.3rem;
   font-size: 1rem;
