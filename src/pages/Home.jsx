@@ -90,12 +90,12 @@ function Home() {
   return (
     <main>
       <section className="home-section">
-        <NavLink to="/styles/ipa">
+        <NavLink to="/styles">
           <div className="hero-container">
             <div className="background-image"></div>
             <div className="background-overlay"></div>
             <div className="hero-content">
-              <h1>Want it Hoppy?</h1>
+              <h1>Explore our beer styles</h1>
               <h4>Shop now!</h4>
             </div>
           </div>
