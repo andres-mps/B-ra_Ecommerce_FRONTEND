@@ -113,7 +113,7 @@ function AboutThisProject() {
                   <div className="card-body">
                     <h5 className="card-title ">Guillermo Sánchez</h5>
                     <p className="card-text">
-                      International relations graduate, entrepreneur & graphic design enthusiast
+                      International Relations graduate, entrepreneur & graphic design enthusiast
                       turned software developer.
                     </p>
                     <p className="card-text d-flex gap-2">
@@ -380,7 +380,7 @@ function AboutThisProject() {
                     <div className="card-body">
                       <h5 className="card-title ">Guillermo Sánchez</h5>
                       <p className="card-text ">
-                        International relations graduate, entrepreneur & graphic design enthusiast
+                        International Relations graduate, entrepreneur & graphic design enthusiast
                         turned software developer.
                       </p>
                       <p className="card-text  d-flex gap-2">
