@@ -83,6 +83,7 @@
   font-family: var(--font-heading);
   cursor: pointer;
 }
+
 .about-tab-2 {
   display: flex;
   justify-content: space-between;
@@ -186,8 +187,7 @@
 .card img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
-  object-position: top;
+  object-fit: contain;
   padding-bottom: 1rem;
 }
 
@@ -304,9 +304,11 @@
   .about-info-container-mobile {
     display: none;
   }
+
   .about-info-container {
     display: block;
   }
+
   .about-hero-content {
     position: absolute;
     bottom: 3rem;
@@ -323,9 +325,11 @@
     justify-content: center;
     min-height: 500px;
   }
+
   .about-info-container {
     display: none;
   }
+
   .card-mobile {
     border: none;
   }
