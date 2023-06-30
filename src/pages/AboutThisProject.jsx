@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+
 import "./AboutThisProject.css";
 import Accordion from "react-bootstrap/Accordion";
 import trello_img from "../assets/Trello.png";
@@ -24,6 +26,8 @@ import nodeLogo from "../assets/icons/node.svg";
 import expressLogo from "../assets/icons/express.svg";
 
 function AboutThisProject() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const handleTabClick = (index) => {
     setActiveTabIndex(index);
@@ -31,6 +35,20 @@ function AboutThisProject() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleGuestLogin = () => {
+    const queryParams = new URLSearchParams(location.search);
+    queryParams.set("user", "maria@gmail.com");
+    queryParams.set("password", "1234");
+    navigate(`login?${queryParams.toString()}`);
+    console.log("Login como usuario");
+  };
+  const handleAdminLogin = () => {
+    const url = "https://b-ra-admin.vercel.app/login?user=admin@gmail.com&password=1234";
+    window.open(url, "_blank");
+    console.log("Login como administrador");
+  };
+
   return (
     <>
       <section>
@@ -93,14 +111,26 @@ function AboutThisProject() {
                 <div className="card">
                   <img src={profileJE_BW} alt="" />
                   <div className="card-body">
-                    <h5 className="card-title ">Andres Mendaro</h5>
+                    <h5 className="card-title ">Guillermo Sánchez</h5>
                     <p className="card-text">
-                      Some quick example text to build on the card title and make up the bulk of the
-                      card's content.
+                      International relations graduate, entrepreneur & graphic design enthusiast
+                      turned software developer.
                     </p>
                     <p className="card-text d-flex gap-2">
-                      <i className="fab fa-github"></i>
-                      <i className="fab fa-linkedin"></i>
+                      <NavLink
+                        target="blank"
+                        to="https://github.com/g-sanchez-andre"
+                        className="text-decoration-none text-black"
+                      >
+                        <i className="fab fa-github"></i>
+                      </NavLink>
+                      <NavLink
+                        target="blank"
+                        to="https://www.linkedin.com/in/guillermo-sanchez-99a5819b/"
+                        className="text-decoration-none text-black"
+                      >
+                        <i className="fab fa-linkedin"></i>
+                      </NavLink>
                     </p>
                   </div>
                 </div>
@@ -140,7 +170,7 @@ function AboutThisProject() {
                     <h5 className="card-title ">Gonzalo Bascans</h5>
                     <p className="card-text">
                       I am a Civil Engineer converted to Full Stack Developer. I started this
-                      exiting transition in January 2023.
+                      exciting transition in January 2023.
                     </p>
                     <p className="card-text d-flex gap-2">
                       <NavLink
@@ -336,14 +366,26 @@ function AboutThisProject() {
                       alt=""
                     />
                     <div className="card-body">
-                      <h5 className="card-title ">Andres Mendaro</h5>
+                      <h5 className="card-title ">Guillermo Sánchez</h5>
                       <p className="card-text ">
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
+                        International relations graduate, entrepreneur & graphic design enthusiast
+                        turned software developer.
                       </p>
                       <p className="card-text  d-flex gap-2">
-                        <i className="fab fa-github"></i>
-                        <i className="fab fa-linkedin"></i>
+                        <NavLink
+                          target="blank"
+                          to="https://github.com/g-sanchez-andre"
+                          className="text-decoration-none text-black"
+                        >
+                          <i className="fab fa-github"></i>
+                        </NavLink>
+                        <NavLink
+                          target="blank"
+                          to="https://www.linkedin.com/in/guillermo-sanchez-99a5819b/"
+                          className="text-decoration-none text-black"
+                        >
+                          <i className="fab fa-linkedin"></i>
+                        </NavLink>
                       </p>
                     </div>
                   </div>
@@ -546,6 +588,34 @@ function AboutThisProject() {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
+        </div>
+      </section>
+      <hr className="solid mx-5" />
+      <section className="about-credentials-container">
+        <h3 style={{ fontFamily: "var(--font-heading)" }}>Project login credentials</h3>
+        <p style={{ fontFamily: "var(--font-heading-light)" }}>
+          To simplify access to the application, the following test users are provided:
+        </p>
+        <div>
+          <button
+            className="btn btn-primary btnOffCanvas me-3 mt-3"
+            style={{ fontFamily: "var(--font-heading-light)" }}
+            onClick={() => {
+              handleGuestLogin();
+            }}
+          >
+            Login as user
+          </button>
+          <button
+            className="btn btn-primary btnOffCanvas mt-3"
+            style={{ fontFamily: "var(--font-heading-light)" }}
+            onClick={() => {
+              handleOffcanvasToggle();
+              handleAdminLogin();
+            }}
+          >
+            Login as administrator
+          </button>
         </div>
       </section>
     </>

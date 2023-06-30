@@ -44,6 +44,10 @@
   flex-wrap: wrap;
 }
 
+.about-credentials-container {
+  padding: 2rem;
+}
+
 .about-tabs {
   width: 100%;
   display: flex;

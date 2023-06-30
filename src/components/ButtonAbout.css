@@ -1,7 +1,13 @@
-.btnOffCanvas {
-  background-color: black;
-  color: white;
+.open-about-button {
+  background-color: transparent;
+  backdrop-filter: blur(20px) brightness(70%);
+  position: fixed;
+  writing-mode: vertical-lr;
   border-color: white;
+  border-right: none;
+  text-orientation: mixed;
+  height: 200px;
+  width: 50px;
   top: 50%;
   right: 0;
   transform: translateY(-50%);
@@ -9,6 +15,25 @@
   border-radius: 0px;
   z-index: 1000;
 }
+
+.open-about-button:hover {
+  background-color: white;
+  color: black;
+  border-right: none;
+  border-color: black;
+}
+
+.btnOffCanvas {
+  background-color: black;
+  color: white;
+  border-color: white;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  border-radius: 0px;
+  z-index: 1000;
+}
+
 .btnOffCanvas:hover {
   background-color: white;
   color: black;
@@ -37,4 +62,10 @@ h6 {
 }
 .button-about-container {
   font-family: var(--font-heading);
+}
+
+@media (max-width: 576px) {
+  .button-about-container {
+    display: none;
+  }
 }
