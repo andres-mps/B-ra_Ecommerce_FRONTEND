@@ -4,12 +4,13 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Product from "../components/Product";
 import AddToCart from "../components/AddToCart";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams, useNavigate } from "react-router-dom";
 import "./ProductDetail.css";
 import { motion } from "framer-motion";
 import ProductDetailLoader from "../components/ProductDetailLoader";
 
 function ProductDetail() {
+  const navigate = useNavigate();
   const [featured, setFeatured] = useState([]);
   const [product, setProduct] = useState(null);
   const [imgToBox, setImgToBox] = useState("main");
@@ -40,6 +41,9 @@ function ProductDetail() {
         method: "GET",
         url: `${import.meta.env.VITE_APP_BACK}/products/${params.product}`,
       });
+      if (response.data.err === "err") {
+        return navigate("/not-found");
+      }
       setProduct(response.data);
       const featured = await axios({
         method: "GET",
