@@ -23,7 +23,7 @@ import AgeGateVerify from "./components/AgeGateVerify";
 function App() {
   const token = useSelector((state) => state.user.token);
   const isAge = useSelector((state) => state.ageGate.isAge);
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(true); 
 
   useEffect(() => {
     const handleVisibilityChange = () => {
